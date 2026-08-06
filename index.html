@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小学生热梗雷达 — 每日自动追踪</title>
+<meta name="description" content="AI 每日自动抓取全网小学生流行梗，帮助家长了解孩子在说什么。">
+<style>
+/* ========== Reset & Base ========== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0a0a0f;
+  --surface: #12121a;
+  --surface-2: #1a1a26;
+  --surface-3: #222233;
+  --border: rgba(255,255,255,0.06);
+  --text: #e8e8f0;
+  --text-2: #9a9ab0;
+  --text-3: #6a6a80;
+  --accent: #ff6b4a;
+  --accent-glow: rgba(255,107,74,0.15);
+  --blue: #4a9eff;
+  --green: #4aff9a;
+  --yellow: #ffcc4a;
+  --purple: #b44aff;
+  --radius: 14px;
+  --radius-sm: 8px;
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "PingFang SC", "Noto Sans SC", sans-serif;
+  --mono: "SF Mono", "JetBrains Mono", "Fira Code", monospace;
+}
+
+html { font-size: 16px; scroll-behavior: smooth; }
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ========== Ambient Background ========== */
+.ambient {
+  position: fixed; inset: 0; z-index: -1; overflow: hidden;
+}
+.ambient::before {
+  content: '';
+  position: absolute;
+  width: 600px; height: 600px;
+  top: -200px; right: -100px;
+  background: radial-gradient(circle, rgba(255,107,74,0.08) 0%, transparent 70%);
+  animation: float 20s ease-in-out infinite;
+}
+.ambient::after {
+  content: '';
+  position: absolute;
+  width: 500px; height: 500px;
+  bottom: -150px; left: -100px;
+  background: radial-gradient(circle, rgba(74,158,255,0.06) 0%, transparent 70%);
+  animation: float 25s ease-in-out infinite reverse;
+}
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, -20px) scale(1.1); }
+}
+
+/* ========== Layout ========== */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ========== Header ========== */
+header {
+  padding: 48px 0 32px;
+  text-align: center;
+}
+header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #fff 0%, var(--text-2) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+header .subtitle {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: var(--text-3);
+}
+header .update-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  padding: 6px 14px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  font-size: 0.78rem;
+  color: var(--text-2);
+}
+header .update-badge .dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* ========== Tab Nav ========== */
+.tab-nav {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-bottom: 32px;
+  padding: 4px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+.tab-btn {
+  padding: 10px 24px;
+  border: none;
+  background: transparent;
+  color: var(--text-3);
+  font-size: 0.88rem;
+  font-weight: 500;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: var(--font);
+}
+.tab-btn:hover { color: var(--text); }
+.tab-btn.active {
+  background: var(--surface-3);
+  color: var(--text);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+/* ========== Tab Content ========== */
+.tab-content { display: none; animation: fadeIn 0.3s ease; }
+.tab-content.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ========== Sub-tabs for 总榜 ========== */
+.sub-tabs {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0;
+}
+.sub-tab {
+  padding: 10px 16px;
+  border: none;
+  background: transparent;
+  color: var(--text-3);
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: all 0.2s ease;
+  font-family: var(--font);
+}
+.sub-tab:hover { color: var(--text-2); }
+.sub-tab.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* ========== Date Picker ========== */
+.date-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.date-nav button {
+  width: 36px; height: 36px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-2);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  font-size: 1rem;
+}
+.date-nav button:hover:not(:disabled) { background: var(--surface-2); color: var(--text); border-color: var(--accent); }
+.date-nav button:disabled { opacity: 0.3; cursor: not-allowed; }
+.date-nav .current-date {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  min-width: 140px;
+  text-align: center;
+}
+
+/* ========== Cards ========== */
+.meme-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin-bottom: 12px;
+  transition: all 0.2s ease;
+  cursor: default;
+}
+.meme-card:hover {
+  border-color: rgba(255,255,255,0.1);
+  background: var(--surface-2);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+.meme-card .card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+.meme-card .rank {
+  font-size: 1.3rem;
+  font-weight: 800;
+  font-family: var(--mono);
+  color: var(--text-3);
+  min-width: 28px;
+}
+.meme-card .rank.top3 { color: var(--accent); }
+.meme-card .name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  flex: 1;
+}
+.meme-card .badges {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.meme-card .badge {
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.badge-new { background: rgba(255,107,74,0.15); color: var(--accent); }
+.badge-up { background: rgba(74,255,154,0.12); color: var(--green); }
+.badge-stable { background: rgba(154,154,176,0.1); color: var(--text-3); }
+.badge-down { background: rgba(74,158,255,0.1); color: var(--blue); }
+
+/* Heat bar */
+.heat-bar {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+}
+.heat-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--surface-3);
+}
+.heat-dot.active {
+  background: var(--accent);
+  box-shadow: 0 0 6px var(--accent-glow);
+}
+.heat-dot.active:nth-child(1) { background: #ff4a4a; }
+.heat-dot.active:nth-child(2) { background: #ff6b4a; }
+.heat-dot.active:nth-child(3) { background: #ff8c4a; }
+.heat-dot.active:nth-child(4) { background: #ffaa4a; }
+.heat-dot.active:nth-child(5) { background: #ffcc4a; }
+
+/* Card details */
+.card-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 16px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+.card-detail {
+  font-size: 0.8rem;
+}
+.card-detail label {
+  color: var(--text-3);
+  display: block;
+  margin-bottom: 2px;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.card-detail span { color: var(--text-2); }
+.card-detail.full { grid-column: 1 / -1; }
+
+/* ========== Potential Chart ========== */
+.potential-card {
+  background: linear-gradient(135deg, var(--surface) 0%, rgba(180,74,255,0.03) 100%);
+  border-color: rgba(180,74,255,0.15);
+}
+.potential-card:hover { border-color: rgba(180,74,255,0.3); }
+.probability {
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+.prob-high { background: rgba(255,107,74,0.15); color: var(--accent); }
+.prob-medium { background: rgba(255,204,74,0.12); color: var(--yellow); }
+.prob-low { background: rgba(154,154,176,0.1); color: var(--text-3); }
+
+/* ========== Classic table ========== */
+.classic-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.classic-table th {
+  text-align: left;
+  padding: 10px 16px;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-3);
+  border-bottom: 1px solid var(--border);
+}
+.classic-table td {
+  padding: 12px 16px;
+  font-size: 0.88rem;
+  color: var(--text-2);
+  border-bottom: 1px solid var(--border);
+}
+.classic-table tr:last-child td { border-bottom: none; }
+.classic-table tr:hover td { background: var(--surface-2); }
+
+/* ========== Parent Guide ========== */
+.guide-section {
+  margin-bottom: 16px;
+  padding: 16px 20px;
+  border-radius: var(--radius-sm);
+}
+.guide-safe { background: rgba(74,255,154,0.05); border: 1px solid rgba(74,255,154,0.12); }
+.guide-attention { background: rgba(255,204,74,0.05); border: 1px solid rgba(255,204,74,0.12); }
+.guide-danger { background: rgba(255,74,74,0.05); border: 1px solid rgba(255,74,74,0.12); }
+.guide-section h4 {
+  font-size: 0.82rem;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.guide-section .items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.guide-section .item {
+  padding: 4px 10px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 6px;
+  font-size: 0.78rem;
+  color: var(--text-2);
+}
+
+/* ========== Daily Meme Detail ========== */
+.daily-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: all 0.25s ease;
+}
+.daily-card:hover {
+  border-color: rgba(255,255,255,0.1);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+.daily-card .top-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+.daily-card .rank-num {
+  font-size: 1.6rem;
+  font-weight: 800;
+  font-family: var(--mono);
+  color: var(--text-3);
+  line-height: 1;
+  min-width: 30px;
+}
+.daily-card .rank-num.top3 { color: var(--accent); }
+.daily-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.daily-card .fire-time {
+  font-size: 0.78rem;
+  color: var(--accent);
+  font-weight: 500;
+}
+.daily-card .description {
+  font-size: 0.88rem;
+  color: var(--text-2);
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.daily-card .meta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+.daily-card .meta-item {
+  font-size: 0.78rem;
+  padding: 8px 12px;
+  background: var(--surface-2);
+  border-radius: var(--radius-sm);
+}
+.daily-card .meta-item label {
+  color: var(--text-3);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  display: block;
+  margin-bottom: 3px;
+}
+.daily-card .meta-item span { color: var(--text-2); }
+.daily-card .meta-item a { color: var(--blue); text-decoration: none; }
+.daily-card .meta-item a:hover { text-decoration: underline; }
+
+/* Continuing section */
+.section-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-2);
+  margin: 32px 0 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.continuing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 10px;
+}
+.cont-item {
+  padding: 12px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: all 0.2s;
+}
+.cont-item:hover { border-color: rgba(255,255,255,0.1); }
+.cont-item .cont-name { font-weight: 600; font-size: 0.88rem; margin-bottom: 4px; }
+.cont-item .cont-status { font-size: 0.76rem; color: var(--text-3); }
+
+/* Radar */
+.radar-item {
+  padding: 12px 16px;
+  background: linear-gradient(135deg, var(--surface) 0%, rgba(74,158,255,0.03) 100%);
+  border: 1px solid rgba(74,158,255,0.1);
+  border-radius: var(--radius-sm);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.radar-item .radar-name { font-weight: 600; font-size: 0.88rem; }
+.radar-item .radar-detail { font-size: 0.76rem; color: var(--text-3); margin-top: 2px; }
+.radar-item .radar-prob {
+  flex-shrink: 0;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+/* ========== Empty State ========== */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-3);
+}
+.empty-state .icon { font-size: 2.5rem; margin-bottom: 12px; }
+.empty-state p { font-size: 0.9rem; }
+
+/* ========== Footer ========== */
+footer {
+  text-align: center;
+  padding: 48px 0 32px;
+  color: var(--text-3);
+  font-size: 0.76rem;
+}
+footer a { color: var(--blue); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+
+/* ========== Stats Row ========== */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 32px;
+}
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  text-align: center;
+}
+.stat-card .stat-num {
+  font-size: 1.6rem;
+  font-weight: 800;
+  font-family: var(--mono);
+  background: linear-gradient(135deg, var(--accent), var(--yellow));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.stat-card .stat-label {
+  font-size: 0.72rem;
+  color: var(--text-3);
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 640px) {
+  header h1 { font-size: 1.5rem; }
+  .stats-row { grid-template-columns: repeat(2, 1fr); }
+  .card-details { grid-template-columns: 1fr; }
+  .tab-btn { padding: 8px 16px; font-size: 0.82rem; }
+  .container { padding: 0 16px; }
+  .meme-card { padding: 16px; }
+  .daily-card { padding: 16px; }
+  .continuing-grid { grid-template-columns: 1fr; }
+  .daily-card .meta-grid { grid-template-columns: 1fr; }
+}
+
+/* ========== Scrollbar ========== */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--surface-3); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-3); }
+</style>
+</head>
+<body>
+
+<div class="ambient"></div>
+
+<div class="container">
+  <!-- Header -->
+  <header>
+    <h1>🔥 小学生热梗雷达</h1>
+    <p class="subtitle">AI 每日自动追踪全网小学生流行梗 — 帮家长听懂孩子在说什么</p>
+    <div class="update-badge">
+      <span class="dot"></span>
+      <span id="lastUpdate">数据加载中...</span>
+    </div>
+  </header>
+
+  <!-- Stats -->
+  <div class="stats-row" id="statsRow"></div>
+
+  <!-- Main Tabs -->
+  <nav class="tab-nav">
+    <button class="tab-btn active" data-tab="master">📊 总榜</button>
+    <button class="tab-btn" data-tab="daily">📅 日榜</button>
+  </nav>
+
+  <!-- 总榜 Content -->
+  <div class="tab-content active" id="tab-master">
+    <div class="sub-tabs">
+      <button class="sub-tab active" data-sub="hot">🔥 火热榜</button>
+      <button class="sub-tab" data-sub="time">⏰ 时效榜</button>
+      <button class="sub-tab" data-sub="potential">🚀 潜力榜</button>
+      <button class="sub-tab" data-sub="classic">🕰️ 已过气</button>
+      <button class="sub-tab" data-sub="guide">💡 家长指南</button>
+    </div>
+
+    <div id="sub-hot" class="sub-content"></div>
+    <div id="sub-time" class="sub-content" style="display:none"></div>
+    <div id="sub-potential" class="sub-content" style="display:none"></div>
+    <div id="sub-classic" class="sub-content" style="display:none"></div>
+    <div id="sub-guide" class="sub-content" style="display:none"></div>
+  </div>
+
+  <!-- 日榜 Content -->
+  <div class="tab-content" id="tab-daily">
+    <div class="date-nav">
+      <button id="prevDate" aria-label="前一天">←</button>
+      <span class="current-date" id="currentDate"></span>
+      <button id="nextDate" aria-label="后一天">→</button>
+    </div>
+    <div id="dailyContent"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>数据来源：B站 API · 今日头条 · 今日热榜 · 全网搜索 | 由 <a href="https://github.com" target="_blank">ZCode CronJob</a> 每日 9:00 自动更新</p>
+    <p style="margin-top:6px">开源项目 — 仅供家长参考，不构成教育建议</p>
+  </footer>
+</div>
+
+<script>
+// ============ Data Loading ============
+let DATA = null;
+let currentDateIdx = 0;
+
+async function loadData() {
+  try {
+    const resp = await fetch('./data.json');
+    DATA = await resp.json();
+    render();
+  } catch (e) {
+    document.getElementById('statsRow').innerHTML = `
+      <div class="empty-state" style="grid-column:1/-1">
+        <div class="icon">⚠️</div>
+        <p>数据加载失败，请确认 data.json 文件存在</p>
+      </div>`;
+  }
+}
+
+// ============ Render ============
+function render() {
+  // Update badge
+  document.getElementById('lastUpdate').textContent = `最后更新: ${DATA.lastUpdated}`;
+
+  // Stats
+  const totalMemes = DATA.masterTable.hotChart.length;
+  const newToday = DATA.masterTable.hotChart.filter(m => m.trend === 'new').length;
+  const potential = DATA.masterTable.potentialChart.length;
+  const maxHeat = DATA.masterTable.hotChart.filter(m => m.heat === 5).length;
+
+  document.getElementById('statsRow').innerHTML = `
+    <div class="stat-card"><div class="stat-num">${totalMemes}</div><div class="stat-label">在追踪</div></div>
+    <div class="stat-card"><div class="stat-num">${newToday}</div><div class="stat-label">新发现</div></div>
+    <div class="stat-card"><div class="stat-num">${maxHeat}</div><div class="stat-label">爆火中</div></div>
+    <div class="stat-card"><div class="stat-num">${potential}</div><div class="stat-label">潜力梗</div></div>
+  `;
+
+  renderHotChart();
+  renderTimeChart();
+  renderPotentialChart();
+  renderClassic();
+  renderGuide();
+  renderDaily();
+}
+
+// ============ 火热榜 ============
+function renderHotChart() {
+  const el = document.getElementById('sub-hot');
+  el.innerHTML = DATA.masterTable.hotChart.map(m => `
+    <div class="meme-card">
+      <div class="card-header">
+        <span class="rank ${m.rank <= 3 ? 'top3' : ''}">${String(m.rank).padStart(2, '0')}</span>
+        <span class="name">${m.name}</span>
+        <div class="badges">
+          ${trendBadge(m.trend)}
+        </div>
+        <div class="heat-bar">
+          ${[1,2,3,4,5].map(i => `<div class="heat-dot ${i <= m.heat ? 'active' : ''}"></div>`).join('')}
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function trendBadge(trend) {
+  const map = {
+    'new': '<span class="badge badge-new">🆕 新</span>',
+    'up': '<span class="badge badge-up">⬆️ 升</span>',
+    'stable': '<span class="badge badge-stable">➡️ 平</span>',
+    'down': '<span class="badge badge-down">⬇️ 降</span>'
+  };
+  return map[trend] || '';
+}
+
+// ============ 时效榜 ============
+function renderTimeChart() {
+  const el = document.getElementById('sub-time');
+  el.innerHTML = DATA.masterTable.timeChart.map(m => `
+    <div class="meme-card">
+      <div class="card-header">
+        <span class="rank ${m.rank <= 3 ? 'top3' : ''}">${String(m.rank).padStart(2, '0')}</span>
+        <span class="name">${m.name}</span>
+        <span style="margin-left:auto; font-size:0.78rem; color:var(--accent); font-weight:500">${m.time}</span>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ============ 潜力榜 ============
+function renderPotentialChart() {
+  const el = document.getElementById('sub-potential');
+  if (DATA.masterTable.potentialChart.length === 0) {
+    el.innerHTML = '<div class="empty-state"><div class="icon">🔮</div><p>暂无潜力梗在追踪</p></div>';
+    return;
+  }
+  el.innerHTML = DATA.masterTable.potentialChart.map(m => `
+    <div class="meme-card potential-card">
+      <div class="card-header">
+        <span class="rank">${String(m.rank).padStart(2, '0')}</span>
+        <span class="name">${m.name}</span>
+        <span class="probability ${probClass(m.probability)}">${probLabel(m.probability)}</span>
+      </div>
+      <div class="card-details">
+        <div class="card-detail"><label>全网热度</label><span>${m.heat}</span></div>
+        <div class="card-detail"><label>进入雷达</label><span>${m.date}</span></div>
+        <div class="card-detail full"><label>下沉理由</label><span>${m.reason}</span></div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function probClass(p) {
+  if (p === 'high') return 'prob-high';
+  if (p === 'medium') return 'prob-medium';
+  return 'prob-low';
+}
+function probLabel(p) {
+  if (p === 'high') return '🟠 高概率';
+  if (p === 'medium') return '🟡 中等';
+  return '⚪ 低';
+}
+
+// ============ 经典/已过气 ============
+function renderClassic() {
+  const el = document.getElementById('sub-classic');
+  el.innerHTML = `
+    <table class="classic-table">
+      <thead><tr><th>梗</th><th>巅峰时间</th><th>当前状态</th></tr></thead>
+      <tbody>
+        ${DATA.masterTable.classic.map(m => `
+          <tr><td>${m.name}</td><td>${m.peakTime}</td><td>${m.status}</td></tr>
+        `).join('')}
+      </tbody>
+    </table>
+  `;
+}
+
+// ============ 家长指南 ============
+function renderGuide() {
+  const g = DATA.masterTable.parentGuide;
+  const el = document.getElementById('sub-guide');
+  el.innerHTML = `
+    <div class="guide-section guide-safe">
+      <h4>🟢 无害暗号类（不必担心）</h4>
+      <div class="items">${g.safe.map(i => `<span class="item">${i}</span>`).join('')}</div>
+    </div>
+    <div class="guide-section guide-attention">
+      <h4>🟡 需要了解的（适度关注）</h4>
+      <div class="items">${g.attention.map(i => `<span class="item">${i}</span>`).join('')}</div>
+    </div>
+    <div class="guide-section guide-danger">
+      <h4>🔴 需要引导的（建议干预）</h4>
+      <div class="items">${g.intervention.map(i => `<span class="item">${i}</span>`).join('')}</div>
+    </div>
+  `;
+}
+
+// ============ 日榜 ============
+function renderDaily() {
+  const dates = DATA.availableDates;
+  if (dates.length === 0) {
+    document.getElementById('dailyContent').innerHTML = '<div class="empty-state"><div class="icon">📭</div><p>暂无日报数据</p></div>';
+    return;
+  }
+  currentDateIdx = 0;
+  updateDailyView();
+}
+
+function updateDailyView() {
+  const dates = DATA.availableDates;
+  const date = dates[currentDateIdx];
+  const report = DATA.dailyReports[date];
+
+  document.getElementById('currentDate').textContent = formatDate(date);
+  document.getElementById('prevDate').disabled = currentDateIdx >= dates.length - 1;
+  document.getElementById('nextDate').disabled = currentDateIdx <= 0;
+
+  if (!report) {
+    document.getElementById('dailyContent').innerHTML = '<div class="empty-state"><div class="icon">📭</div><p>该日暂无日报</p></div>';
+    return;
+  }
+
+  let html = '';
+
+  // New memes
+  html += `<div class="section-title">📌 今日新梗 / 近期热梗（${report.newMemes.length} 个）</div>`;
+  html += report.newMemes.map(m => `
+    <div class="daily-card">
+      <div class="top-row">
+        <span class="rank-num ${m.rank <= 3 ? 'top3' : ''}">${m.rank}</span>
+        <div>
+          <h3>${m.name}</h3>
+          <span class="fire-time">🔥 ${m.fireTime}</span>
+        </div>
+      </div>
+      <p class="description">${m.what}</p>
+      <div class="meta-grid">
+        <div class="meta-item"><label>怎么火的</label><span>${m.howFired}</span></div>
+        <div class="meta-item"><label>使用场景</label><span>${m.scene}</span></div>
+        <div class="meta-item"><label>平台来源</label><span>${m.platform}</span></div>
+        <div class="meta-item"><label>发现渠道</label><span>${m.channel}</span></div>
+        ${m.link ? `<div class="meta-item"><label>参考链接</label><a href="${m.link}" target="_blank" rel="noopener">查看来源 →</a></div>` : ''}
+      </div>
+    </div>
+  `).join('');
+
+  // Continuing
+  if (report.continuing && report.continuing.length > 0) {
+    html += `<div class="section-title">🔄 持续热门（${report.continuing.length} 个）</div>`;
+    html += '<div class="continuing-grid">';
+    html += report.continuing.map(m => `
+      <div class="cont-item">
+        <div class="cont-name">${m.name}</div>
+        <div class="cont-status">${m.status} · 自 ${m.since}</div>
+      </div>
+    `).join('');
+    html += '</div>';
+  }
+
+  // Radar
+  if (report.radar && report.radar.length > 0) {
+    html += `<div class="section-title">🔭 泛热梗雷达预警（${report.radar.length} 个）</div>`;
+    html += report.radar.map(m => `
+      <div class="radar-item">
+        <div>
+          <div class="radar-name">${m.name}</div>
+          <div class="radar-detail">${m.detail}</div>
+        </div>
+        <span class="radar-prob ${m.probability === '中高' || m.probability === '高' ? 'prob-high' : m.probability === '中' ? 'prob-medium' : 'prob-low'}">
+          渗透: ${m.probability}
+        </span>
+      </div>
+    `).join('');
+  }
+
+  document.getElementById('dailyContent').innerHTML = html;
+}
+
+function formatDate(dateStr) {
+  const [y, m, d] = dateStr.split('-');
+  return `${y}年${parseInt(m)}月${parseInt(d)}日`;
+}
+
+// ============ Tab Logic ============
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+  });
+});
+
+document.querySelectorAll('.sub-tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.sub-tab').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.sub-content').forEach(c => c.style.display = 'none');
+    btn.classList.add('active');
+    document.getElementById('sub-' + btn.dataset.sub).style.display = 'block';
+  });
+});
+
+// Date navigation
+document.getElementById('prevDate').addEventListener('click', () => {
+  if (currentDateIdx < DATA.availableDates.length - 1) {
+    currentDateIdx++;
+    updateDailyView();
+  }
+});
+document.getElementById('nextDate').addEventListener('click', () => {
+  if (currentDateIdx > 0) {
+    currentDateIdx--;
+    updateDailyView();
+  }
+});
+
+// ============ Init ============
+loadData();
+</script>
+</body>
+</html>

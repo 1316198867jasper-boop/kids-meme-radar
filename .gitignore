@@ -1,0 +1,8 @@
+# Old versioned files (keep only latest daily reports)
+daily/*-v*.md
+# OS files
+.DS_Store
+# Old HTML export
+小学生热梗总览.html
+小学生热梗总览-preview.png
+小学生热梗总览.pdf
