@@ -3,799 +3,549 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>小学生热梗雷达 — 每日自动追踪</title>
-<meta name="description" content="AI 每日自动抓取全网小学生流行梗，帮助家长了解孩子在说什么。">
+<title>小学生热梗雷达</title>
 <style>
-/* ========== Reset & Base ========== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg: #0a0a0f;
-  --surface: #12121a;
-  --surface-2: #1a1a26;
-  --surface-3: #222233;
-  --border: rgba(255,255,255,0.06);
-  --text: #e8e8f0;
-  --text-2: #9a9ab0;
-  --text-3: #6a6a80;
-  --accent: #ff6b4a;
-  --accent-glow: rgba(255,107,74,0.15);
-  --blue: #4a9eff;
-  --green: #4aff9a;
-  --yellow: #ffcc4a;
-  --purple: #b44aff;
-  --radius: 14px;
-  --radius-sm: 8px;
+  --red: #A42423;
+  --red-light: #c43a39;
+  --red-dark: #7a1a1a;
+  --cream: #FFF2DF;
+  --cream-dark: #f5e6cf;
+  --white: #ffffff;
+  --text: #1a1a1a;
+  --text-2: #4a4a4a;
+  --text-3: #888;
+  --border: rgba(164,36,35,0.12);
   --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "PingFang SC", "Noto Sans SC", sans-serif;
-  --mono: "SF Mono", "JetBrains Mono", "Fira Code", monospace;
+  --mono: "SF Mono", "JetBrains Mono", monospace;
 }
 
-html { font-size: 16px; scroll-behavior: smooth; }
+html { font-size: 15px; }
 body {
   font-family: var(--font);
-  background: var(--bg);
+  background: var(--cream);
   color: var(--text);
-  line-height: 1.6;
-  min-height: 100vh;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* ========== Ambient Background ========== */
-.ambient {
-  position: fixed; inset: 0; z-index: -1; overflow: hidden;
-}
-.ambient::before {
-  content: '';
-  position: absolute;
-  width: 600px; height: 600px;
-  top: -200px; right: -100px;
-  background: radial-gradient(circle, rgba(255,107,74,0.08) 0%, transparent 70%);
-  animation: float 20s ease-in-out infinite;
-}
-.ambient::after {
-  content: '';
-  position: absolute;
-  width: 500px; height: 500px;
-  bottom: -150px; left: -100px;
-  background: radial-gradient(circle, rgba(74,158,255,0.06) 0%, transparent 70%);
-  animation: float 25s ease-in-out infinite reverse;
-}
-@keyframes float {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(30px, -20px) scale(1.1); }
-}
-
-/* ========== Layout ========== */
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-/* ========== Header ========== */
-header {
-  padding: 48px 0 32px;
-  text-align: center;
-}
-header h1 {
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  background: linear-gradient(135deg, #fff 0%, var(--text-2) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-header .subtitle {
-  margin-top: 8px;
-  font-size: 0.9rem;
-  color: var(--text-3);
-}
-header .update-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 16px;
-  padding: 6px 14px;
-  background: var(--surface-2);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  font-size: 0.78rem;
-  color: var(--text-2);
-}
-header .update-badge .dot {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: var(--green);
-  animation: pulse 2s ease-in-out infinite;
-}
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
-}
-
-/* ========== Tab Nav ========== */
-.tab-nav {
+  line-height: 1.5;
+  height: 100vh;
+  overflow: hidden;
   display: flex;
-  justify-content: center;
-  gap: 4px;
-  margin-bottom: 32px;
-  padding: 4px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-}
-.tab-btn {
-  padding: 10px 24px;
-  border: none;
-  background: transparent;
-  color: var(--text-3);
-  font-size: 0.88rem;
-  font-weight: 500;
-  border-radius: 9px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  font-family: var(--font);
-}
-.tab-btn:hover { color: var(--text); }
-.tab-btn.active {
-  background: var(--surface-3);
-  color: var(--text);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
-/* ========== Tab Content ========== */
-.tab-content { display: none; animation: fadeIn 0.3s ease; }
-.tab-content.active { display: block; }
-@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
-
-/* ========== Sub-tabs for 总榜 ========== */
-.sub-tabs {
+/* ===== Sidebar ===== */
+.sidebar {
+  width: 200px;
+  min-width: 200px;
+  background: var(--red);
+  color: var(--white);
   display: flex;
-  gap: 2px;
-  margin-bottom: 24px;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 0;
+  flex-direction: column;
+  height: 100vh;
+  padding: 20px 0;
 }
-.sub-tab {
-  padding: 10px 16px;
-  border: none;
-  background: transparent;
-  color: var(--text-3);
-  font-size: 0.82rem;
-  font-weight: 500;
-  cursor: pointer;
-  border-bottom: 2px solid transparent;
-  margin-bottom: -1px;
-  transition: all 0.2s ease;
-  font-family: var(--font);
-}
-.sub-tab:hover { color: var(--text-2); }
-.sub-tab.active {
-  color: var(--accent);
-  border-bottom-color: var(--accent);
-}
-
-/* ========== Date Picker ========== */
-.date-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  margin-bottom: 28px;
-}
-.date-nav button {
-  width: 36px; height: 36px;
-  border: 1px solid var(--border);
-  background: var(--surface);
-  color: var(--text-2);
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s;
-  font-size: 1rem;
-}
-.date-nav button:hover:not(:disabled) { background: var(--surface-2); color: var(--text); border-color: var(--accent); }
-.date-nav button:disabled { opacity: 0.3; cursor: not-allowed; }
-.date-nav .current-date {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--text);
-  min-width: 140px;
-  text-align: center;
-}
-
-/* ========== Cards ========== */
-.meme-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 20px 24px;
-  margin-bottom: 12px;
-  transition: all 0.2s ease;
-  cursor: default;
-}
-.meme-card:hover {
-  border-color: rgba(255,255,255,0.1);
-  background: var(--surface-2);
-  transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-}
-.meme-card .card-header {
-  display: flex;
-  align-items: center;
-  gap: 14px;
+.logo {
+  padding: 0 20px 24px;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
   margin-bottom: 12px;
 }
-.meme-card .rank {
-  font-size: 1.3rem;
-  font-weight: 800;
-  font-family: var(--mono);
-  color: var(--text-3);
-  min-width: 28px;
-}
-.meme-card .rank.top3 { color: var(--accent); }
-.meme-card .name {
+.logo h1 {
   font-size: 1.05rem;
-  font-weight: 600;
-  flex: 1;
-}
-.meme-card .badges {
-  display: flex;
-  gap: 6px;
-  align-items: center;
-}
-.meme-card .badge {
-  padding: 3px 10px;
-  border-radius: 12px;
-  font-size: 0.7rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.02em;
 }
-.badge-new { background: rgba(255,107,74,0.15); color: var(--accent); }
-.badge-up { background: rgba(74,255,154,0.12); color: var(--green); }
-.badge-stable { background: rgba(154,154,176,0.1); color: var(--text-3); }
-.badge-down { background: rgba(74,158,255,0.1); color: var(--blue); }
+.logo .sub {
+  font-size: 0.68rem;
+  opacity: 0.7;
+  margin-top: 2px;
+}
 
-/* Heat bar */
-.heat-bar {
-  display: flex;
-  gap: 3px;
-  align-items: center;
+.nav-group {
+  padding: 0 12px;
 }
-.heat-dot {
-  width: 10px; height: 10px;
-  border-radius: 50%;
-  background: var(--surface-3);
-}
-.heat-dot.active {
-  background: var(--accent);
-  box-shadow: 0 0 6px var(--accent-glow);
-}
-.heat-dot.active:nth-child(1) { background: #ff4a4a; }
-.heat-dot.active:nth-child(2) { background: #ff6b4a; }
-.heat-dot.active:nth-child(3) { background: #ff8c4a; }
-.heat-dot.active:nth-child(4) { background: #ffaa4a; }
-.heat-dot.active:nth-child(5) { background: #ffcc4a; }
-
-/* Card details */
-.card-details {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px 16px;
-  margin-top: 12px;
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
-}
-.card-detail {
-  font-size: 0.8rem;
-}
-.card-detail label {
-  color: var(--text-3);
-  display: block;
-  margin-bottom: 2px;
-  font-size: 0.72rem;
+.nav-label {
+  font-size: 0.65rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
+  opacity: 0.5;
+  padding: 12px 8px 6px;
 }
-.card-detail span { color: var(--text-2); }
-.card-detail.full { grid-column: 1 / -1; }
-
-/* ========== Potential Chart ========== */
-.potential-card {
-  background: linear-gradient(135deg, var(--surface) 0%, rgba(180,74,255,0.03) 100%);
-  border-color: rgba(180,74,255,0.15);
+.nav-item {
+  display: block;
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: var(--white);
+  text-align: left;
+  padding: 9px 14px;
+  font-size: 0.85rem;
+  font-family: var(--font);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s;
+  opacity: 0.8;
 }
-.potential-card:hover { border-color: rgba(180,74,255,0.3); }
-.probability {
-  padding: 3px 10px;
-  border-radius: 12px;
-  font-size: 0.72rem;
+.nav-item:hover { background: rgba(255,255,255,0.1); opacity: 1; }
+.nav-item.active {
+  background: rgba(255,255,255,0.18);
+  opacity: 1;
   font-weight: 600;
 }
-.prob-high { background: rgba(255,107,74,0.15); color: var(--accent); }
-.prob-medium { background: rgba(255,204,74,0.12); color: var(--yellow); }
-.prob-low { background: rgba(154,154,176,0.1); color: var(--text-3); }
 
-/* ========== Classic table ========== */
-.classic-table {
+.sidebar-footer {
+  margin-top: auto;
+  padding: 16px 20px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  font-size: 0.65rem;
+  opacity: 0.5;
+  line-height: 1.6;
+}
+
+/* ===== Main Content ===== */
+.main {
+  flex: 1;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 28px 36px;
+}
+
+/* ===== Panel (each tab) ===== */
+.panel { display: none; }
+.panel.active { display: block; }
+
+/* ===== Table Styles ===== */
+.table-wrapper {
+  background: var(--white);
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+table {
   width: 100%;
   border-collapse: collapse;
+  font-size: 0.84rem;
 }
-.classic-table th {
-  text-align: left;
-  padding: 10px 16px;
+thead th {
+  background: var(--red);
+  color: var(--white);
+  font-weight: 600;
   font-size: 0.72rem;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--text-3);
-  border-bottom: 1px solid var(--border);
+  letter-spacing: 0.04em;
+  padding: 10px 14px;
+  text-align: left;
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
-.classic-table td {
-  padding: 12px 16px;
-  font-size: 0.88rem;
-  color: var(--text-2);
-  border-bottom: 1px solid var(--border);
+thead th:first-child { padding-left: 20px; }
+tbody tr { border-bottom: 1px solid rgba(164,36,35,0.06); }
+tbody tr:last-child { border-bottom: none; }
+tbody tr:hover { background: rgba(164,36,35,0.03); }
+tbody td {
+  padding: 9px 14px;
+  vertical-align: middle;
 }
-.classic-table tr:last-child td { border-bottom: none; }
-.classic-table tr:hover td { background: var(--surface-2); }
+tbody td:first-child { padding-left: 20px; }
 
-/* ========== Parent Guide ========== */
-.guide-section {
-  margin-bottom: 16px;
-  padding: 16px 20px;
-  border-radius: var(--radius-sm);
+.rank-cell {
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--text-3);
+  width: 40px;
 }
-.guide-safe { background: rgba(74,255,154,0.05); border: 1px solid rgba(74,255,154,0.12); }
-.guide-attention { background: rgba(255,204,74,0.05); border: 1px solid rgba(255,204,74,0.12); }
-.guide-danger { background: rgba(255,74,74,0.05); border: 1px solid rgba(255,74,74,0.12); }
-.guide-section h4 {
-  font-size: 0.82rem;
-  margin-bottom: 8px;
+.rank-cell.top3 { color: var(--red); }
+
+/* Heat dots */
+.heat {
+  display: flex;
+  gap: 3px;
+}
+.heat-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #e8e0d8;
+}
+.heat-dot.on { background: var(--red); }
+
+/* Trend */
+.trend {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+.trend-new { background: rgba(164,36,35,0.1); color: var(--red); }
+.trend-up { background: rgba(34,139,34,0.08); color: #228b22; }
+.trend-stable { background: rgba(0,0,0,0.04); color: var(--text-3); }
+.trend-down { background: rgba(70,130,180,0.08); color: steelblue; }
+
+/* Probability */
+.prob {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+.prob-high { background: rgba(164,36,35,0.12); color: var(--red); }
+.prob-medium { background: rgba(200,150,50,0.1); color: #9a7030; }
+
+/* ===== Daily Report ===== */
+.date-header {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 16px;
+  margin-bottom: 20px;
 }
-.guide-section .items {
+.date-header h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  min-width: 160px;
+  text-align: center;
+}
+.date-btn {
+  width: 32px; height: 32px;
+  border: 1px solid var(--border);
+  background: var(--white);
+  border-radius: 6px;
+  cursor: pointer;
   display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  color: var(--text-2);
+  transition: all 0.15s;
 }
-.guide-section .item {
-  padding: 4px 10px;
-  background: rgba(255,255,255,0.04);
+.date-btn:hover:not(:disabled) { border-color: var(--red); color: var(--red); }
+.date-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+.date-picker-wrap {
+  position: relative;
+  margin-left: 12px;
+}
+.date-picker-btn {
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  background: var(--white);
   border-radius: 6px;
   font-size: 0.78rem;
   color: var(--text-2);
+  cursor: pointer;
+  font-family: var(--font);
+}
+.date-picker-btn:hover { border-color: var(--red); color: var(--red); }
+.date-input {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  opacity: 0;
+  cursor: pointer;
 }
 
-/* ========== Daily Meme Detail ========== */
-.daily-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 24px;
-  margin-bottom: 16px;
-  transition: all 0.25s ease;
-}
-.daily-card:hover {
-  border-color: rgba(255,255,255,0.1);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-}
-.daily-card .top-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  margin-bottom: 14px;
-}
-.daily-card .rank-num {
-  font-size: 1.6rem;
-  font-weight: 800;
-  font-family: var(--mono);
-  color: var(--text-3);
-  line-height: 1;
-  min-width: 30px;
-}
-.daily-card .rank-num.top3 { color: var(--accent); }
-.daily-card h3 {
-  font-size: 1.1rem;
+/* Daily cards */
+.daily-section-title {
+  font-size: 0.82rem;
   font-weight: 700;
+  color: var(--red);
+  margin: 24px 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--red);
+  display: inline-block;
+}
+.daily-section-title:first-child { margin-top: 0; }
+
+.meme-row {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 12px;
+}
+.meme-row .m-rank {
+  font-family: var(--mono);
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--text-3);
+}
+.meme-row .m-rank.top3 { color: var(--red); }
+.meme-row .m-name {
+  font-weight: 700;
+  font-size: 0.92rem;
   margin-bottom: 4px;
 }
-.daily-card .fire-time {
-  font-size: 0.78rem;
-  color: var(--accent);
+.meme-row .m-time {
+  font-size: 0.74rem;
+  color: var(--red);
   font-weight: 500;
+  margin-bottom: 6px;
 }
-.daily-card .description {
-  font-size: 0.88rem;
+.meme-row .m-desc {
+  font-size: 0.8rem;
   color: var(--text-2);
-  line-height: 1.7;
-  margin-bottom: 14px;
+  line-height: 1.6;
 }
-.daily-card .meta-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 10px;
-}
-.daily-card .meta-item {
-  font-size: 0.78rem;
-  padding: 8px 12px;
-  background: var(--surface-2);
-  border-radius: var(--radius-sm);
-}
-.daily-card .meta-item label {
-  color: var(--text-3);
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  display: block;
-  margin-bottom: 3px;
-}
-.daily-card .meta-item span { color: var(--text-2); }
-.daily-card .meta-item a { color: var(--blue); text-decoration: none; }
-.daily-card .meta-item a:hover { text-decoration: underline; }
-
-/* Continuing section */
-.section-title {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--text-2);
-  margin: 32px 0 16px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid var(--border);
+.meme-row .m-meta {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+.meme-row .m-tag {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  background: var(--cream);
+  border-radius: 4px;
+  color: var(--text-2);
+}
+
+/* Continuing grid */
+.cont-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 8px;
 }
-.continuing-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 10px;
-}
-.cont-item {
-  padding: 12px 16px;
-  background: var(--surface);
+.cont-chip {
+  background: var(--white);
   border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  transition: all 0.2s;
+  border-radius: 6px;
+  padding: 8px 12px;
 }
-.cont-item:hover { border-color: rgba(255,255,255,0.1); }
-.cont-item .cont-name { font-weight: 600; font-size: 0.88rem; margin-bottom: 4px; }
-.cont-item .cont-status { font-size: 0.76rem; color: var(--text-3); }
+.cont-chip .c-name { font-weight: 600; font-size: 0.82rem; }
+.cont-chip .c-status { font-size: 0.7rem; color: var(--text-3); margin-top: 2px; }
 
-/* Radar */
-.radar-item {
-  padding: 12px 16px;
-  background: linear-gradient(135deg, var(--surface) 0%, rgba(74,158,255,0.03) 100%);
-  border: 1px solid rgba(74,158,255,0.1);
-  border-radius: var(--radius-sm);
-  margin-bottom: 8px;
+/* Radar list */
+.radar-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-}
-.radar-item .radar-name { font-weight: 600; font-size: 0.88rem; }
-.radar-item .radar-detail { font-size: 0.76rem; color: var(--text-3); margin-top: 2px; }
-.radar-item .radar-prob {
-  flex-shrink: 0;
-  padding: 4px 10px;
-  border-radius: 12px;
-  font-size: 0.7rem;
-  font-weight: 600;
-}
-
-/* ========== Empty State ========== */
-.empty-state {
-  text-align: center;
-  padding: 60px 20px;
-  color: var(--text-3);
-}
-.empty-state .icon { font-size: 2.5rem; margin-bottom: 12px; }
-.empty-state p { font-size: 0.9rem; }
-
-/* ========== Footer ========== */
-footer {
-  text-align: center;
-  padding: 48px 0 32px;
-  color: var(--text-3);
-  font-size: 0.76rem;
-}
-footer a { color: var(--blue); text-decoration: none; }
-footer a:hover { text-decoration: underline; }
-
-/* ========== Stats Row ========== */
-.stats-row {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-  margin-bottom: 32px;
-}
-.stat-card {
-  background: var(--surface);
+  padding: 8px 14px;
+  background: var(--white);
   border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  padding: 16px;
-  text-align: center;
+  border-radius: 6px;
+  margin-bottom: 6px;
 }
-.stat-card .stat-num {
-  font-size: 1.6rem;
-  font-weight: 800;
-  font-family: var(--mono);
-  background: linear-gradient(135deg, var(--accent), var(--yellow));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.stat-card .stat-label {
-  font-size: 0.72rem;
-  color: var(--text-3);
-  margin-top: 4px;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
+.radar-row .r-name { font-weight: 600; font-size: 0.82rem; }
+.radar-row .r-detail { font-size: 0.7rem; color: var(--text-3); }
 
-/* ========== Responsive ========== */
-@media (max-width: 640px) {
-  header h1 { font-size: 1.5rem; }
-  .stats-row { grid-template-columns: repeat(2, 1fr); }
-  .card-details { grid-template-columns: 1fr; }
-  .tab-btn { padding: 8px 16px; font-size: 0.82rem; }
-  .container { padding: 0 16px; }
-  .meme-card { padding: 16px; }
-  .daily-card { padding: 16px; }
-  .continuing-grid { grid-template-columns: 1fr; }
-  .daily-card .meta-grid { grid-template-columns: 1fr; }
+/* ===== Guide section ===== */
+.guide-block {
+  padding: 16px 20px;
+  border-radius: 8px;
+  margin-bottom: 12px;
 }
+.guide-block h4 {
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.guide-block .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.guide-block .tag {
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.76rem;
+  background: rgba(255,255,255,0.6);
+}
+.guide-safe { background: rgba(34,139,34,0.06); border: 1px solid rgba(34,139,34,0.12); }
+.guide-safe h4 { color: #228b22; }
+.guide-warn { background: rgba(200,150,50,0.06); border: 1px solid rgba(200,150,50,0.12); }
+.guide-warn h4 { color: #9a7030; }
+.guide-danger { background: rgba(164,36,35,0.06); border: 1px solid rgba(164,36,35,0.12); }
+.guide-danger h4 { color: var(--red); }
 
-/* ========== Scrollbar ========== */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: var(--surface-3); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: var(--text-3); }
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .sidebar { width: 56px; min-width: 56px; }
+  .logo h1, .logo .sub, .nav-label, .sidebar-footer { display: none; }
+  .nav-item { font-size: 0; padding: 12px; text-align: center; }
+  .nav-item::before { font-size: 1rem; }
+  .main { padding: 16px; }
+}
 </style>
 </head>
 <body>
 
-<div class="ambient"></div>
-
-<div class="container">
-  <!-- Header -->
-  <header>
-    <h1>🔥 小学生热梗雷达</h1>
-    <p class="subtitle">AI 每日自动追踪全网小学生流行梗 — 帮家长听懂孩子在说什么</p>
-    <div class="update-badge">
-      <span class="dot"></span>
-      <span id="lastUpdate">数据加载中...</span>
-    </div>
-  </header>
-
-  <!-- Stats -->
-  <div class="stats-row" id="statsRow"></div>
-
-  <!-- Main Tabs -->
-  <nav class="tab-nav">
-    <button class="tab-btn active" data-tab="master">📊 总榜</button>
-    <button class="tab-btn" data-tab="daily">📅 日榜</button>
-  </nav>
-
-  <!-- 总榜 Content -->
-  <div class="tab-content active" id="tab-master">
-    <div class="sub-tabs">
-      <button class="sub-tab active" data-sub="hot">🔥 火热榜</button>
-      <button class="sub-tab" data-sub="time">⏰ 时效榜</button>
-      <button class="sub-tab" data-sub="potential">🚀 潜力榜</button>
-      <button class="sub-tab" data-sub="classic">🕰️ 已过气</button>
-      <button class="sub-tab" data-sub="guide">💡 家长指南</button>
-    </div>
-
-    <div id="sub-hot" class="sub-content"></div>
-    <div id="sub-time" class="sub-content" style="display:none"></div>
-    <div id="sub-potential" class="sub-content" style="display:none"></div>
-    <div id="sub-classic" class="sub-content" style="display:none"></div>
-    <div id="sub-guide" class="sub-content" style="display:none"></div>
+<!-- Sidebar Navigation -->
+<aside class="sidebar">
+  <div class="logo">
+    <h1>小学生热梗雷达</h1>
+    <div class="sub">每日自动追踪</div>
   </div>
 
-  <!-- 日榜 Content -->
-  <div class="tab-content" id="tab-daily">
-    <div class="date-nav">
-      <button id="prevDate" aria-label="前一天">←</button>
-      <span class="current-date" id="currentDate"></span>
-      <button id="nextDate" aria-label="后一天">→</button>
+  <div class="nav-group">
+    <div class="nav-label">总榜</div>
+    <button class="nav-item active" data-panel="hot">火热榜</button>
+    <button class="nav-item" data-panel="time">时效榜</button>
+    <button class="nav-item" data-panel="potential">潜力榜</button>
+    <button class="nav-item" data-panel="classic">已过气</button>
+    <button class="nav-item" data-panel="guide">家长指南</button>
+  </div>
+
+  <div class="nav-group">
+    <div class="nav-label">动态</div>
+    <button class="nav-item" data-panel="daily">日报</button>
+  </div>
+
+  <div class="sidebar-footer">
+    数据来源: B站 / 头条 / 热榜<br>
+    每日 9:00 自动更新
+  </div>
+</aside>
+
+<!-- Main Content Area -->
+<main class="main">
+
+  <!-- 火热榜 -->
+  <div class="panel active" id="panel-hot">
+    <div class="table-wrapper" id="hotTable"></div>
+  </div>
+
+  <!-- 时效榜 -->
+  <div class="panel" id="panel-time">
+    <div class="table-wrapper" id="timeTable"></div>
+  </div>
+
+  <!-- 潜力榜 -->
+  <div class="panel" id="panel-potential">
+    <div class="table-wrapper" id="potentialTable"></div>
+  </div>
+
+  <!-- 已过气 -->
+  <div class="panel" id="panel-classic">
+    <div class="table-wrapper" id="classicTable"></div>
+  </div>
+
+  <!-- 家长指南 -->
+  <div class="panel" id="panel-guide">
+    <div id="guideContent"></div>
+  </div>
+
+  <!-- 日报 -->
+  <div class="panel" id="panel-daily">
+    <div class="date-header">
+      <button class="date-btn" id="prevDate">&#8592;</button>
+      <h2 id="currentDate"></h2>
+      <button class="date-btn" id="nextDate">&#8594;</button>
+      <div class="date-picker-wrap">
+        <button class="date-picker-btn" id="pickerBtn">选择日期</button>
+        <input type="date" class="date-input" id="datePicker">
+      </div>
     </div>
     <div id="dailyContent"></div>
   </div>
 
-  <!-- Footer -->
-  <footer>
-    <p>数据来源：B站 API · 今日头条 · 今日热榜 · 全网搜索 | 由 <a href="https://github.com" target="_blank">ZCode CronJob</a> 每日 9:00 自动更新</p>
-    <p style="margin-top:6px">开源项目 — 仅供家长参考，不构成教育建议</p>
-  </footer>
-</div>
+</main>
 
-<!-- Embedded Data (auto-generated by CronJob) -->
+<!-- Embedded Data -->
 <script id="embedded-data">
-window.__EMBEDDED_DATA__ = {"lastUpdated":"2026-08-06","masterTable":{"timeChart":[{"rank":1,"name":"竹知了","time":"2026年8月1-4日","source":"8/6日报","sourceFile":"2026-08-06"},{"rank":2,"name":"伪人（全面入侵学校）","time":"2026年8月3日","source":"8/6日报","sourceFile":"2026-08-06"},{"rank":3,"name":"熊大回眸","time":"2026年8月2-3日","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":4,"name":"中国人能飞","time":"2026年7月25-30日","source":"8/6日报","sourceFile":"2026-08-06"},{"rank":5,"name":"绷住挑战（大绷住时代）","time":"2026年7月中旬","source":"8/6日报","sourceFile":"2026-08-06"},{"rank":6,"name":"因为我善","time":"2026年7月中旬","source":"8/6日报","sourceFile":"2026-08-06"},{"rank":7,"name":"花儿一家找妈妈","time":"2026年7月16日","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":8,"name":"妙脆角小猫","time":"2026年6月下旬","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":9,"name":"叮咚鸡 / 库里库里","time":"2026年4-6月","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":10,"name":"白菜对我笑","time":"2026年2月下旬","source":"8/6日报","sourceFile":"2026-08-06"},{"rank":11,"name":"验牌 / 擦皮鞋","time":"2026年2月（二次爆发）","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":12,"name":"比比拉布","time":"2026年2月（二次爆发）","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":13,"name":"大笑奶龙","time":"2025年12月","source":"8/6日报","sourceFile":"2026-08-06"},{"rank":14,"name":"新号别搞","time":"2025年末","source":"8/6日报","sourceFile":"2026-08-06"},{"rank":15,"name":"从夯到拉","time":"2025年下半年","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":16,"name":"那咋了 / 受着呗","time":"2025年6月","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":17,"name":"我的刀盾","time":"2025年5月","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":18,"name":"刀马刀马","time":"2025年5月","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":19,"name":"哈基米","time":"2025年4月","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":20,"name":"阿玛特拉斯","time":"2025年4月","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":21,"name":"木棍人通通通","time":"2025年3月底","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":22,"name":"树恨你（Trees Hate You）","time":"2024年7月（2026年7月仍活跃）","source":"8/6日报","sourceFile":"2026-08-06"},{"rank":23,"name":"龙国 / 帽子叔叔","time":"长期渐进","source":"8/5日报","sourceFile":"2026-08-05"}],"hotChart":[{"rank":1,"name":"竹知了","heat":5,"trend":"new","source":"8/6日报","sourceFile":"2026-08-06"},{"rank":2,"name":"中国人能飞","heat":5,"trend":"new","source":"8/6日报","sourceFile":"2026-08-06"},{"rank":3,"name":"比比拉布","heat":5,"trend":"stable","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":4,"name":"我的刀盾","heat":5,"trend":"stable","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":5,"name":"验牌 / 擦皮鞋","heat":5,"trend":"stable","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":6,"name":"伪人（全面入侵学校）","heat":4,"trend":"new","source":"8/6日报","sourceFile":"2026-08-06"},{"rank":7,"name":"从夯到拉","heat":4,"trend":"up","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":8,"name":"妙脆角小猫","heat":4,"trend":"stable","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":9,"name":"叮咚鸡 / 库里库里","heat":4,"trend":"stable","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":10,"name":"大笑奶龙","heat":4,"trend":"new","source":"8/6日报","sourceFile":"2026-08-06"},{"rank":11,"name":"白菜对我笑","heat":4,"trend":"new","source":"8/6日报","sourceFile":"2026-08-06"},{"rank":12,"name":"哈基米","heat":4,"trend":"stable","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":13,"name":"那咋了 / 受着呗","heat":4,"trend":"stable","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":14,"name":"绷住挑战（大绷住时代）","heat":4,"trend":"new","source":"8/6日报","sourceFile":"2026-08-06"},{"rank":15,"name":"新号别搞","heat":3,"trend":"new","source":"8/6日报","sourceFile":"2026-08-06"},{"rank":16,"name":"因为我善","heat":3,"trend":"new","source":"8/6日报","sourceFile":"2026-08-06"},{"rank":17,"name":"熊大回眸","heat":3,"trend":"stable","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":18,"name":"花儿一家找妈妈","heat":3,"trend":"stable","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":19,"name":"木棍人通通通","heat":3,"trend":"down","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":20,"name":"树恨你（Trees Hate You）","heat":3,"trend":"new","source":"8/6日报","sourceFile":"2026-08-06"},{"rank":21,"name":"阿玛特拉斯","heat":2,"trend":"down","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":22,"name":"刀马刀马","heat":2,"trend":"down","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":23,"name":"龙国 / 帽子叔叔","heat":2,"trend":"stable","source":"8/5日报","sourceFile":"2026-08-05"}],"potentialChart":[{"rank":1,"name":"霸之意志","heat":"8/4 10.3万播放","reason":"中二口号型，极适合小学生喊；类似\"阿玛特拉斯\"路径","probability":"high","date":"8/6"},{"rank":2,"name":"干瘪瘪的芝士球","heat":"7/16 132.2万播放","reason":"食物+魔性表达，低龄吸引力强；类似\"妙脆角小猫\"路径","probability":"medium","date":"8/6"},{"rank":3,"name":"许愿柳","heat":"7/31 70.3万播放","reason":"动作模仿类（许愿姿势），暑假期间传播窗口","probability":"medium","date":"8/6"},{"rank":4,"name":"撅腚聪明","heat":"8/5 全网霸屏","reason":"虽然来源偏成人，但口号极度洗脑+简单；如果出方言版/鬼畜版可能下沉","probability":"medium","date":"8/6"}],"classic":[{"name":"包的","peakTime":"2024年9月","status":"已融入日常用语，不再算「梗」"},{"name":"我勒个豆","peakTime":"2024年9月","status":"感叹词，仍高频但不再新鲜"},{"name":"鸡你太美","peakTime":"2019年","status":"7年不衰，热度缓降中"},{"name":"歪比巴卜","peakTime":"2020年2月","status":"低年级间歇性复活"},{"name":"八嘎呀路","peakTime":"2025年","status":"与刀盾系列配套使用"},{"name":"樱花草手势舞","peakTime":"2026年7月","status":"全民级，非小学生专属"}],"parentGuide":{"safe":["比比拉布","我的刀盾","哈基米","刀马刀马","歪比巴卜","白菜对我笑","中国人能飞"],"attention":["验牌/擦皮鞋（赌片台词）","龙国/帽子叔叔（影响书面表达）","从夯到拉（替代正常评价词汇）","竹知了（涉华为争议但玩具本身无害）","伪人（恐怖内容，低龄可能害怕）"],"intervention":["那咋了/受着呗（消极态度，新华社已批评）","新号别搞（回避沟通）"]}},"dailyReports":{"2026-08-06":{"date":"2026-08-06","newMemes":[{"rank":1,"name":"竹知了","fireTime":"2026年7月31日-8月4日集中爆发","what":"一种成本仅一元的传统竹制蝉玩具，摇动手柄发出「哇哇」声。网友发现其声音与华为余承东发布会上观众整齐惊叹声高度相似，配以「一千万以内最好的玩具」等文案二创调侃。","howFired":"7月底数码圈小范围玩梗 → 短视频创作者批量制作混剪 → 华为批量投诉下架 → 「越禁越火」全网出圈","scene":"小学生购买1元竹知了玩具课间把玩、互相「哇哇」叫；用「X以内最好的XX」句式造句玩梗","platform":"抖音/快手短视频首发，B站二创扩散","channel":"泛热梗雷达","link":"https://search.bilibili.com/all?keyword=%E7%AB%B9%E7%9F%A5%E4%BA%86+%E6%A2%97"},{"rank":2,"name":"伪人（全面入侵学校）","fireTime":"2026年8月3日视频发布，363.9万播放","what":"一种都市传说/恐怖叙事类梗——「伪人」是指外表与正常人无异但行为诡异的「假人」角色，类似Backrooms后室系列的恐怖设定。","howFired":"梗百科/梗指南等B站科普频道8月3日发布相关视频，3天内播放量破363万","scene":"小学生课间讨论「谁是伪人」、互相指认「你是伪人」、模仿伪人诡异行为动作","platform":"B站梗百科首发","channel":"泛热梗雷达","link":"https://search.bilibili.com/all?keyword=%E4%BC%AA%E4%BA%BA+%E5%85%A5%E4%BE%B5+%E5%AD%A6%E6%A0%A1"},{"rank":3,"name":"大笑奶龙","fireTime":"2025年12月起，至8月仍持续产出新内容","what":"将低幼动画IP「奶龙」的形象进行AI恶搞/猎奇化处理——生成夸张扭曲的「大笑奶龙」形象，配合魔性笑声循环播放。","howFired":"2025年12月网友用AI缝合恶搞奶龙形象 → 官方账号被迫关闭评论区 → 蛋仔派对游戏联动","scene":"小学生用大笑奶龙做表情包、在蛋仔派对中使用奶龙皮肤、课间模仿魔性笑声","platform":"B站首发，抖音扩散，蛋仔派对联动","channel":"泛热梗雷达","link":"https://search.bilibili.com/all?keyword=%E5%A4%A7%E7%AC%91%E5%A5%B6%E9%BE%99+2026"},{"rank":4,"name":"白菜对我笑","fireTime":"2026年2月26-27日起，持续流行至8月","what":"巴西Funk音乐原曲《MALVADO DE VAPO》的中文空耳——歌词被网友听成「白菜对我笑」。旋律魔性洗脑。","howFired":"抖音热榜出现 → 短视频平台大量二创 → 因节奏魔性渗透到低龄群体","scene":"课间哼唱「白菜对我笑」旋律、作为无厘头口头禅使用","platform":"抖音热榜首发，全平台扩散","channel":"定向搜索","link":"https://so.toutiao.com/search?dvpf=pc&keyword=%E7%99%BD%E8%8F%9C%E5%AF%B9%E6%88%91%E7%AC%91"},{"rank":5,"name":"新号别搞","fireTime":"2025年末开始，2026年7-8月高频使用","what":"源自游戏文化，原意为「我是新号/新玩家，别来惹我」。被小学生挪用为日常回怼用语。","howFired":"王者荣耀/和平精英等游戏中的新手保护机制催生 → 小学生从游戏带入课间/家庭场景","scene":"被老师/家长追问时回一句「新号别搞」表示不想被打扰；转学或换班时自我介绍用「新号求罩」","platform":"王者荣耀/和平精英 → 校园日常","channel":"定向搜索","link":""},{"rank":6,"name":"因为我善","fireTime":"2026年7月中旬开始广泛传播","what":"全称「因为我善良（所以才不跟你计较）」，用作自我开脱或讽刺式回应。","howFired":"短视频搞笑情景剧使用 → 小学生在日常社交中使用。人民日报报道校园「病毒式传播」","scene":"被同学欺负后假装淡定说「因为我善」；考试让同学抄答案时自嘲","platform":"抖音短视频 → 校园","channel":"定向搜索","link":""},{"rank":7,"name":"树恨你（Trees Hate You）","fireTime":"2024年7月首爆，2026年7月仍有新视频32.3万播放","what":"同名跑酷/速通类游戏，玩家需在被树木追击的情况下通关。UP主鲤鱼Ace带火后小学生纷纷模仿。","howFired":"游戏主播鲤鱼Ace速通视频 → 小学生跟风速通 → B站大量「三年级版」视频","scene":"小学生讨论速通记录、课间模仿躲避树木动作、录制自己的速通视频上传","platform":"游戏平台 → B站速通视频","channel":"泛热梗雷达","link":"https://search.bilibili.com/all?keyword=%E6%A0%91%E6%81%A8%E4%BD%A0+%E5%B0%8F%E5%AD%A6%E7%94%9F"},{"rank":8,"name":"从夯到拉·八月梗曲","fireTime":"8月3日201.8万播放新期视频发布","what":"B站最流行的排名格式——「夯」代表最好，「拉」代表最差。8月第一周多位UP主发布梗曲盘点。","howFired":"头部UP主「蛋某人排名」开创格式 → 万物皆可从夯到拉 → 小学生模仿评价一切","scene":"课间讨论「XX从夯到拉排第几」；「这个好夯」「太拉了」成为日常评价用语","platform":"B站原创格式，全平台扩散","channel":"泛热梗雷达","link":"https://search.bilibili.com/all?keyword=%E4%BB%8E%E5%A4%AF%E5%88%B0%E6%8B%89+%E5%85%AB%E6%9C%88"},{"rank":9,"name":"绷住挑战（大绷住时代）","fireTime":"2026年7月中旬开始爆发","what":"观看搞笑/抽象视频，挑战全程不笑（「绷住」= 忍住不笑）。笑了就输。","howFired":"B站meme/鬼畜区持续产出搞笑素材 → UP主制作「绷住挑战」合集 → 暑假小学生大量参与","scene":"课间多人看搞笑视频比谁先笑；说「绷不住了」表示忍不住笑","platform":"B站meme/鬼畜区","channel":"泛热梗雷达","link":"https://search.bilibili.com/all?keyword=%E7%BB%B7%E4%BD%8F%E6%8C%91%E6%88%98+2026"}],"continuing":[{"name":"比比拉布","since":"2025年5月（2026年2月二爆）","status":"低年级顶流暗号，8月仍极高频"},{"name":"我的刀盾","since":"2025年5月","status":"打闹口号，有周边挂件"},{"name":"那咋了 / 受着呗","since":"2025年6月","status":"消极态度梗，央视已点名"},{"name":"验牌 / 擦皮鞋","since":"2026年2月","status":"有发声挂件周边，热度稳定"},{"name":"哈基米","since":"2025年4月","status":"高频使用中"},{"name":"叮咚鸡 / 库里库里","since":"2026年4-6月","status":"校园传唱中"},{"name":"包的","since":"2024年9月","status":"已融入日常用语"},{"name":"从夯到拉","since":"2025年下半年","status":"万物皆可排名，8月再爆发"},{"name":"妙脆角小猫","since":"2026年6月下旬","status":"IP生态完整，持续活跃"},{"name":"歪比巴卜","since":"2020年2月","status":"低年级间歇性复活"}],"radar":[{"name":"撅腚聪明","detail":"8月5日全网霸屏，源自诺兰首映礼","probability":"低"},{"name":"干瘪瘪的芝士球","detail":"7月16日132.2万播放","probability":"中"},{"name":"许愿柳","detail":"7月31日70.3万播放","probability":"中"},{"name":"霸之意志","detail":"8月4日10.3万播放，中二口号适合小学生","probability":"中高"},{"name":"十字老粉","detail":"8月4日14.9万播放","probability":"中"},{"name":"虞书欣八次投篮全打铁","detail":"8月3日全网热搜","probability":"中"}]},"2026-08-05":{"date":"2026-08-05","newMemes":[{"rank":1,"name":"熊大回眸","fireTime":"2026年8月2-3日","what":"动画《熊出没》中熊大突然回头的画面被截图制成表情包，因表情诡异/魔性在短视频平台爆火。","howFired":"短视频平台二创 → B站鬼畜混剪 → 小学生传播","scene":"课间互相做「熊大回眸」姿势、用表情包聊天","platform":"抖音/B站","channel":"泛热梗雷达","link":""},{"rank":2,"name":"比比拉布","fireTime":"2025年5月，2026年2月二次爆发","what":"一种小学生之间的「接头暗号」互动游戏——一方说「比比」，另一方须回「拉布」，类似暗号对答。","howFired":"校园自发传播 → 短视频记录 → 二次爆发","scene":"课间/放学路上互喊暗号、不回应者被视为「不是自己人」","platform":"校园自发 → 短视频记录","channel":"定向搜索","link":""},{"rank":3,"name":"我的刀盾","fireTime":"2025年5月","what":"模仿动漫/游戏中角色召唤武器的台词，小学生在打闹时喊出。已有实体周边挂件。","howFired":"动漫台词 → 小学生模仿 → 周边商品化","scene":"课间打闹时喊「我的刀盾」配合挥舞动作","platform":"B站动漫 → 校园","channel":"定向搜索","link":""},{"rank":4,"name":"验牌 / 擦皮鞋","fireTime":"2026年2月二次爆发","what":"源自港片赌神系列台词「验牌」和「给我擦皮鞋」的空耳歌曲，旋律洗脑。已有发声挂件周边。","howFired":"抖音洗脑歌曲 → 全平台传播 → 实体周边 → 小学生人手一个挂件","scene":"课间按响挂件播放、互相喊「给我擦皮鞋」","platform":"抖音 → 校园周边","channel":"定向搜索","link":""},{"rank":5,"name":"妙脆角小猫","fireTime":"2026年6月下旬","what":"将猫咪形象与零食「妙脆角」结合的萌系IP梗，形成完整生态（表情包/头像/段子）。","howFired":"原创表情包 → 社交平台传播 → 小学生群体广泛使用","scene":"用妙脆角小猫表情包聊天、画在课本上","platform":"多平台","channel":"定向搜索","link":""},{"rank":6,"name":"花儿一家找妈妈","fireTime":"2026年7月16日","what":"B站UP主创作的系列动画/鬼畜，以夸张荒诞的「找妈妈」剧情引发低龄观众追捧。","howFired":"B站动画区首发 → 鬼畜二创 → 小学生传播","scene":"课间模仿台词、讨论剧情","platform":"B站","channel":"泛热梗雷达","link":""}],"continuing":[{"name":"哈基米","since":"2025年4月","status":"持续高频使用"},{"name":"那咋了 / 受着呗","since":"2025年6月","status":"央视已点名批评"},{"name":"从夯到拉","since":"2025年下半年","status":"评价万物的格式"},{"name":"叮咚鸡 / 库里库里","since":"2026年4-6月","status":"校园传唱"},{"name":"木棍人通通通","since":"2025年3月底","status":"热度略降"},{"name":"阿玛特拉斯","since":"2025年4月","status":"热度缓降"},{"name":"刀马刀马","since":"2025年5月","status":"与刀盾系列配套"},{"name":"龙国 / 帽子叔叔","since":"长期渐进","status":"影响书面表达"}],"radar":[]}},"availableDates":["2026-08-06","2026-08-05"]};
+window.__EMBEDDED_DATA__ = {"lastUpdated":"2026-08-06","masterTable":{"timeChart":[{"rank":1,"name":"竹知了","time":"2026年8月1-4日","source":"8/6日报","sourceFile":"2026-08-06"},{"rank":2,"name":"伪人（全面入侵学校）","time":"2026年8月3日","source":"8/6日报","sourceFile":"2026-08-06"},{"rank":3,"name":"熊大回眸","time":"2026年8月2-3日","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":4,"name":"中国人能飞","time":"2026年7月25-30日","source":"8/6日报","sourceFile":"2026-08-06"},{"rank":5,"name":"绷住挑战（大绷住时代）","time":"2026年7月中旬","source":"8/6日报","sourceFile":"2026-08-06"},{"rank":6,"name":"因为我善","time":"2026年7月中旬","source":"8/6日报","sourceFile":"2026-08-06"},{"rank":7,"name":"花儿一家找妈妈","time":"2026年7月16日","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":8,"name":"妙脆角小猫","time":"2026年6月下旬","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":9,"name":"叮咚鸡 / 库里库里","time":"2026年4-6月","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":10,"name":"白菜对我笑","time":"2026年2月下旬","source":"8/6日报","sourceFile":"2026-08-06"},{"rank":11,"name":"验牌 / 擦皮鞋","time":"2026年2月（二次爆发）","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":12,"name":"比比拉布","time":"2026年2月（二次爆发）","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":13,"name":"大笑奶龙","time":"2025年12月","source":"8/6日报","sourceFile":"2026-08-06"},{"rank":14,"name":"新号别搞","time":"2025年末","source":"8/6日报","sourceFile":"2026-08-06"},{"rank":15,"name":"从夯到拉","time":"2025年下半年","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":16,"name":"那咋了 / 受着呗","time":"2025年6月","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":17,"name":"我的刀盾","time":"2025年5月","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":18,"name":"刀马刀马","time":"2025年5月","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":19,"name":"哈基米","time":"2025年4月","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":20,"name":"阿玛特拉斯","time":"2025年4月","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":21,"name":"木棍人通通通","time":"2025年3月底","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":22,"name":"树恨你（Trees Hate You）","time":"2024年7月（2026年7月仍活跃）","source":"8/6日报","sourceFile":"2026-08-06"},{"rank":23,"name":"龙国 / 帽子叔叔","time":"长期渐进","source":"8/5日报","sourceFile":"2026-08-05"}],"hotChart":[{"rank":1,"name":"竹知了","heat":5,"trend":"new","source":"8/6日报","sourceFile":"2026-08-06"},{"rank":2,"name":"中国人能飞","heat":5,"trend":"new","source":"8/6日报","sourceFile":"2026-08-06"},{"rank":3,"name":"比比拉布","heat":5,"trend":"stable","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":4,"name":"我的刀盾","heat":5,"trend":"stable","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":5,"name":"验牌 / 擦皮鞋","heat":5,"trend":"stable","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":6,"name":"伪人（全面入侵学校）","heat":4,"trend":"new","source":"8/6日报","sourceFile":"2026-08-06"},{"rank":7,"name":"从夯到拉","heat":4,"trend":"up","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":8,"name":"妙脆角小猫","heat":4,"trend":"stable","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":9,"name":"叮咚鸡 / 库里库里","heat":4,"trend":"stable","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":10,"name":"大笑奶龙","heat":4,"trend":"new","source":"8/6日报","sourceFile":"2026-08-06"},{"rank":11,"name":"白菜对我笑","heat":4,"trend":"new","source":"8/6日报","sourceFile":"2026-08-06"},{"rank":12,"name":"哈基米","heat":4,"trend":"stable","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":13,"name":"那咋了 / 受着呗","heat":4,"trend":"stable","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":14,"name":"绷住挑战（大绷住时代）","heat":4,"trend":"new","source":"8/6日报","sourceFile":"2026-08-06"},{"rank":15,"name":"新号别搞","heat":3,"trend":"new","source":"8/6日报","sourceFile":"2026-08-06"},{"rank":16,"name":"因为我善","heat":3,"trend":"new","source":"8/6日报","sourceFile":"2026-08-06"},{"rank":17,"name":"熊大回眸","heat":3,"trend":"stable","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":18,"name":"花儿一家找妈妈","heat":3,"trend":"stable","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":19,"name":"木棍人通通通","heat":3,"trend":"down","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":20,"name":"树恨你（Trees Hate You）","heat":3,"trend":"new","source":"8/6日报","sourceFile":"2026-08-06"},{"rank":21,"name":"阿玛特拉斯","heat":2,"trend":"down","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":22,"name":"刀马刀马","heat":2,"trend":"down","source":"8/5日报","sourceFile":"2026-08-05"},{"rank":23,"name":"龙国 / 帽子叔叔","heat":2,"trend":"stable","source":"8/5日报","sourceFile":"2026-08-05"}],"potentialChart":[{"rank":1,"name":"霸之意志","heat":"8/4 10.3万播放","reason":"中二口号型，极适合小学生喊；类似\"阿玛特拉斯\"路径","probability":"high","date":"8/6"},{"rank":2,"name":"干瘪瘪的芝士球","heat":"7/16 132.2万播放","reason":"食物+魔性表达，低龄吸引力强；类似\"妙脆角小猫\"路径","probability":"medium","date":"8/6"},{"rank":3,"name":"许愿柳","heat":"7/31 70.3万播放","reason":"动作模仿类（许愿姿势），暑假期间传播窗口","probability":"medium","date":"8/6"},{"rank":4,"name":"撅腚聪明","heat":"8/5 全网霸屏","reason":"虽然来源偏成人，但口号极度洗脑+简单；如果出方言版/鬼畜版可能下沉","probability":"medium","date":"8/6"}],"classic":[{"name":"包的","peakTime":"2024年9月","status":"已融入日常用语，不再算「梗」"},{"name":"我勒个豆","peakTime":"2024年9月","status":"感叹词，仍高频但不再新鲜"},{"name":"鸡你太美","peakTime":"2019年","status":"7年不衰，热度缓降中"},{"name":"歪比巴卜","peakTime":"2020年2月","status":"低年级间歇性复活"},{"name":"八嘎呀路","peakTime":"2025年","status":"与刀盾系列配套使用"},{"name":"樱花草手势舞","peakTime":"2026年7月","status":"全民级，非小学生专属"}],"parentGuide":{"safe":["比比拉布","我的刀盾","哈基米","刀马刀马","歪比巴卜","白菜对我笑","中国人能飞"],"attention":["验牌/擦皮鞋（赌片台词）","龙国/帽子叔叔（影响书面表达）","从夯到拉（替代正常评价词汇）","竹知了（涉华为争议但玩具本身无害）","伪人（恐怖内容，低龄可能害怕）"],"intervention":["那咋了/受着呗（消极态度，新华社已批评）","新号别搞（回避沟通）"]}},"dailyReports":{"2026-08-06":{"date":"2026-08-06","newMemes":[{"rank":1,"name":"竹知了","fireTime":"2026年7月31日-8月4日集中爆发","what":"一种成本仅一元的传统竹制蝉玩具，摇动手柄发出「哇哇」声。网友发现其声音与华为余承东发布会上观众整齐惊叹声高度相似，配以「一千万以内最好的玩具」等文案二创调侃。","howFired":"7月底数码圈小范围玩梗 - 短视频创作者批量制作混剪 - 华为批量投诉下架 - 越禁越火全网出圈","scene":"小学生购买1元竹知了玩具课间把玩、互相哇哇叫；用X以内最好的XX句式造句玩梗","platform":"抖音/快手短视频首发，B站二创扩散","channel":"泛热梗雷达","link":"https://search.bilibili.com/all?keyword=%E7%AB%B9%E7%9F%A5%E4%BA%86+%E6%A2%97"},{"rank":2,"name":"伪人（全面入侵学校）","fireTime":"2026年8月3日视频发布，363.9万播放","what":"一种都市传说/恐怖叙事类梗——伪人是指外表与正常人无异但行为诡异的假人角色，类似Backrooms后室系列的恐怖设定。","howFired":"梗百科/梗指南等B站科普频道8月3日发布相关视频，3天内播放量破363万","scene":"小学生课间讨论谁是伪人、互相指认、模仿伪人诡异行为动作","platform":"B站梗百科首发","channel":"泛热梗雷达","link":"https://search.bilibili.com/all?keyword=%E4%BC%AA%E4%BA%BA+%E5%85%A5%E4%BE%B5+%E5%AD%A6%E6%A0%A1"},{"rank":3,"name":"大笑奶龙","fireTime":"2025年12月起，至8月仍持续产出新内容","what":"将低幼动画IP奶龙的形象进行AI恶搞/猎奇化处理——生成夸张扭曲的大笑奶龙形象，配合魔性笑声循环播放。","howFired":"2025年12月网友用AI缝合恶搞奶龙形象 - 官方账号被迫关闭评论区 - 蛋仔派对游戏联动","scene":"小学生用大笑奶龙做表情包、在蛋仔派对中使用奶龙皮肤、课间模仿魔性笑声","platform":"B站首发，抖音扩散，蛋仔派对联动","channel":"泛热梗雷达","link":"https://search.bilibili.com/all?keyword=%E5%A4%A7%E7%AC%91%E5%A5%B6%E9%BE%99+2026"},{"rank":4,"name":"白菜对我笑","fireTime":"2026年2月26-27日起，持续流行至8月","what":"巴西Funk音乐原曲的中文空耳——歌词被网友听成白菜对我笑。旋律魔性洗脑。","howFired":"抖音热榜出现 - 短视频平台大量二创 - 因节奏魔性渗透到低龄群体","scene":"课间哼唱白菜对我笑旋律、作为无厘头口头禅使用","platform":"抖音热榜首发，全平台扩散","channel":"定向搜索","link":""},{"rank":5,"name":"新号别搞","fireTime":"2025年末开始，2026年7-8月高频使用","what":"源自游戏文化，原意为我是新号/新玩家，别来惹我。被小学生挪用为日常回怼用语。","howFired":"王者荣耀/和平精英等游戏中的新手保护机制催生 - 小学生从游戏带入课间/家庭场景","scene":"被老师/家长追问时回一句新号别搞表示不想被打扰","platform":"王者荣耀/和平精英 - 校园日常","channel":"定向搜索","link":""},{"rank":6,"name":"因为我善","fireTime":"2026年7月中旬开始广泛传播","what":"全称因为我善良所以才不跟你计较，用作自我开脱或讽刺式回应。","howFired":"短视频搞笑情景剧使用 - 小学生在日常社交中使用。人民日报报道校园病毒式传播","scene":"被同学欺负后假装淡定说因为我善","platform":"抖音短视频 - 校园","channel":"定向搜索","link":""},{"rank":7,"name":"树恨你（Trees Hate You）","fireTime":"2024年7月首爆，2026年7月仍有新视频32.3万播放","what":"同名跑酷/速通类游戏，玩家需在被树木追击的情况下通关。UP主鲤鱼Ace带火后小学生纷纷模仿。","howFired":"游戏主播鲤鱼Ace速通视频 - 小学生跟风速通 - B站大量三年级版视频","scene":"小学生讨论速通记录、课间模仿躲避树木动作","platform":"游戏平台 - B站速通视频","channel":"泛热梗雷达","link":""},{"rank":8,"name":"从夯到拉·八月梗曲","fireTime":"8月3日201.8万播放新期视频发布","what":"B站最流行的排名格式——夯代表最好，拉代表最差。8月第一周多位UP主发布梗曲盘点。","howFired":"头部UP主蛋某人排名开创格式 - 万物皆可从夯到拉 - 小学生模仿评价一切","scene":"课间讨论XX从夯到拉排第几；这个好夯太拉了成为日常评价用语","platform":"B站原创格式，全平台扩散","channel":"泛热梗雷达","link":""},{"rank":9,"name":"绷住挑战（大绷住时代）","fireTime":"2026年7月中旬开始爆发","what":"观看搞笑/抽象视频，挑战全程不笑（绷住=忍住不笑）。笑了就输。","howFired":"B站meme/鬼畜区持续产出搞笑素材 - UP主制作绷住挑战合集 - 暑假小学生大量参与","scene":"课间多人看搞笑视频比谁先笑；说绷不住了表示忍不住笑","platform":"B站meme/鬼畜区","channel":"泛热梗雷达","link":""}],"continuing":[{"name":"比比拉布","since":"2025年5月（2026年2月二爆）","status":"低年级顶流暗号，8月仍极高频"},{"name":"我的刀盾","since":"2025年5月","status":"打闹口号，有周边挂件"},{"name":"那咋了 / 受着呗","since":"2025年6月","status":"消极态度梗，央视已点名"},{"name":"验牌 / 擦皮鞋","since":"2026年2月","status":"有发声挂件周边，热度稳定"},{"name":"哈基米","since":"2025年4月","status":"高频使用中"},{"name":"叮咚鸡 / 库里库里","since":"2026年4-6月","status":"校园传唱中"},{"name":"包的","since":"2024年9月","status":"已融入日常用语"},{"name":"从夯到拉","since":"2025年下半年","status":"万物皆可排名，8月再爆发"},{"name":"妙脆角小猫","since":"2026年6月下旬","status":"IP生态完整，持续活跃"},{"name":"歪比巴卜","since":"2020年2月","status":"低年级间歇性复活"}],"radar":[{"name":"撅腚聪明","detail":"8月5日全网霸屏，源自诺兰首映礼","probability":"低"},{"name":"干瘪瘪的芝士球","detail":"7月16日132.2万播放","probability":"中"},{"name":"许愿柳","detail":"7月31日70.3万播放","probability":"中"},{"name":"霸之意志","detail":"8月4日10.3万播放，中二口号适合小学生","probability":"中高"},{"name":"十字老粉","detail":"8月4日14.9万播放","probability":"中"},{"name":"虞书欣八次投篮全打铁","detail":"8月3日全网热搜","probability":"中"}]},"2026-08-05":{"date":"2026-08-05","newMemes":[{"rank":1,"name":"熊大回眸","fireTime":"2026年8月2-3日","what":"动画熊出没中熊大突然回头的画面被截图制成表情包，因表情诡异/魔性在短视频平台爆火。","howFired":"短视频平台二创 - B站鬼畜混剪 - 小学生传播","scene":"课间互相做熊大回眸姿势、用表情包聊天","platform":"抖音/B站","channel":"泛热梗雷达","link":""},{"rank":2,"name":"比比拉布","fireTime":"2025年5月，2026年2月二次爆发","what":"一种小学生之间的接头暗号互动游戏——一方说比比，另一方须回拉布，类似暗号对答。","howFired":"校园自发传播 - 短视频记录 - 二次爆发","scene":"课间/放学路上互喊暗号、不回应者被视为不是自己人","platform":"校园自发 - 短视频记录","channel":"定向搜索","link":""},{"rank":3,"name":"我的刀盾","fireTime":"2025年5月","what":"模仿动漫/游戏中角色召唤武器的台词，小学生在打闹时喊出。已有实体周边挂件。","howFired":"动漫台词 - 小学生模仿 - 周边商品化","scene":"课间打闹时喊我的刀盾配合挥舞动作","platform":"B站动漫 - 校园","channel":"定向搜索","link":""},{"rank":4,"name":"验牌 / 擦皮鞋","fireTime":"2026年2月二次爆发","what":"源自港片赌神系列台词验牌和给我擦皮鞋的空耳歌曲，旋律洗脑。已有发声挂件周边。","howFired":"抖音洗脑歌曲 - 全平台传播 - 实体周边 - 小学生人手一个挂件","scene":"课间按响挂件播放、互相喊给我擦皮鞋","platform":"抖音 - 校园周边","channel":"定向搜索","link":""},{"rank":5,"name":"妙脆角小猫","fireTime":"2026年6月下旬","what":"将猫咪形象与零食妙脆角结合的萌系IP梗，形成完整生态。","howFired":"原创表情包 - 社交平台传播 - 小学生群体广泛使用","scene":"用妙脆角小猫表情包聊天、画在课本上","platform":"多平台","channel":"定向搜索","link":""},{"rank":6,"name":"花儿一家找妈妈","fireTime":"2026年7月16日","what":"B站UP主创作的系列动画/鬼畜，以夸张荒诞的找妈妈剧情引发低龄观众追捧。","howFired":"B站动画区首发 - 鬼畜二创 - 小学生传播","scene":"课间模仿台词、讨论剧情","platform":"B站","channel":"泛热梗雷达","link":""}],"continuing":[{"name":"哈基米","since":"2025年4月","status":"持续高频使用"},{"name":"那咋了 / 受着呗","since":"2025年6月","status":"央视已点名批评"},{"name":"从夯到拉","since":"2025年下半年","status":"评价万物的格式"},{"name":"叮咚鸡 / 库里库里","since":"2026年4-6月","status":"校园传唱"},{"name":"木棍人通通通","since":"2025年3月底","status":"热度略降"},{"name":"阿玛特拉斯","since":"2025年4月","status":"热度缓降"},{"name":"刀马刀马","since":"2025年5月","status":"与刀盾系列配套"},{"name":"龙国 / 帽子叔叔","since":"长期渐进","status":"影响书面表达"}],"radar":[]}},"availableDates":["2026-08-06","2026-08-05"]};
 </script>
 
 <script>
-// ============ Data Loading ============
-let DATA = null;
+const DATA = window.__EMBEDDED_DATA__;
 let currentDateIdx = 0;
 
-async function loadData() {
-  // Try embedded data first, then fetch as fallback
-  if (window.__EMBEDDED_DATA__) {
-    DATA = window.__EMBEDDED_DATA__;
-    render();
-    return;
-  }
-  try {
-    const resp = await fetch('./data.json');
-    if (!resp.ok) throw new Error('HTTP ' + resp.status);
-    DATA = await resp.json();
-    render();
-  } catch (e) {
-    document.getElementById('statsRow').innerHTML = `
-      <div class="empty-state" style="grid-column:1/-1">
-        <div class="icon">⚠️</div>
-        <p>数据加载失败：${e.message}</p>
-      </div>`;
-  }
-}
-
-// ============ Render ============
-function render() {
-  // Update badge
-  document.getElementById('lastUpdate').textContent = `最后更新: ${DATA.lastUpdated}`;
-
-  // Stats
-  const totalMemes = DATA.masterTable.hotChart.length;
-  const newToday = DATA.masterTable.hotChart.filter(m => m.trend === 'new').length;
-  const potential = DATA.masterTable.potentialChart.length;
-  const maxHeat = DATA.masterTable.hotChart.filter(m => m.heat === 5).length;
-
-  document.getElementById('statsRow').innerHTML = `
-    <div class="stat-card"><div class="stat-num">${totalMemes}</div><div class="stat-label">在追踪</div></div>
-    <div class="stat-card"><div class="stat-num">${newToday}</div><div class="stat-label">新发现</div></div>
-    <div class="stat-card"><div class="stat-num">${maxHeat}</div><div class="stat-label">爆火中</div></div>
-    <div class="stat-card"><div class="stat-num">${potential}</div><div class="stat-label">潜力梗</div></div>
-  `;
-
-  renderHotChart();
-  renderTimeChart();
-  renderPotentialChart();
+// ===== Render all panels =====
+function init() {
+  renderHot();
+  renderTime();
+  renderPotential();
   renderClassic();
   renderGuide();
   renderDaily();
+  setupNav();
+  setupDateNav();
 }
 
-// ============ 火热榜 ============
-function renderHotChart() {
-  const el = document.getElementById('sub-hot');
-  el.innerHTML = DATA.masterTable.hotChart.map(m => `
-    <div class="meme-card">
-      <div class="card-header">
-        <span class="rank ${m.rank <= 3 ? 'top3' : ''}">${String(m.rank).padStart(2, '0')}</span>
-        <span class="name">${m.name}</span>
-        <div class="badges">
-          ${trendBadge(m.trend)}
-        </div>
-        <div class="heat-bar">
-          ${[1,2,3,4,5].map(i => `<div class="heat-dot ${i <= m.heat ? 'active' : ''}"></div>`).join('')}
-        </div>
-      </div>
-    </div>
-  `).join('');
+// ===== Hot Chart =====
+function renderHot() {
+  const rows = DATA.masterTable.hotChart.map(m => `
+    <tr>
+      <td class="rank-cell ${m.rank<=3?'top3':''}">${m.rank}</td>
+      <td><strong>${m.name}</strong></td>
+      <td><div class="heat">${[1,2,3,4,5].map(i=>`<div class="heat-dot ${i<=m.heat?'on':''}"></div>`).join('')}</div></td>
+      <td>${trendTag(m.trend)}</td>
+      <td style="font-size:0.75rem;color:var(--text-3)">${m.source}</td>
+    </tr>`).join('');
+  document.getElementById('hotTable').innerHTML = `
+    <table><thead><tr><th>#</th><th>梗</th><th>热度</th><th>趋势</th><th>收录</th></tr></thead>
+    <tbody>${rows}</tbody></table>`;
 }
 
-function trendBadge(trend) {
-  const map = {
-    'new': '<span class="badge badge-new">🆕 新</span>',
-    'up': '<span class="badge badge-up">⬆️ 升</span>',
-    'stable': '<span class="badge badge-stable">➡️ 平</span>',
-    'down': '<span class="badge badge-down">⬇️ 降</span>'
-  };
-  return map[trend] || '';
+function trendTag(t) {
+  const map = { new:'<span class="trend trend-new">新</span>', up:'<span class="trend trend-up">升</span>', stable:'<span class="trend trend-stable">平</span>', down:'<span class="trend trend-down">降</span>' };
+  return map[t]||'';
 }
 
-// ============ 时效榜 ============
-function renderTimeChart() {
-  const el = document.getElementById('sub-time');
-  el.innerHTML = DATA.masterTable.timeChart.map(m => `
-    <div class="meme-card">
-      <div class="card-header">
-        <span class="rank ${m.rank <= 3 ? 'top3' : ''}">${String(m.rank).padStart(2, '0')}</span>
-        <span class="name">${m.name}</span>
-        <span style="margin-left:auto; font-size:0.78rem; color:var(--accent); font-weight:500">${m.time}</span>
-      </div>
-    </div>
-  `).join('');
+// ===== Time Chart =====
+function renderTime() {
+  const rows = DATA.masterTable.timeChart.map(m => `
+    <tr>
+      <td class="rank-cell ${m.rank<=3?'top3':''}">${m.rank}</td>
+      <td><strong>${m.name}</strong></td>
+      <td style="color:var(--red);font-size:0.82rem">${m.time}</td>
+      <td style="font-size:0.75rem;color:var(--text-3)">${m.source}</td>
+    </tr>`).join('');
+  document.getElementById('timeTable').innerHTML = `
+    <table><thead><tr><th>#</th><th>梗</th><th>爆发时间</th><th>收录</th></tr></thead>
+    <tbody>${rows}</tbody></table>`;
 }
 
-// ============ 潜力榜 ============
-function renderPotentialChart() {
-  const el = document.getElementById('sub-potential');
-  if (DATA.masterTable.potentialChart.length === 0) {
-    el.innerHTML = '<div class="empty-state"><div class="icon">🔮</div><p>暂无潜力梗在追踪</p></div>';
-    return;
-  }
-  el.innerHTML = DATA.masterTable.potentialChart.map(m => `
-    <div class="meme-card potential-card">
-      <div class="card-header">
-        <span class="rank">${String(m.rank).padStart(2, '0')}</span>
-        <span class="name">${m.name}</span>
-        <span class="probability ${probClass(m.probability)}">${probLabel(m.probability)}</span>
-      </div>
-      <div class="card-details">
-        <div class="card-detail"><label>全网热度</label><span>${m.heat}</span></div>
-        <div class="card-detail"><label>进入雷达</label><span>${m.date}</span></div>
-        <div class="card-detail full"><label>下沉理由</label><span>${m.reason}</span></div>
-      </div>
-    </div>
-  `).join('');
+// ===== Potential Chart =====
+function renderPotential() {
+  const rows = DATA.masterTable.potentialChart.map(m => `
+    <tr>
+      <td class="rank-cell">${m.rank}</td>
+      <td><strong>${m.name}</strong></td>
+      <td style="font-size:0.78rem">${m.heat}</td>
+      <td style="font-size:0.78rem;color:var(--text-2)">${m.reason}</td>
+      <td>${probTag(m.probability)}</td>
+      <td style="font-size:0.75rem;color:var(--text-3)">${m.date}</td>
+    </tr>`).join('');
+  document.getElementById('potentialTable').innerHTML = `
+    <table><thead><tr><th>#</th><th>梗</th><th>全网热度</th><th>下沉理由</th><th>概率</th><th>进入</th></tr></thead>
+    <tbody>${rows}</tbody></table>`;
 }
 
-function probClass(p) {
-  if (p === 'high') return 'prob-high';
-  if (p === 'medium') return 'prob-medium';
-  return 'prob-low';
-}
-function probLabel(p) {
-  if (p === 'high') return '🟠 高概率';
-  if (p === 'medium') return '🟡 中等';
-  return '⚪ 低';
+function probTag(p) {
+  if (p==='high') return '<span class="prob prob-high">高</span>';
+  return '<span class="prob prob-medium">中</span>';
 }
 
-// ============ 经典/已过气 ============
+// ===== Classic =====
 function renderClassic() {
-  const el = document.getElementById('sub-classic');
-  el.innerHTML = `
-    <table class="classic-table">
-      <thead><tr><th>梗</th><th>巅峰时间</th><th>当前状态</th></tr></thead>
-      <tbody>
-        ${DATA.masterTable.classic.map(m => `
-          <tr><td>${m.name}</td><td>${m.peakTime}</td><td>${m.status}</td></tr>
-        `).join('')}
-      </tbody>
-    </table>
-  `;
+  const rows = DATA.masterTable.classic.map(m => `
+    <tr><td><strong>${m.name}</strong></td><td>${m.peakTime}</td><td style="color:var(--text-3)">${m.status}</td></tr>`).join('');
+  document.getElementById('classicTable').innerHTML = `
+    <table><thead><tr><th>梗</th><th>巅峰时间</th><th>当前状态</th></tr></thead>
+    <tbody>${rows}</tbody></table>`;
 }
 
-// ============ 家长指南 ============
+// ===== Guide =====
 function renderGuide() {
   const g = DATA.masterTable.parentGuide;
-  const el = document.getElementById('sub-guide');
-  el.innerHTML = `
-    <div class="guide-section guide-safe">
-      <h4>🟢 无害暗号类（不必担心）</h4>
-      <div class="items">${g.safe.map(i => `<span class="item">${i}</span>`).join('')}</div>
+  document.getElementById('guideContent').innerHTML = `
+    <div class="guide-block guide-safe">
+      <h4>无害暗号类（不必担心）</h4>
+      <div class="tags">${g.safe.map(i=>`<span class="tag">${i}</span>`).join('')}</div>
     </div>
-    <div class="guide-section guide-attention">
-      <h4>🟡 需要了解的（适度关注）</h4>
-      <div class="items">${g.attention.map(i => `<span class="item">${i}</span>`).join('')}</div>
+    <div class="guide-block guide-warn">
+      <h4>需要了解的（适度关注）</h4>
+      <div class="tags">${g.attention.map(i=>`<span class="tag">${i}</span>`).join('')}</div>
     </div>
-    <div class="guide-section guide-danger">
-      <h4>🔴 需要引导的（建议干预）</h4>
-      <div class="items">${g.intervention.map(i => `<span class="item">${i}</span>`).join('')}</div>
-    </div>
-  `;
+    <div class="guide-block guide-danger">
+      <h4>需要引导的（建议干预）</h4>
+      <div class="tags">${g.intervention.map(i=>`<span class="tag">${i}</span>`).join('')}</div>
+    </div>`;
 }
 
-// ============ 日榜 ============
+// ===== Daily =====
 function renderDaily() {
-  const dates = DATA.availableDates;
-  if (dates.length === 0) {
-    document.getElementById('dailyContent').innerHTML = '<div class="empty-state"><div class="icon">📭</div><p>暂无日报数据</p></div>';
-    return;
-  }
-  currentDateIdx = 0;
   updateDailyView();
 }
 
@@ -809,106 +559,83 @@ function updateDailyView() {
   document.getElementById('nextDate').disabled = currentDateIdx <= 0;
 
   if (!report) {
-    document.getElementById('dailyContent').innerHTML = '<div class="empty-state"><div class="icon">📭</div><p>该日暂无日报</p></div>';
+    document.getElementById('dailyContent').innerHTML = '<p style="color:var(--text-3);padding:40px;text-align:center">该日暂无日报</p>';
     return;
   }
 
   let html = '';
-
-  // New memes
-  html += `<div class="section-title">📌 今日新梗 / 近期热梗（${report.newMemes.length} 个）</div>`;
+  html += `<div class="daily-section-title">新梗 / 近期热梗 (${report.newMemes.length})</div>`;
   html += report.newMemes.map(m => `
-    <div class="daily-card">
-      <div class="top-row">
-        <span class="rank-num ${m.rank <= 3 ? 'top3' : ''}">${m.rank}</span>
-        <div>
-          <h3>${m.name}</h3>
-          <span class="fire-time">🔥 ${m.fireTime}</span>
+    <div class="meme-row">
+      <div class="m-rank ${m.rank<=3?'top3':''}">${m.rank}</div>
+      <div>
+        <div class="m-name">${m.name}</div>
+        <div class="m-time">${m.fireTime}</div>
+        <div class="m-desc">${m.what}</div>
+        <div class="m-meta">
+          <span class="m-tag">${m.platform}</span>
+          <span class="m-tag">${m.channel}</span>
+          ${m.link?`<a class="m-tag" href="${m.link}" target="_blank" style="color:var(--red);text-decoration:none">查看来源</a>`:''}
         </div>
       </div>
-      <p class="description">${m.what}</p>
-      <div class="meta-grid">
-        <div class="meta-item"><label>怎么火的</label><span>${m.howFired}</span></div>
-        <div class="meta-item"><label>使用场景</label><span>${m.scene}</span></div>
-        <div class="meta-item"><label>平台来源</label><span>${m.platform}</span></div>
-        <div class="meta-item"><label>发现渠道</label><span>${m.channel}</span></div>
-        ${m.link ? `<div class="meta-item"><label>参考链接</label><a href="${m.link}" target="_blank" rel="noopener">查看来源 →</a></div>` : ''}
-      </div>
-    </div>
-  `).join('');
+    </div>`).join('');
 
-  // Continuing
   if (report.continuing && report.continuing.length > 0) {
-    html += `<div class="section-title">🔄 持续热门（${report.continuing.length} 个）</div>`;
-    html += '<div class="continuing-grid">';
+    html += `<div class="daily-section-title">持续热门 (${report.continuing.length})</div>`;
+    html += '<div class="cont-grid">';
     html += report.continuing.map(m => `
-      <div class="cont-item">
-        <div class="cont-name">${m.name}</div>
-        <div class="cont-status">${m.status} · 自 ${m.since}</div>
-      </div>
-    `).join('');
+      <div class="cont-chip"><div class="c-name">${m.name}</div><div class="c-status">${m.status}</div></div>`).join('');
     html += '</div>';
   }
 
-  // Radar
   if (report.radar && report.radar.length > 0) {
-    html += `<div class="section-title">🔭 泛热梗雷达预警（${report.radar.length} 个）</div>`;
+    html += `<div class="daily-section-title">雷达预警 (${report.radar.length})</div>`;
     html += report.radar.map(m => `
-      <div class="radar-item">
-        <div>
-          <div class="radar-name">${m.name}</div>
-          <div class="radar-detail">${m.detail}</div>
-        </div>
-        <span class="radar-prob ${m.probability === '中高' || m.probability === '高' ? 'prob-high' : m.probability === '中' ? 'prob-medium' : 'prob-low'}">
-          渗透: ${m.probability}
-        </span>
-      </div>
-    `).join('');
+      <div class="radar-row">
+        <div><div class="r-name">${m.name}</div><div class="r-detail">${m.detail}</div></div>
+        <span class="prob ${m.probability==='中高'||m.probability==='高'?'prob-high':'prob-medium'}">${m.probability}</span>
+      </div>`).join('');
   }
 
   document.getElementById('dailyContent').innerHTML = html;
 }
 
-function formatDate(dateStr) {
-  const [y, m, d] = dateStr.split('-');
-  return `${y}年${parseInt(m)}月${parseInt(d)}日`;
+function formatDate(d) { const [y,m,day]=d.split('-'); return `${y}年${+m}月${+day}日`; }
+
+// ===== Navigation =====
+function setupNav() {
+  document.querySelectorAll('.nav-item').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('panel-' + btn.dataset.panel).classList.add('active');
+    });
+  });
 }
 
-// ============ Tab Logic ============
-document.querySelectorAll('.tab-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-    btn.classList.add('active');
-    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+function setupDateNav() {
+  document.getElementById('prevDate').addEventListener('click', () => {
+    if (currentDateIdx < DATA.availableDates.length - 1) { currentDateIdx++; updateDailyView(); }
   });
-});
-
-document.querySelectorAll('.sub-tab').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.sub-tab').forEach(b => b.classList.remove('active'));
-    document.querySelectorAll('.sub-content').forEach(c => c.style.display = 'none');
-    btn.classList.add('active');
-    document.getElementById('sub-' + btn.dataset.sub).style.display = 'block';
+  document.getElementById('nextDate').addEventListener('click', () => {
+    if (currentDateIdx > 0) { currentDateIdx--; updateDailyView(); }
   });
-});
 
-// Date navigation
-document.getElementById('prevDate').addEventListener('click', () => {
-  if (currentDateIdx < DATA.availableDates.length - 1) {
-    currentDateIdx++;
-    updateDailyView();
-  }
-});
-document.getElementById('nextDate').addEventListener('click', () => {
-  if (currentDateIdx > 0) {
-    currentDateIdx--;
-    updateDailyView();
-  }
-});
+  // Date picker
+  const picker = document.getElementById('datePicker');
+  const dates = DATA.availableDates;
+  picker.min = dates[dates.length - 1];
+  picker.max = dates[0];
+  picker.value = dates[0];
+  picker.addEventListener('change', () => {
+    const idx = dates.indexOf(picker.value);
+    if (idx >= 0) { currentDateIdx = idx; updateDailyView(); }
+  });
+}
 
-// ============ Init ============
-loadData();
+// ===== Init =====
+init();
 </script>
 </body>
 </html>
