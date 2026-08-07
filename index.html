@@ -597,6 +597,13 @@ tbody td:first-child { padding-left: 20px; }
   color: var(--text-3); border: 1px solid rgba(164,36,35,0.08);
   margin-left: 6px;
 }
+.ip-tag {
+  display: inline-flex; align-items: center;
+  font-size: 0.58rem; font-weight: 600; padding: 1px 5px;
+  border-radius: 4px; background: rgba(99,102,241,0.1);
+  color: #6366f1; border: 1px solid rgba(99,102,241,0.2);
+  margin-left: 5px; letter-spacing: 0.03em; vertical-align: middle;
+}
 .popup-status-bar {
   display: flex; align-items: center; gap: 8px;
   margin-bottom: 12px; padding-bottom: 10px;
@@ -820,12 +827,18 @@ function infoBtn(name) {
   return `<button class="info-btn" onclick="showMemePopup('${name.replace(/'/g, "\\'")}')">这是什么？</button>`;
 }
 
+// ===== IP Tag Helper =====
+const _ipNames = new Set((DATA.wikiEntries||[]).filter(e => e.memeType === 'ip').map(e => e.name));
+function ipTag(name) {
+  return _ipNames.has(name) ? '<span class="ip-tag">IP</span>' : '';
+}
+
 // ===== Hot Chart =====
 function renderHot() {
   const rows = DATA.masterTable.hotChart.map(m => `
     <tr>
       <td class="rank-cell ${m.rank<=3?'top3':''}">${m.rank}</td>
-      <td><strong>${m.name}</strong> ${infoBtn(m.name)}</td>
+      <td><strong>${m.name}</strong>${ipTag(m.name)} ${infoBtn(m.name)}</td>
       <td><div class="heat">${heatBars(m.heat)}</div></td>
       <td><div class="heat">${freshBars(m.fresh)}</div></td>
       <td>${trendTag(m.trend)}</td>
@@ -840,7 +853,7 @@ function renderTime() {
   const rows = DATA.masterTable.timeChart.map(m => `
     <tr>
       <td class="rank-cell ${m.rank<=3?'top3':''}">${m.rank}</td>
-      <td><strong>${m.name}</strong> ${infoBtn(m.name)}</td>
+      <td><strong>${m.name}</strong>${ipTag(m.name)} ${infoBtn(m.name)}</td>
       <td><div class="heat">${heatBars(m.heat)}</div></td>
       <td><div class="heat">${freshBars(m.fresh)}</div></td>
       <td style="color:var(--red);font-size:0.82rem">${m.time}</td>
@@ -856,7 +869,7 @@ function renderPotential() {
   const rows = DATA.masterTable.potentialChart.map(m => `
     <tr>
       <td class="rank-cell">${m.rank}</td>
-      <td><strong>${m.name}</strong> ${infoBtn(m.name)}</td>
+      <td><strong>${m.name}</strong>${ipTag(m.name)} ${infoBtn(m.name)}</td>
       <td style="font-size:0.78rem">${m.heat}</td>
       <td style="font-size:0.78rem;color:var(--text-2)">${m.reason}</td>
       <td>${probTag(m.probability)}</td>
@@ -875,7 +888,7 @@ function probTag(p) {
 // ===== Classic =====
 function renderClassic() {
   const rows = DATA.masterTable.classic.map(m => `
-    <tr><td><strong>${m.name}</strong> ${infoBtn(m.name)}</td><td>${m.peakTime}</td><td style="color:var(--text-3)">${m.status}</td></tr>`).join('');
+    <tr><td><strong>${m.name}</strong>${ipTag(m.name)} ${infoBtn(m.name)}</td><td>${m.peakTime}</td><td style="color:var(--text-3)">${m.status}</td></tr>`).join('');
   document.getElementById('classicTable').innerHTML = `
     <table><thead><tr><th>梗</th><th>巅峰时间</th><th>当前状态</th></tr></thead>
     <tbody>${rows}</tbody></table>`;
