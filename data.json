@@ -249,15 +249,6 @@
     "hotChart": [
       {
         "rank": 1,
-        "name": "甲亢哥（IShowSpeed）",
-        "heat": 10,
-        "fresh": 3,
-        "trend": "new",
-        "source": "8/7日报",
-        "sourceFile": "2026-08-07"
-      },
-      {
-        "rank": 2,
         "name": "竹知了",
         "heat": 10,
         "fresh": 10,
@@ -266,7 +257,7 @@
         "sourceFile": "2026-08-06"
       },
       {
-        "rank": 3,
+        "rank": 2,
         "name": "中国人能飞",
         "heat": 10,
         "fresh": 9,
@@ -275,7 +266,7 @@
         "sourceFile": "2026-08-06"
       },
       {
-        "rank": 4,
+        "rank": 3,
         "name": "比比拉布",
         "heat": 9,
         "fresh": 5,
@@ -284,7 +275,7 @@
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 5,
+        "rank": 4,
         "name": "我的刀盾",
         "heat": 9,
         "fresh": 3,
@@ -293,7 +284,7 @@
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 6,
+        "rank": 5,
         "name": "验牌 / 擦皮鞋",
         "heat": 9,
         "fresh": 5,
@@ -302,7 +293,7 @@
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 7,
+        "rank": 6,
         "name": "哈基米",
         "heat": 9,
         "fresh": 3,
@@ -311,7 +302,7 @@
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 8,
+        "rank": 7,
         "name": "伪人（全面入侵学校）",
         "heat": 8,
         "fresh": 10,
@@ -320,7 +311,7 @@
         "sourceFile": "2026-08-06"
       },
       {
-        "rank": 9,
+        "rank": 8,
         "name": "从夯到拉",
         "heat": 8,
         "fresh": 3,
@@ -329,7 +320,7 @@
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 10,
+        "rank": 9,
         "name": "妙脆角小猫",
         "heat": 8,
         "fresh": 7,
@@ -338,7 +329,7 @@
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 11,
+        "rank": 10,
         "name": "叮咚鸡 / 库里库里",
         "heat": 8,
         "fresh": 6,
@@ -347,7 +338,7 @@
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 12,
+        "rank": 11,
         "name": "大笑奶龙",
         "heat": 8,
         "fresh": 4,
@@ -356,7 +347,7 @@
         "sourceFile": "2026-08-06"
       },
       {
-        "rank": 13,
+        "rank": 12,
         "name": "白菜对我笑",
         "heat": 8,
         "fresh": 5,
@@ -365,7 +356,7 @@
         "sourceFile": "2026-08-06"
       },
       {
-        "rank": 14,
+        "rank": 13,
         "name": "上头神婆多嘴歌/棒棒歌",
         "heat": 8,
         "fresh": 8,
@@ -374,13 +365,22 @@
         "sourceFile": "2026-08-07"
       },
       {
-        "rank": 15,
+        "rank": 14,
         "name": "绷住挑战（大绷住时代）",
         "heat": 8,
         "fresh": 8,
         "trend": "stable",
         "source": "8/6日报",
         "sourceFile": "2026-08-06"
+      },
+      {
+        "rank": 15,
+        "name": "甲亢哥（IShowSpeed）",
+        "heat": 7,
+        "fresh": 2,
+        "trend": "new",
+        "source": "8/7日报",
+        "sourceFile": "2026-08-07"
       },
       {
         "rank": 16,
@@ -943,7 +943,7 @@
           "scene": "课间模仿甲亢哥夸张表情和肢体动作；用⚡符号装饰文字；喊'特辣的海藻'作为惊叹词",
           "platform": "B站鬼畜区",
           "channel": "B站鬼畜区7日排行榜（#2、#3、#9位）",
-          "link": "https://www.bilibili.com/video/BV1Lz4y1x7Kp"
+          "link": "https://search.bilibili.com/all?keyword=%E7%94%B2%E4%BA%A2%E5%93%A5+%E9%AC%BC%E7%95%9C"
         },
         {
           "rank": 2,
@@ -1658,7 +1658,7 @@
       "scene": "课间模仿甲亢哥夸张表情和肢体动作；用⚡符号装饰文字；喊'特辣的海藻'作为惊叹词",
       "platform": "B站鬼畜区",
       "peakTime": "2025年3月底爆发，2026年8月仍霸榜",
-      "link": "https://www.bilibili.com/video/BV1Lz4y1x7Kp",
+      "link": "https://search.bilibili.com/all?keyword=%E7%94%B2%E4%BA%A2%E5%93%A5+%E9%AC%BC%E7%95%9C",
       "verified": "verified",
       "memeType": "ip"
     },
