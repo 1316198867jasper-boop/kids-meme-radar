@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-06",
+  "lastUpdated": "2026-08-07",
   "masterTable": {
     "timeChart": [
       {
@@ -23,7 +23,7 @@
       {
         "rank": 3,
         "name": "熊大回眸",
-        "heat": 5,
+        "heat": 6,
         "fresh": 10,
         "time": "2026年8月2-3日",
         "source": "8/5日报",
@@ -40,17 +40,17 @@
       },
       {
         "rank": 5,
-        "name": "绷住挑战（大绷住时代）",
-        "heat": 7,
-        "fresh": 9,
-        "time": "2026年7月中旬",
-        "source": "8/6日报",
-        "sourceFile": "2026-08-06"
+        "name": "上头神婆多嘴歌/棒棒歌",
+        "heat": 8,
+        "fresh": 8,
+        "time": "2026年夏季",
+        "source": "8/7日报",
+        "sourceFile": "2026-08-07"
       },
       {
         "rank": 6,
-        "name": "因为我善",
-        "heat": 5,
+        "name": "绷住挑战（大绷住时代）",
+        "heat": 8,
         "fresh": 8,
         "time": "2026年7月中旬",
         "source": "8/6日报",
@@ -58,42 +58,69 @@
       },
       {
         "rank": 7,
+        "name": "因为我善",
+        "heat": 7,
+        "fresh": 8,
+        "time": "2026年7月中旬",
+        "source": "8/6日报",
+        "sourceFile": "2026-08-06"
+      },
+      {
+        "rank": 8,
         "name": "花儿一家找妈妈",
-        "heat": 5,
+        "heat": 6,
         "fresh": 8,
         "time": "2026年7月16日",
         "source": "8/5日报",
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 8,
+        "rank": 9,
         "name": "妙脆角小猫",
-        "heat": 7,
+        "heat": 8,
         "fresh": 7,
         "time": "2026年6月下旬",
         "source": "8/5日报",
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 9,
+        "rank": 10,
         "name": "叮咚鸡 / 库里库里",
-        "heat": 7,
+        "heat": 8,
         "fresh": 6,
         "time": "2026年4-6月",
         "source": "8/5日报",
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 10,
+        "rank": 11,
+        "name": "葱明姜就蒜了",
+        "heat": 6,
+        "fresh": 5,
+        "time": "2026年4月10日",
+        "source": "8/7日报",
+        "sourceFile": "2026-08-07"
+      },
+      {
+        "rank": 12,
+        "name": "紫薯精（如果全世界都指责你）",
+        "heat": 6,
+        "fresh": 5,
+        "time": "2026年3月初",
+        "source": "8/7日报",
+        "sourceFile": "2026-08-07"
+      },
+      {
+        "rank": 13,
         "name": "白菜对我笑",
-        "heat": 7,
+        "heat": 8,
         "fresh": 5,
         "time": "2026年2月下旬",
         "source": "8/6日报",
         "sourceFile": "2026-08-06"
       },
       {
-        "rank": 11,
+        "rank": 14,
         "name": "验牌 / 擦皮鞋",
         "heat": 9,
         "fresh": 5,
@@ -102,7 +129,7 @@
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 12,
+        "rank": 15,
         "name": "比比拉布",
         "heat": 9,
         "fresh": 5,
@@ -111,16 +138,16 @@
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 13,
+        "rank": 16,
         "name": "大笑奶龙",
-        "heat": 7,
+        "heat": 8,
         "fresh": 4,
         "time": "2025年12月",
         "source": "8/6日报",
         "sourceFile": "2026-08-06"
       },
       {
-        "rank": 14,
+        "rank": 17,
         "name": "新号别搞",
         "heat": 6,
         "fresh": 4,
@@ -129,7 +156,7 @@
         "sourceFile": "2026-08-06"
       },
       {
-        "rank": 15,
+        "rank": 18,
         "name": "从夯到拉",
         "heat": 8,
         "fresh": 3,
@@ -138,73 +165,82 @@
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 16,
+        "rank": 19,
         "name": "那咋了 / 受着呗",
         "heat": 7,
-        "fresh": 2,
+        "fresh": 3,
         "time": "2025年6月",
         "source": "8/5日报",
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 17,
+        "rank": 20,
         "name": "我的刀盾",
         "heat": 9,
-        "fresh": 2,
+        "fresh": 3,
         "time": "2025年5月",
-        "source": "8/5日报",
-        "sourceFile": "2026-08-05"
-      },
-      {
-        "rank": 18,
-        "name": "刀马刀马",
-        "heat": 3,
-        "fresh": 2,
-        "time": "2025年5月",
-        "source": "8/5日报",
-        "sourceFile": "2026-08-05"
-      },
-      {
-        "rank": 19,
-        "name": "哈基米",
-        "heat": 7,
-        "fresh": 2,
-        "time": "2025年4月",
-        "source": "8/5日报",
-        "sourceFile": "2026-08-05"
-      },
-      {
-        "rank": 20,
-        "name": "阿玛特拉斯",
-        "heat": 3,
-        "fresh": 2,
-        "time": "2025年4月",
         "source": "8/5日报",
         "sourceFile": "2026-08-05"
       },
       {
         "rank": 21,
-        "name": "木棍人通通通",
+        "name": "刀马刀马",
         "heat": 5,
+        "fresh": 3,
+        "time": "2025年5月",
+        "source": "8/5日报",
+        "sourceFile": "2026-08-05"
+      },
+      {
+        "rank": 22,
+        "name": "哈基米",
+        "heat": 9,
+        "fresh": 3,
+        "time": "2025年4月",
+        "source": "8/5日报",
+        "sourceFile": "2026-08-05"
+      },
+      {
+        "rank": 23,
+        "name": "甲亢哥（IShowSpeed）",
+        "heat": 10,
+        "fresh": 3,
+        "time": "2025年3月底",
+        "source": "8/7日报",
+        "sourceFile": "2026-08-07"
+      },
+      {
+        "rank": 24,
+        "name": "阿玛特拉斯",
+        "heat": 5,
+        "fresh": 2,
+        "time": "2025年4月",
+        "source": "8/5日报",
+        "sourceFile": "2026-08-05"
+      },
+      {
+        "rank": 25,
+        "name": "木棍人通通通",
+        "heat": 6,
         "fresh": 2,
         "time": "2025年3月底",
         "source": "8/5日报",
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 22,
+        "rank": 26,
         "name": "树恨你（Trees Hate You）",
-        "heat": 5,
-        "fresh": 1,
+        "heat": 6,
+        "fresh": 2,
         "time": "2024年7月（2026年7月仍活跃）",
         "source": "8/6日报",
         "sourceFile": "2026-08-06"
       },
       {
-        "rank": 23,
+        "rank": 27,
         "name": "龙国 / 帽子叔叔",
-        "heat": 3,
-        "fresh": 1,
+        "heat": 5,
+        "fresh": 2,
         "time": "长期渐进",
         "source": "8/5日报",
         "sourceFile": "2026-08-05"
@@ -213,24 +249,33 @@
     "hotChart": [
       {
         "rank": 1,
-        "name": "竹知了",
+        "name": "甲亢哥（IShowSpeed）",
         "heat": 10,
-        "fresh": 10,
+        "fresh": 3,
         "trend": "new",
-        "source": "8/6日报",
-        "sourceFile": "2026-08-06"
+        "source": "8/7日报",
+        "sourceFile": "2026-08-07"
       },
       {
         "rank": 2,
-        "name": "中国人能飞",
+        "name": "竹知了",
         "heat": 10,
-        "fresh": 9,
-        "trend": "new",
+        "fresh": 10,
+        "trend": "stable",
         "source": "8/6日报",
         "sourceFile": "2026-08-06"
       },
       {
         "rank": 3,
+        "name": "中国人能飞",
+        "heat": 10,
+        "fresh": 9,
+        "trend": "up",
+        "source": "8/6日报",
+        "sourceFile": "2026-08-06"
+      },
+      {
+        "rank": 4,
         "name": "比比拉布",
         "heat": 9,
         "fresh": 5,
@@ -239,16 +284,16 @@
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 4,
+        "rank": 5,
         "name": "我的刀盾",
         "heat": 9,
-        "fresh": 2,
+        "fresh": 3,
         "trend": "stable",
         "source": "8/5日报",
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 5,
+        "rank": 6,
         "name": "验牌 / 擦皮鞋",
         "heat": 9,
         "fresh": 5,
@@ -257,18 +302,9 @@
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 6,
-        "name": "伪人（全面入侵学校）",
-        "heat": 8,
-        "fresh": 10,
-        "trend": "new",
-        "source": "8/6日报",
-        "sourceFile": "2026-08-06"
-      },
-      {
         "rank": 7,
-        "name": "从夯到拉",
-        "heat": 8,
+        "name": "哈基米",
+        "heat": 9,
         "fresh": 3,
         "trend": "up",
         "source": "8/5日报",
@@ -276,144 +312,180 @@
       },
       {
         "rank": 8,
-        "name": "妙脆角小猫",
-        "heat": 7,
-        "fresh": 7,
+        "name": "伪人（全面入侵学校）",
+        "heat": 8,
+        "fresh": 10,
         "trend": "stable",
-        "source": "8/5日报",
-        "sourceFile": "2026-08-05"
+        "source": "8/6日报",
+        "sourceFile": "2026-08-06"
       },
       {
         "rank": 9,
-        "name": "叮咚鸡 / 库里库里",
-        "heat": 7,
-        "fresh": 6,
+        "name": "从夯到拉",
+        "heat": 8,
+        "fresh": 3,
         "trend": "stable",
         "source": "8/5日报",
         "sourceFile": "2026-08-05"
       },
       {
         "rank": 10,
-        "name": "大笑奶龙",
-        "heat": 7,
-        "fresh": 4,
-        "trend": "new",
-        "source": "8/6日报",
-        "sourceFile": "2026-08-06"
+        "name": "妙脆角小猫",
+        "heat": 8,
+        "fresh": 7,
+        "trend": "stable",
+        "source": "8/5日报",
+        "sourceFile": "2026-08-05"
       },
       {
         "rank": 11,
-        "name": "白菜对我笑",
-        "heat": 7,
-        "fresh": 5,
-        "trend": "new",
-        "source": "8/6日报",
-        "sourceFile": "2026-08-06"
+        "name": "叮咚鸡 / 库里库里",
+        "heat": 8,
+        "fresh": 6,
+        "trend": "stable",
+        "source": "8/5日报",
+        "sourceFile": "2026-08-05"
       },
       {
         "rank": 12,
-        "name": "哈基米",
-        "heat": 7,
-        "fresh": 2,
+        "name": "大笑奶龙",
+        "heat": 8,
+        "fresh": 4,
         "trend": "stable",
-        "source": "8/5日报",
-        "sourceFile": "2026-08-05"
-      },
-      {
-        "rank": 13,
-        "name": "那咋了 / 受着呗",
-        "heat": 7,
-        "fresh": 2,
-        "trend": "stable",
-        "source": "8/5日报",
-        "sourceFile": "2026-08-05"
-      },
-      {
-        "rank": 14,
-        "name": "绷住挑战（大绷住时代）",
-        "heat": 7,
-        "fresh": 9,
-        "trend": "new",
         "source": "8/6日报",
         "sourceFile": "2026-08-06"
       },
       {
-        "rank": 15,
-        "name": "新号别搞",
-        "heat": 6,
-        "fresh": 4,
+        "rank": 13,
+        "name": "白菜对我笑",
+        "heat": 8,
+        "fresh": 5,
+        "trend": "stable",
+        "source": "8/6日报",
+        "sourceFile": "2026-08-06"
+      },
+      {
+        "rank": 14,
+        "name": "上头神婆多嘴歌/棒棒歌",
+        "heat": 8,
+        "fresh": 8,
         "trend": "new",
+        "source": "8/7日报",
+        "sourceFile": "2026-08-07"
+      },
+      {
+        "rank": 15,
+        "name": "绷住挑战（大绷住时代）",
+        "heat": 8,
+        "fresh": 8,
+        "trend": "stable",
         "source": "8/6日报",
         "sourceFile": "2026-08-06"
       },
       {
         "rank": 16,
+        "name": "那咋了 / 受着呗",
+        "heat": 7,
+        "fresh": 3,
+        "trend": "stable",
+        "source": "8/5日报",
+        "sourceFile": "2026-08-05"
+      },
+      {
+        "rank": 17,
         "name": "因为我善",
-        "heat": 5,
+        "heat": 7,
         "fresh": 8,
-        "trend": "new",
+        "trend": "stable",
         "source": "8/6日报",
         "sourceFile": "2026-08-06"
       },
       {
-        "rank": 17,
+        "rank": 18,
+        "name": "紫薯精（如果全世界都指责你）",
+        "heat": 6,
+        "fresh": 5,
+        "trend": "new",
+        "source": "8/7日报",
+        "sourceFile": "2026-08-07"
+      },
+      {
+        "rank": 19,
+        "name": "葱明姜就蒜了",
+        "heat": 6,
+        "fresh": 5,
+        "trend": "new",
+        "source": "8/7日报",
+        "sourceFile": "2026-08-07"
+      },
+      {
+        "rank": 20,
+        "name": "新号别搞",
+        "heat": 6,
+        "fresh": 4,
+        "trend": "stable",
+        "source": "8/6日报",
+        "sourceFile": "2026-08-06"
+      },
+      {
+        "rank": 21,
         "name": "熊大回眸",
-        "heat": 5,
+        "heat": 6,
         "fresh": 10,
         "trend": "stable",
         "source": "8/5日报",
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 18,
+        "rank": 22,
         "name": "花儿一家找妈妈",
-        "heat": 5,
+        "heat": 6,
         "fresh": 8,
         "trend": "stable",
         "source": "8/5日报",
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 19,
+        "rank": 23,
         "name": "木棍人通通通",
-        "heat": 5,
+        "heat": 6,
         "fresh": 2,
         "trend": "down",
         "source": "8/5日报",
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 20,
+        "rank": 24,
         "name": "树恨你（Trees Hate You）",
-        "heat": 5,
-        "fresh": 1,
-        "trend": "new",
+        "heat": 6,
+        "fresh": 2,
+        "trend": "stable",
         "source": "8/6日报",
         "sourceFile": "2026-08-06"
       },
       {
-        "rank": 21,
+        "rank": 25,
         "name": "阿玛特拉斯",
-        "heat": 3,
+        "heat": 5,
         "fresh": 2,
         "trend": "down",
         "source": "8/5日报",
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 22,
+        "rank": 26,
         "name": "刀马刀马",
-        "heat": 3,
-        "fresh": 2,
+        "heat": 5,
+        "fresh": 3,
         "trend": "down",
         "source": "8/5日报",
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 23,
+        "rank": 27,
         "name": "龙国 / 帽子叔叔",
-        "heat": 3,
-        "fresh": 1,
+        "heat": 5,
+        "fresh": 2,
         "trend": "stable",
         "source": "8/5日报",
         "sourceFile": "2026-08-05"
@@ -422,172 +494,86 @@
     "potentialChart": [
       {
         "rank": 1,
+        "name": "GTA6预告片效应",
+        "heat": "B站热搜#11",
+        "reason": "预告片画面广泛传播，游戏梗已提前下沉",
+        "probability": "high",
+        "date": "8/7"
+      },
+      {
+        "rank": 2,
         "name": "霸之意志",
         "heat": "8/4 10.3万播放",
-        "reason": "中二口号型，极适合小学生喊；类似\"阿玛特拉斯\"路径",
+        "reason": "中二口号型，极适合小学生喊",
         "probability": "high",
         "date": "8/6"
       },
       {
-        "rank": 2,
-        "name": "干瘪瘪的芝士球",
-        "heat": "7/16 132.2万播放",
-        "reason": "食物+魔性表达，低龄吸引力强；类似\"妙脆角小猫\"路径",
-        "probability": "medium",
-        "date": "8/6"
-      },
-      {
         "rank": 3,
-        "name": "许愿柳",
-        "heat": "7/31 70.3万播放",
-        "reason": "动作模仿类（许愿姿势），暑假期间传播窗口",
+        "name": "菠萝赛东回归",
+        "heat": "B站热搜#15",
+        "reason": "低龄粉丝占比极高，回归后新一波模仿梗",
         "probability": "medium",
-        "date": "8/6"
+        "date": "8/7"
       },
       {
         "rank": 4,
-        "name": "撅腚聪明",
-        "heat": "8/5 全网霸屏",
-        "reason": "虽然来源偏成人，但口号极度洗脑+简单；如果出方言版/鬼畜版可能下沉",
+        "name": "杀戮尖塔2梗群",
+        "heat": "一周4期梗百科",
+        "reason": "社区活跃度极高，二创渗透路径",
+        "probability": "medium",
+        "date": "8/7"
+      },
+      {
+        "rank": 5,
+        "name": "三蹦子出海",
+        "heat": "B站热搜#9",
+        "reason": "核心笑点简单易懂具备下沉潜力",
+        "probability": "medium",
+        "date": "8/7"
+      },
+      {
+        "rank": 6,
+        "name": "干瘪瘪的芝士球",
+        "heat": "7/16 132.2万播放",
+        "reason": "食物+魔性表达，低龄吸引力强",
+        "probability": "medium",
+        "date": "8/6"
+      },
+      {
+        "rank": 7,
+        "name": "许愿柳",
+        "heat": "7/31 70.3万播放",
+        "reason": "动作模仿类，暑假期间传播窗口",
         "probability": "medium",
         "date": "8/6"
       }
     ],
     "classic": [
       {
-        "name": "孤勇者对暗号",
-        "peakTime": "2022年5月",
-        "status": "曾经的小学生顶流暗号，已被比比拉布取代"
+        "name": "老六",
+        "peakTime": "2024年",
+        "status": "已融入日常用语，课间仍高频"
       },
       {
-        "name": "栓Q",
-        "peakTime": "2022年4月",
-        "status": "偶尔使用，已不再新鲜"
-      },
-      {
-        "name": "芭比Q了",
-        "peakTime": "2022年3月",
-        "status": "已融入网络用语，不再算「梗」"
-      },
-      {
-        "name": "听我说谢谢你",
-        "peakTime": "2022年6月",
-        "status": "校园感恩操热度已退"
-      },
-      {
-        "name": "挖呀挖呀挖",
-        "peakTime": "2023年5月",
-        "status": "全民级短暂爆火后迅速过气"
-      },
-      {
-        "name": "尊嘟假嘟",
-        "peakTime": "2023年3月",
-        "status": "偶尔使用，低年级仍有"
-      },
-      {
-        "name": "你个老六",
-        "peakTime": "2022年",
-        "status": "已泛化为日常用语"
+        "name": "唐人（真唐）",
+        "peakTime": "2025年",
+        "status": "仍在使用但官媒已批评"
       },
       {
         "name": "电摇",
-        "peakTime": "2023年",
-        "status": "部分地区仍活跃但热度大降"
-      },
-      {
-        "name": "科目三",
-        "peakTime": "2023年12月",
-        "status": "全民舞蹈热潮已退"
-      },
-      {
-        "name": "萝卜刀",
-        "peakTime": "2023年10月",
-        "status": "学校全面禁止后退潮"
-      },
-      {
-        "name": "烟卡",
-        "peakTime": "2023-2024年",
-        "status": "教育部明令禁止后衰退"
-      },
-      {
-        "name": "奥利给",
-        "peakTime": "2020年",
-        "status": "怪鸽口号，小学生早已不用"
-      },
-      {
-        "name": "YYDS",
-        "peakTime": "2021年",
-        "status": "已融入日常缩写，不再新鲜"
-      },
-      {
-        "name": "不讲武德",
-        "peakTime": "2020年12月",
-        "status": "马保国系列，基本过气"
-      },
-      {
-        "name": "可达鸭",
-        "peakTime": "2022年6月",
-        "status": "肯德基联名短暂热潮已退"
-      },
-      {
-        "name": "Skibidi Toilet",
-        "peakTime": "2023-2024年",
-        "status": "已被意大利脑腐系列取代"
-      },
-      {
-        "name": "City不City",
-        "peakTime": "2024年7月",
-        "status": "保保熊带火，短暂热潮已退"
-      },
-      {
-        "name": "显眼包",
         "peakTime": "2024年",
-        "status": "已融入日常用语"
+        "status": "课间仍在模仿"
       },
       {
-        "name": "盘串",
-        "peakTime": "2023年",
-        "status": "学校禁止后退潮"
-      },
-      {
-        "name": "公主请上车",
-        "peakTime": "2024年",
-        "status": "社交暗语短暂流行后过气"
-      },
-      {
-        "name": "小猪佩奇社会人",
-        "peakTime": "2018年",
-        "status": "远古级梗，低年级零星使用"
-      },
-      {
-        "name": "Come的喂ABC",
-        "peakTime": "2022年",
-        "status": "英语课恶搞，偶有复活"
-      },
-      {
-        "name": "咕卡",
-        "peakTime": "2024年",
-        "status": "装饰卡片潮流，热度稍降"
-      },
-      {
-        "name": "捏捏乐",
-        "peakTime": "2024年",
-        "status": "解压玩具热潮，持续但不算梗"
-      },
-      {
-        "name": "奥特曼卡片",
-        "peakTime": "2022-2024年",
-        "status": "收集交换仍在但热度渐降"
-      },
-      {
-        "name": "小马宝莉卡",
-        "peakTime": "2024年",
-        "status": "女生圈热潮，热度稍降"
+        "name": "冯冯给我转点米",
+        "peakTime": "2025年末",
+        "status": "偶尔使用"
       },
       {
         "name": "包的",
         "peakTime": "2024年9月",
-        "status": "已融入日常用语，不再算「梗」"
+        "status": "已融入日常用语"
       },
       {
         "name": "我勒个豆",
@@ -623,18 +609,22 @@
         "刀马刀马",
         "歪比巴卜",
         "白菜对我笑",
-        "中国人能飞"
+        "中国人能飞",
+        "葱明姜就蒜了",
+        "甲亢哥模仿"
       ],
       "attention": [
-        "验牌/擦皮鞋（赌片台词）",
-        "龙国/帽子叔叔（影响书面表达）",
-        "从夯到拉（替代正常评价词汇）",
-        "竹知了（涉华为争议但玩具本身无害）",
-        "伪人（恐怖内容，低龄可能害怕）"
+        "验牌/擦皮鞋",
+        "龙国/帽子叔叔",
+        "从夯到拉",
+        "竹知了",
+        "伪人",
+        "紫薯精"
       ],
       "intervention": [
-        "那咋了/受着呗（消极态度，新华社已批评）",
-        "新号别搞（回避沟通）"
+        "那咋了/受着呗",
+        "新号别搞",
+        "看广告给你爸复活"
       ]
     }
   },
@@ -940,9 +930,32 @@
         }
       ],
       "radar": []
+    },
+    "2026-08-07": {
+      "title": "小学生热梗日报 - 2026-08-07",
+      "highlights": [
+        "甲亢哥鬼畜宇宙霸榜B站（本周1100万+播放）",
+        "中国人能飞登上B站热搜",
+        "哈基米B站鬼畜区#6（313万播放）",
+        "紫薯精/葱明姜就蒜了/上头神婆棒棒歌 新收录"
+      ],
+      "newMemes": [
+        "甲亢哥（IShowSpeed）",
+        "紫薯精（如果全世界都指责你）",
+        "上头神婆多嘴歌/棒棒歌",
+        "葱明姜就蒜了"
+      ],
+      "radarWarnings": [
+        "GTA6预告片效应",
+        "菠萝赛东回归",
+        "杀戮尖塔2梗群",
+        "三蹦子出海"
+      ],
+      "sourceFile": "daily/2026-08-07.md"
     }
   },
   "availableDates": [
+    "2026-08-07",
     "2026-08-06",
     "2026-08-05"
   ],
@@ -1551,6 +1564,50 @@
       "link": "",
       "verified": "verified",
       "memeType": "song"
+    },
+    {
+      "name": "甲亢哥（IShowSpeed）",
+      "what": "美国主播IShowSpeed因直播极度亢奋得名'甲亢哥'，其鬼畜二创内容在B站形成庞大矩阵。核心素材包括访华游少林寺、唱《阳光彩虹小白马》、与大张伟互动等",
+      "howFired": "2023年直播反应夸张被注意 → 2024年'阳光彩虹小白马'成标志BGM → 2025年3-4月访华引发鬼畜创作井喷 → 2026年持续发酵，'特辣的海藻'成为衍生热梗",
+      "scene": "课间模仿甲亢哥夸张表情和肢体动作；用⚡符号装饰文字；喊'特辣的海藻'作为惊叹词",
+      "platform": "B站鬼畜区",
+      "peakTime": "2025年3月底爆发，2026年8月仍霸榜",
+      "link": "https://www.bilibili.com/video/BV1Lz4y1x7Kp",
+      "verified": "verified",
+      "memeType": "ip"
+    },
+    {
+      "name": "紫薯精（如果全世界都指责你）",
+      "what": "源自抖音短剧《紫薯精》（创作者周小闹）中的经典台词'如果全世界都指责你，我带你去吃刘文祥'。前半句制造温情氛围，后半句突转烧烤店名，形成反差喜剧效果",
+      "howFired": "抖音短剧热播 → 台词被截取成表情包和二创 → 全网造句模板（'如果XXX，我带你去吃XXX'）",
+      "scene": "小学生互相安慰时故意用此句式制造搞笑效果；课间玩造句接龙",
+      "platform": "抖音短剧",
+      "peakTime": "2026年3月初",
+      "link": "https://so.toutiao.com/search?dvpf=pc&keyword=紫薯精+短剧+如果全世界",
+      "verified": "unverified",
+      "memeType": "slang"
+    },
+    {
+      "name": "上头神婆多嘴歌/棒棒歌",
+      "what": "'听不懂但上头'系列洗脑BGM，歌词无需理解含义，纯靠魔性节奏和重复旋律让人无法自拔。'棒棒歌'被称为'2026年短视频BGM万金油'",
+      "howFired": "抖音短视频配乐 → 跨平台传播至B站、虎牙等 → 成为万能BGM模板",
+      "scene": "小学生课间哼唱洗脑旋律；在自己的短视频账号中使用该BGM；集体跟唱",
+      "platform": "抖音 → 全平台",
+      "peakTime": "2026年夏季",
+      "link": "https://so.toutiao.com/search?dvpf=pc&keyword=洗脑神曲+2026+上头",
+      "verified": "unverified",
+      "memeType": "song"
+    },
+    {
+      "name": "葱明姜就蒜了",
+      "what": "利用蔬菜与常用词的谐音双关：葱明=聪明，姜就=将就，蒜了=算了。完整版：'人生不过葱姜蒜。葱明一点，姜就一下，不行就蒜了'。河北创作者'郭凌儿'原创",
+      "howFired": "河北创作者原创段子 → 短视频平台传播 → 被纳入儿童趣味语文教育场景 → 进入小学生流行梗清单",
+      "scene": "同学间遇到小烦恼时互相说'蒜了蒜了'；语文课/作文中使用谐音梗；家长与孩子的互动段子",
+      "platform": "短视频平台",
+      "peakTime": "2026年4月",
+      "link": "https://so.toutiao.com/search?dvpf=pc&keyword=葱明+姜就+蒜了",
+      "verified": "unverified",
+      "memeType": "slang"
     }
   ]
 }
