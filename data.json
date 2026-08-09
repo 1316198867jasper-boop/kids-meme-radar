@@ -1,11 +1,11 @@
 {
-  "lastUpdated": "2026-08-08",
+  "lastUpdated": "2026-08-09",
   "masterTable": {
     "timeChart": [
       {
         "rank": 1,
         "name": "竹知了",
-        "heat": 9,
+        "heat": 8,
         "fresh": 10,
         "time": "2026年8月1-4日",
         "source": "8/6日报",
@@ -23,7 +23,7 @@
       {
         "rank": 3,
         "name": "熊大回眸",
-        "heat": 4,
+        "heat": 3,
         "fresh": 10,
         "time": "2026年8月2-3日",
         "source": "8/5日报",
@@ -32,7 +32,7 @@
       {
         "rank": 4,
         "name": "中国人能飞",
-        "heat": 9,
+        "heat": 8,
         "fresh": 9,
         "time": "2026年7月25-30日",
         "source": "8/6日报",
@@ -40,6 +40,15 @@
       },
       {
         "rank": 5,
+        "name": "正太扭腰（左边画个虫虫）",
+        "heat": 8,
+        "fresh": 9,
+        "time": "2026年7月中旬-8月初大规模传播",
+        "source": "8/9日报",
+        "sourceFile": "2026-08-09"
+      },
+      {
+        "rank": 6,
         "name": "上头神婆多嘴歌/棒棒歌",
         "heat": 7,
         "fresh": 8,
@@ -48,17 +57,8 @@
         "sourceFile": "2026-08-07"
       },
       {
-        "rank": 6,
-        "name": "绷住挑战（大绷住时代）",
-        "heat": 6,
-        "fresh": 8,
-        "time": "2026年7月中旬",
-        "source": "8/6日报",
-        "sourceFile": "2026-08-06"
-      },
-      {
         "rank": 7,
-        "name": "因为我善",
+        "name": "绷住挑战（大绷住时代）",
         "heat": 5,
         "fresh": 8,
         "time": "2026年7月中旬",
@@ -67,33 +67,42 @@
       },
       {
         "rank": 8,
+        "name": "因为我善",
+        "heat": 5,
+        "fresh": 8,
+        "time": "2026年7月中旬",
+        "source": "8/6日报",
+        "sourceFile": "2026-08-06"
+      },
+      {
+        "rank": 9,
         "name": "花儿一家找妈妈",
-        "heat": 4,
+        "heat": 3,
         "fresh": 8,
         "time": "2026年7月16日",
         "source": "8/5日报",
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 9,
+        "rank": 10,
         "name": "妙脆角小猫",
-        "heat": 6,
+        "heat": 5,
         "fresh": 7,
         "time": "2026年6月下旬",
         "source": "8/5日报",
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 10,
+        "rank": 11,
         "name": "叮咚鸡 / 库里库里",
-        "heat": 6,
+        "heat": 5,
         "fresh": 6,
         "time": "2026年4-6月",
         "source": "8/5日报",
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 11,
+        "rank": 12,
         "name": "比比拉布",
         "heat": 9,
         "fresh": 5,
@@ -102,7 +111,7 @@
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 12,
+        "rank": 13,
         "name": "验牌 / 擦皮鞋",
         "heat": 8,
         "fresh": 5,
@@ -111,16 +120,16 @@
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 13,
+        "rank": 14,
         "name": "白菜对我笑",
-        "heat": 5,
+        "heat": 4,
         "fresh": 5,
         "time": "2026年2月下旬",
         "source": "8/6日报",
         "sourceFile": "2026-08-06"
       },
       {
-        "rank": 14,
+        "rank": 15,
         "name": "葱明姜就蒜了",
         "heat": 5,
         "fresh": 5,
@@ -129,7 +138,7 @@
         "sourceFile": "2026-08-07"
       },
       {
-        "rank": 15,
+        "rank": 16,
         "name": "紫薯精（如果全世界都指责你）",
         "heat": 5,
         "fresh": 5,
@@ -138,7 +147,7 @@
         "sourceFile": "2026-08-07"
       },
       {
-        "rank": 16,
+        "rank": 17,
         "name": "大笑奶龙",
         "heat": 6,
         "fresh": 4,
@@ -147,7 +156,7 @@
         "sourceFile": "2026-08-06"
       },
       {
-        "rank": 17,
+        "rank": 18,
         "name": "新号别搞",
         "heat": 5,
         "fresh": 4,
@@ -156,7 +165,7 @@
         "sourceFile": "2026-08-06"
       },
       {
-        "rank": 18,
+        "rank": 19,
         "name": "我的刀盾",
         "heat": 9,
         "fresh": 3,
@@ -165,7 +174,7 @@
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 19,
+        "rank": 20,
         "name": "哈基米",
         "heat": 9,
         "fresh": 3,
@@ -174,7 +183,7 @@
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 20,
+        "rank": 21,
         "name": "甲亢哥（IShowSpeed）",
         "heat": 8,
         "fresh": 3,
@@ -183,7 +192,7 @@
         "sourceFile": "2026-08-07"
       },
       {
-        "rank": 21,
+        "rank": 22,
         "name": "从夯到拉",
         "heat": 7,
         "fresh": 3,
@@ -192,7 +201,7 @@
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 22,
+        "rank": 23,
         "name": "那咋了 / 受着呗",
         "heat": 6,
         "fresh": 3,
@@ -201,7 +210,7 @@
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 23,
+        "rank": 24,
         "name": "刀马刀马",
         "heat": 3,
         "fresh": 3,
@@ -210,7 +219,7 @@
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 24,
+        "rank": 25,
         "name": "嘉豪（装酷标签）",
         "heat": 4,
         "fresh": 2,
@@ -219,16 +228,16 @@
         "sourceFile": "2026-08-07"
       },
       {
-        "rank": 25,
+        "rank": 26,
         "name": "木棍人通通通",
-        "heat": 4,
+        "heat": 3,
         "fresh": 2,
         "time": "2025年3月底",
         "source": "8/5日报",
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 26,
+        "rank": 27,
         "name": "树恨你（Trees Hate You）",
         "heat": 4,
         "fresh": 2,
@@ -237,7 +246,7 @@
         "sourceFile": "2026-08-06"
       },
       {
-        "rank": 27,
+        "rank": 28,
         "name": "阿玛特拉斯",
         "heat": 3,
         "fresh": 2,
@@ -246,7 +255,7 @@
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 28,
+        "rank": 29,
         "name": "龙国 / 帽子叔叔",
         "heat": 3,
         "fresh": 2,
@@ -258,24 +267,6 @@
     "hotChart": [
       {
         "rank": 1,
-        "name": "竹知了",
-        "heat": 9,
-        "fresh": 10,
-        "trend": "stable",
-        "source": "8/6日报",
-        "sourceFile": "2026-08-06"
-      },
-      {
-        "rank": 2,
-        "name": "中国人能飞",
-        "heat": 9,
-        "fresh": 9,
-        "trend": "up",
-        "source": "8/6日报",
-        "sourceFile": "2026-08-06"
-      },
-      {
-        "rank": 3,
         "name": "比比拉布",
         "heat": 9,
         "fresh": 5,
@@ -284,7 +275,7 @@
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 4,
+        "rank": 2,
         "name": "我的刀盾",
         "heat": 9,
         "fresh": 3,
@@ -293,16 +284,43 @@
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 5,
+        "rank": 3,
         "name": "哈基米",
         "heat": 9,
         "fresh": 3,
-        "trend": "up",
+        "trend": "stable",
         "source": "8/5日报",
         "sourceFile": "2026-08-05"
       },
       {
+        "rank": 4,
+        "name": "竹知了",
+        "heat": 8,
+        "fresh": 10,
+        "trend": "down",
+        "source": "8/6日报",
+        "sourceFile": "2026-08-06"
+      },
+      {
+        "rank": 5,
+        "name": "中国人能飞",
+        "heat": 8,
+        "fresh": 9,
+        "trend": "down",
+        "source": "8/6日报",
+        "sourceFile": "2026-08-06"
+      },
+      {
         "rank": 6,
+        "name": "正太扭腰（左边画个虫虫）",
+        "heat": 8,
+        "fresh": 9,
+        "trend": "new",
+        "source": "8/9日报",
+        "sourceFile": "2026-08-09"
+      },
+      {
+        "rank": 7,
         "name": "验牌 / 擦皮鞋",
         "heat": 8,
         "fresh": 5,
@@ -311,25 +329,25 @@
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 7,
+        "rank": 8,
         "name": "甲亢哥（IShowSpeed）",
         "heat": 8,
-        "fresh": 2,
-        "trend": "new",
-        "source": "8/7日报",
-        "sourceFile": "2026-08-07"
-      },
-      {
-        "rank": 8,
-        "name": "上头神婆多嘴歌/棒棒歌",
-        "heat": 7,
-        "fresh": 8,
-        "trend": "new",
+        "fresh": 3,
+        "trend": "stable",
         "source": "8/7日报",
         "sourceFile": "2026-08-07"
       },
       {
         "rank": 9,
+        "name": "上头神婆多嘴歌/棒棒歌",
+        "heat": 7,
+        "fresh": 8,
+        "trend": "stable",
+        "source": "8/7日报",
+        "sourceFile": "2026-08-07"
+      },
+      {
+        "rank": 10,
         "name": "从夯到拉",
         "heat": 7,
         "fresh": 3,
@@ -338,7 +356,7 @@
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 10,
+        "rank": 11,
         "name": "伪人（全面入侵学校）",
         "heat": 6,
         "fresh": 10,
@@ -347,34 +365,7 @@
         "sourceFile": "2026-08-06"
       },
       {
-        "rank": 11,
-        "name": "绷住挑战（大绷住时代）",
-        "heat": 6,
-        "fresh": 8,
-        "trend": "stable",
-        "source": "8/6日报",
-        "sourceFile": "2026-08-06"
-      },
-      {
         "rank": 12,
-        "name": "妙脆角小猫",
-        "heat": 6,
-        "fresh": 7,
-        "trend": "stable",
-        "source": "8/5日报",
-        "sourceFile": "2026-08-05"
-      },
-      {
-        "rank": 13,
-        "name": "叮咚鸡 / 库里库里",
-        "heat": 6,
-        "fresh": 6,
-        "trend": "stable",
-        "source": "8/5日报",
-        "sourceFile": "2026-08-05"
-      },
-      {
-        "rank": 14,
         "name": "大笑奶龙",
         "heat": 6,
         "fresh": 4,
@@ -383,7 +374,7 @@
         "sourceFile": "2026-08-06"
       },
       {
-        "rank": 15,
+        "rank": 13,
         "name": "那咋了 / 受着呗",
         "heat": 6,
         "fresh": 3,
@@ -392,7 +383,16 @@
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 16,
+        "rank": 14,
+        "name": "绷住挑战（大绷住时代）",
+        "heat": 5,
+        "fresh": 8,
+        "trend": "down",
+        "source": "8/6日报",
+        "sourceFile": "2026-08-06"
+      },
+      {
+        "rank": 15,
         "name": "因为我善",
         "heat": 5,
         "fresh": 8,
@@ -401,20 +401,29 @@
         "sourceFile": "2026-08-06"
       },
       {
-        "rank": 17,
-        "name": "白菜对我笑",
+        "rank": 16,
+        "name": "妙脆角小猫",
         "heat": 5,
-        "fresh": 5,
-        "trend": "stable",
-        "source": "8/6日报",
-        "sourceFile": "2026-08-06"
+        "fresh": 7,
+        "trend": "down",
+        "source": "8/5日报",
+        "sourceFile": "2026-08-05"
+      },
+      {
+        "rank": 17,
+        "name": "叮咚鸡 / 库里库里",
+        "heat": 5,
+        "fresh": 6,
+        "trend": "down",
+        "source": "8/5日报",
+        "sourceFile": "2026-08-05"
       },
       {
         "rank": 18,
         "name": "紫薯精（如果全世界都指责你）",
         "heat": 5,
         "fresh": 5,
-        "trend": "new",
+        "trend": "stable",
         "source": "8/7日报",
         "sourceFile": "2026-08-07"
       },
@@ -423,7 +432,7 @@
         "name": "葱明姜就蒜了",
         "heat": 5,
         "fresh": 5,
-        "trend": "new",
+        "trend": "stable",
         "source": "8/7日报",
         "sourceFile": "2026-08-07"
       },
@@ -438,48 +447,48 @@
       },
       {
         "rank": 21,
-        "name": "熊大回眸",
+        "name": "白菜对我笑",
         "heat": 4,
-        "fresh": 10,
-        "trend": "stable",
-        "source": "8/5日报",
-        "sourceFile": "2026-08-05"
+        "fresh": 5,
+        "trend": "down",
+        "source": "8/6日报",
+        "sourceFile": "2026-08-06"
       },
       {
         "rank": 22,
-        "name": "花儿一家找妈妈",
-        "heat": 4,
-        "fresh": 8,
-        "trend": "stable",
-        "source": "8/5日报",
-        "sourceFile": "2026-08-05"
-      },
-      {
-        "rank": 23,
         "name": "嘉豪（装酷标签）",
         "heat": 4,
         "fresh": 2,
-        "trend": "new",
+        "trend": "stable",
         "source": "用户提供+验证",
         "sourceFile": "2026-08-07"
       },
       {
-        "rank": 24,
-        "name": "木棍人通通通",
-        "heat": 4,
-        "fresh": 2,
-        "trend": "down",
-        "source": "8/5日报",
-        "sourceFile": "2026-08-05"
-      },
-      {
-        "rank": 25,
+        "rank": 23,
         "name": "树恨你（Trees Hate You）",
         "heat": 4,
         "fresh": 2,
         "trend": "stable",
         "source": "8/6日报",
         "sourceFile": "2026-08-06"
+      },
+      {
+        "rank": 24,
+        "name": "熊大回眸",
+        "heat": 3,
+        "fresh": 10,
+        "trend": "down",
+        "source": "8/5日报",
+        "sourceFile": "2026-08-05"
+      },
+      {
+        "rank": 25,
+        "name": "花儿一家找妈妈",
+        "heat": 3,
+        "fresh": 8,
+        "trend": "down",
+        "source": "8/5日报",
+        "sourceFile": "2026-08-05"
       },
       {
         "rank": 26,
@@ -492,7 +501,7 @@
       },
       {
         "rank": 27,
-        "name": "阿玛特拉斯",
+        "name": "木棍人通通通",
         "heat": 3,
         "fresh": 2,
         "trend": "down",
@@ -501,6 +510,15 @@
       },
       {
         "rank": 28,
+        "name": "阿玛特拉斯",
+        "heat": 3,
+        "fresh": 2,
+        "trend": "down",
+        "source": "8/5日报",
+        "sourceFile": "2026-08-05"
+      },
+      {
+        "rank": 29,
         "name": "龙国 / 帽子叔叔",
         "heat": 3,
         "fresh": 2,
@@ -513,7 +531,7 @@
       {
         "rank": 1,
         "name": "GTA6预告片效应",
-        "heat": "B站热搜#11",
+        "heat": "B站持续热议",
         "reason": "预告片画面广泛传播，游戏梗已提前下沉",
         "probability": "high",
         "date": "8/7"
@@ -528,43 +546,19 @@
       },
       {
         "rank": 3,
-        "name": "菠萝赛东回归",
-        "heat": "B站热搜#15",
-        "reason": "低龄粉丝占比极高，回归后新一波模仿梗",
-        "probability": "medium",
-        "date": "8/7"
+        "name": "完蛋！我被男同学包围了",
+        "heat": "Steam 98%好评+B站热搜",
+        "reason": "高中生制作真人恋爱游戏，偏大龄受众",
+        "probability": "low",
+        "date": "8/9"
       },
       {
         "rank": 4,
-        "name": "杀戮尖塔2梗群",
-        "heat": "一周4期梗百科",
-        "reason": "社区活跃度极高，二创渗透路径",
+        "name": "AI漫剧(千荒归契)",
+        "heat": "百亿级播放",
+        "reason": "播放量惊人但需确认低龄渗透度",
         "probability": "medium",
-        "date": "8/7"
-      },
-      {
-        "rank": 5,
-        "name": "三蹦子出海",
-        "heat": "B站热搜#9",
-        "reason": "核心笑点简单易懂具备下沉潜力",
-        "probability": "medium",
-        "date": "8/7"
-      },
-      {
-        "rank": 6,
-        "name": "干瘪瘪的芝士球",
-        "heat": "7/16 132.2万播放",
-        "reason": "食物+魔性表达，低龄吸引力强",
-        "probability": "medium",
-        "date": "8/6"
-      },
-      {
-        "rank": 7,
-        "name": "许愿柳",
-        "heat": "7/31 70.3万播放",
-        "reason": "动作模仿类，暑假期间传播窗口",
-        "probability": "medium",
-        "date": "8/6"
+        "date": "8/8"
       }
     ],
     "classic": [
@@ -622,6 +616,11 @@
         "name": "嘉豪（装酷标签）",
         "peakTime": "2025年末",
         "status": "仍在使用但已被多家媒体批评为校园霸凌"
+      },
+      {
+        "name": "阿玛特拉斯",
+        "peakTime": "2025年1-2月",
+        "status": "热度缓降，偶尔使用"
       }
     ],
     "parentGuide": {
@@ -634,7 +633,8 @@
         "白菜对我笑",
         "中国人能飞",
         "葱明姜就蒜了",
-        "甲亢哥模仿"
+        "甲亢哥模仿",
+        "正太扭腰"
       ],
       "attention": [
         "验牌/擦皮鞋",
@@ -1127,13 +1127,84 @@
           "probability": "中"
         }
       ]
+    },
+    "2026-08-09": {
+      "date": "2026-08-09",
+      "newMemes": [
+        {
+          "rank": 1,
+          "name": "正太扭腰（左边画个虫虫右边画个龙龙）",
+          "fireTime": "2026年7月中旬出现，7月底-8月初大规模传播，播放超23亿",
+          "what": "一种魔性BGM配合舞蹈的短视频挑战梗。核心剧情套路为'听说隔壁班新转来了一个正太'，男生声称自己'早就不扭了'结果下一秒开始跳魔性扭腰舞形成反差。配乐中'左边画个虫虫，右边画个龙龙'极度洗脑",
+          "howFired": "TF家族练习生张奕然首发(7月中旬) → 田嘉瑞等偶像跟进 → 短短数天播放超23亿火到国外 → 校园走廊版(蓝白校服)大量二创 → 蛋仔派对游戏内置扭腰动作",
+          "scene": "小学生在蛋仔派对中使用扭腰动作；课间模仿'听说隔壁班新转来了一个正太'剧情；哼唱'左边画个虫虫右边画个龙龙'",
+          "platform": "抖音/B站短视频 → 蛋仔派对游戏",
+          "channel": "头条搜索(正太扭腰+梗+2026+爆火)",
+          "link": "https://search.bilibili.com/all?keyword=%E6%AD%A3%E5%A4%AA%E6%89%AD%E8%85%B0+%E8%99%AB%E8%99%AB+%E9%BE%99%E9%BE%99&order=click"
+        }
+      ],
+      "continuing": [
+        {
+          "name": "比比拉布",
+          "since": "2025年5月(2026.2二爆)",
+          "status": "低年级社交暗号顶流，头条清单首位"
+        },
+        {
+          "name": "我的刀盾",
+          "since": "2025年5月",
+          "status": "7/31新视频13.5万播放，仍有内容产出"
+        },
+        {
+          "name": "哈基米",
+          "since": "2025年4月",
+          "status": "B站鬼畜7日榜仍上榜(313万播放)"
+        },
+        {
+          "name": "甲亢哥",
+          "since": "2025年3月",
+          "status": "B站鬼畜7日榜4条霸榜(合计1237万播放)"
+        },
+        {
+          "name": "验牌/擦皮鞋",
+          "since": "2026年2月",
+          "status": "挂件仍在校园流通"
+        },
+        {
+          "name": "竹知了",
+          "since": "2026年8月初",
+          "status": "从爆发高峰回落至长尾阶段(heat 9→8)"
+        },
+        {
+          "name": "从夯到拉",
+          "since": "2025年下半年",
+          "status": "已固化为日常评价体系"
+        }
+      ],
+      "radar": [
+        {
+          "name": "完蛋！我被男同学包围了",
+          "detail": "Steam 98%好评+B站热搜，高中生制作真人恋爱游戏",
+          "probability": "低"
+        },
+        {
+          "name": "霸之意志",
+          "detail": "中二口号型，适合小学生喊，持续观察中",
+          "probability": "高"
+        },
+        {
+          "name": "GTA6效应",
+          "detail": "B站仍在热议，发售后预计爆发",
+          "probability": "高"
+        }
+      ]
     }
   },
   "availableDates": [
     "2026-08-05",
     "2026-08-06",
     "2026-08-07",
-    "2026-08-08"
+    "2026-08-08",
+    "2026-08-09"
   ],
   "wikiEntries": [
     {
@@ -1795,6 +1866,17 @@
       "link": "https://search.bilibili.com/all?keyword=%E5%98%89%E8%B1%AA+%E6%A2%97&order=click",
       "verified": "verified",
       "memeType": "slang"
+    },
+    {
+      "name": "正太扭腰（左边画个虫虫）",
+      "what": "一种魔性BGM配合舞蹈的短视频挑战梗。核心剧情套路为'听说隔壁班新转来了一个正太'，男生声称自己'早就不扭了'结果下一秒开始跳魔性扭腰舞形成反差。配乐中'左边画个虫虫，右边画个龙龙'极度洗脑",
+      "howFired": "TF家族练习生张奕然首发视频(2026年7月中旬) → 田嘉瑞等偶像跟进 → 短短数天播放超23亿火到国外 → 校园走廊版(蓝白校服)大量二创 → 蛋仔派对游戏内置扭腰动作 → 宠物版/变装版等多种形式二创",
+      "scene": "小学生在蛋仔派对中使用扭腰动作；课间模仿'听说隔壁班新转来了一个正太'剧情；哼唱'左边画个虫虫右边画个龙龙'洗脑旋律",
+      "platform": "抖音/B站短视频 → 蛋仔派对游戏",
+      "peakTime": "2026年7-8月",
+      "link": "https://search.bilibili.com/all?keyword=%E6%AD%A3%E5%A4%AA%E6%89%AD%E8%85%B0+%E8%99%AB%E8%99%AB+%E9%BE%99%E9%BE%99&order=click",
+      "verified": "verified",
+      "memeType": "action"
     }
   ]
 }
