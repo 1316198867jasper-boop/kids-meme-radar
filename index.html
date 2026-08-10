@@ -647,7 +647,6 @@ tbody td:first-child { padding-left: 20px; }
     <div class="nav-label">总榜</div>
     <button class="nav-item active" data-panel="hot"><i data-lucide="flame"></i>爆梗榜</button>
     <button class="nav-item" data-panel="time"><i data-lucide="clock"></i>新梗榜</button>
-    <button class="nav-item" data-panel="potential"><i data-lucide="rocket"></i>潜力榜</button>
     <button class="nav-item" data-panel="classic"><i data-lucide="archive"></i>老梗榜</button>
     <button class="nav-item" data-panel="wiki"><i data-lucide="book-open"></i>梗百科</button>
   </div>
@@ -677,10 +676,6 @@ tbody td:first-child { padding-left: 20px; }
     <div class="table-wrapper" id="timeTable"></div>
   </div>
 
-  <!-- 潜力榜 -->
-  <div class="panel" id="panel-potential">
-    <div class="table-wrapper" id="potentialTable"></div>
-  </div>
 
   <!-- 已过气 -->
   <div class="panel" id="panel-classic">
@@ -731,7 +726,6 @@ function init() {
   document.getElementById('lastUpdated').textContent = DATA.lastUpdated + ' 更新';
   renderHot();
   renderTime();
-  renderPotential();
   renderClassic();
   renderWiki();
   renderDaily();
@@ -865,26 +859,6 @@ function renderTime() {
     <tbody>${rows}</tbody></table>`;
 }
 
-// ===== Potential Chart =====
-function renderPotential() {
-  const rows = DATA.masterTable.potentialChart.map(m => `
-    <tr>
-      <td class="rank-cell">${m.rank}</td>
-      <td><strong>${m.name}</strong>${ipTag(m.name)} ${infoBtn(m.name)}</td>
-      <td style="font-size:0.78rem">${m.heat}</td>
-      <td style="font-size:0.78rem;color:var(--text-2)">${m.reason}</td>
-      <td>${probTag(m.probability)}</td>
-      <td style="font-size:0.75rem;color:var(--text-3)">${m.date}</td>
-    </tr>`).join('');
-  document.getElementById('potentialTable').innerHTML = `
-    <table><thead><tr><th>#</th><th>梗</th><th>全网热度</th><th>下沉理由</th><th>概率</th><th>进入</th></tr></thead>
-    <tbody>${rows}</tbody></table>`;
-}
-
-function probTag(p) {
-  if (p==='high') return '<span class="prob prob-high">高</span>';
-  return '<span class="prob prob-medium">中</span>';
-}
 
 // ===== Classic =====
 function renderClassic() {
