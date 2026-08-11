@@ -1,12 +1,12 @@
 {
-  "lastUpdated": "2026-08-10",
+  "lastUpdated": "2026-08-11",
   "masterTable": {
     "timeChart": [
       {
         "rank": 1,
         "name": "竹知了",
-        "heat": 7,
-        "fresh": 10,
+        "heat": 6,
+        "fresh": 9,
         "time": "2026年8月1-4日",
         "source": "8/6日报",
         "sourceFile": "2026-08-06"
@@ -14,8 +14,8 @@
       {
         "rank": 2,
         "name": "伪人（全面入侵学校）",
-        "heat": 5,
-        "fresh": 10,
+        "heat": 4,
+        "fresh": 9,
         "time": "2026年8月3日",
         "source": "8/6日报",
         "sourceFile": "2026-08-06"
@@ -24,7 +24,7 @@
         "rank": 3,
         "name": "熊大回眸",
         "heat": 2,
-        "fresh": 10,
+        "fresh": 9,
         "time": "2026年8月2-3日",
         "source": "8/5日报",
         "sourceFile": "2026-08-05"
@@ -32,7 +32,7 @@
       {
         "rank": 4,
         "name": "中国人能飞",
-        "heat": 7,
+        "heat": 6,
         "fresh": 9,
         "time": "2026年7月25-30日",
         "source": "8/6日报",
@@ -78,7 +78,7 @@
         "rank": 9,
         "name": "花儿一家找妈妈",
         "heat": 2,
-        "fresh": 8,
+        "fresh": 7,
         "time": "2026年7月16日",
         "source": "8/5日报",
         "sourceFile": "2026-08-05"
@@ -252,7 +252,7 @@
         "name": "正太扭腰（左边画个虫虫）",
         "heat": 9,
         "fresh": 9,
-        "trend": "up",
+        "trend": "stable",
         "source": "8/9日报",
         "sourceFile": "2026-08-09"
       },
@@ -288,30 +288,12 @@
         "name": "哈基米",
         "heat": 8,
         "fresh": 3,
-        "trend": "down",
+        "trend": "stable",
         "source": "8/5日报",
         "sourceFile": "2026-08-05"
       },
       {
         "rank": 6,
-        "name": "竹知了",
-        "heat": 7,
-        "fresh": 10,
-        "trend": "down",
-        "source": "8/6日报",
-        "sourceFile": "2026-08-06"
-      },
-      {
-        "rank": 7,
-        "name": "中国人能飞",
-        "heat": 7,
-        "fresh": 9,
-        "trend": "down",
-        "source": "8/6日报",
-        "sourceFile": "2026-08-06"
-      },
-      {
-        "rank": 8,
         "name": "上头神婆多嘴歌/棒棒歌",
         "heat": 7,
         "fresh": 8,
@@ -320,22 +302,40 @@
         "sourceFile": "2026-08-07"
       },
       {
-        "rank": 9,
+        "rank": 7,
         "name": "验牌 / 擦皮鞋",
         "heat": 7,
         "fresh": 5,
-        "trend": "down",
+        "trend": "stable",
         "source": "8/5日报",
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 10,
+        "rank": 8,
         "name": "从夯到拉",
         "heat": 7,
         "fresh": 3,
         "trend": "stable",
         "source": "8/5日报",
         "sourceFile": "2026-08-05"
+      },
+      {
+        "rank": 9,
+        "name": "竹知了",
+        "heat": 6,
+        "fresh": 9,
+        "trend": "down",
+        "source": "8/6日报",
+        "sourceFile": "2026-08-06"
+      },
+      {
+        "rank": 10,
+        "name": "中国人能飞",
+        "heat": 6,
+        "fresh": 9,
+        "trend": "down",
+        "source": "8/6日报",
+        "sourceFile": "2026-08-06"
       },
       {
         "rank": 11,
@@ -348,15 +348,6 @@
       },
       {
         "rank": 12,
-        "name": "伪人（全面入侵学校）",
-        "heat": 5,
-        "fresh": 10,
-        "trend": "down",
-        "source": "8/6日报",
-        "sourceFile": "2026-08-06"
-      },
-      {
-        "rank": 13,
         "name": "因为我善",
         "heat": 5,
         "fresh": 8,
@@ -365,16 +356,16 @@
         "sourceFile": "2026-08-06"
       },
       {
-        "rank": 14,
+        "rank": 13,
         "name": "大笑奶龙",
         "heat": 5,
         "fresh": 4,
-        "trend": "down",
+        "trend": "stable",
         "source": "8/6日报",
         "sourceFile": "2026-08-06"
       },
       {
-        "rank": 15,
+        "rank": 14,
         "name": "紫薯精（如果全世界都指责你）",
         "heat": 5,
         "fresh": 5,
@@ -383,7 +374,7 @@
         "sourceFile": "2026-08-07"
       },
       {
-        "rank": 16,
+        "rank": 15,
         "name": "葱明姜就蒜了",
         "heat": 5,
         "fresh": 5,
@@ -392,7 +383,7 @@
         "sourceFile": "2026-08-07"
       },
       {
-        "rank": 17,
+        "rank": 16,
         "name": "新号别搞",
         "heat": 5,
         "fresh": 4,
@@ -401,29 +392,38 @@
         "sourceFile": "2026-08-06"
       },
       {
-        "rank": 18,
-        "name": "绷住挑战（大绷住时代）",
+        "rank": 17,
+        "name": "妙脆角小猫",
         "heat": 4,
-        "fresh": 8,
+        "fresh": 7,
+        "trend": "stable",
+        "source": "8/5日报",
+        "sourceFile": "2026-08-05"
+      },
+      {
+        "rank": 18,
+        "name": "伪人（全面入侵学校）",
+        "heat": 4,
+        "fresh": 9,
         "trend": "down",
         "source": "8/6日报",
         "sourceFile": "2026-08-06"
       },
       {
         "rank": 19,
-        "name": "妙脆角小猫",
+        "name": "绷住挑战（大绷住时代）",
         "heat": 4,
-        "fresh": 7,
-        "trend": "down",
-        "source": "8/5日报",
-        "sourceFile": "2026-08-05"
+        "fresh": 8,
+        "trend": "stable",
+        "source": "8/6日报",
+        "sourceFile": "2026-08-06"
       },
       {
         "rank": 20,
         "name": "叮咚鸡 / 库里库里",
         "heat": 4,
         "fresh": 6,
-        "trend": "down",
+        "trend": "stable",
         "source": "8/5日报",
         "sourceFile": "2026-08-05"
       },
@@ -450,7 +450,7 @@
         "name": "白菜对我笑",
         "heat": 3,
         "fresh": 5,
-        "trend": "down",
+        "trend": "stable",
         "source": "8/6日报",
         "sourceFile": "2026-08-06"
       },
@@ -467,7 +467,7 @@
         "rank": 25,
         "name": "熊大回眸",
         "heat": 2,
-        "fresh": 10,
+        "fresh": 9,
         "trend": "down",
         "source": "8/5日报",
         "sourceFile": "2026-08-05"
@@ -476,7 +476,7 @@
         "rank": 26,
         "name": "花儿一家找妈妈",
         "heat": 2,
-        "fresh": 8,
+        "fresh": 7,
         "trend": "down",
         "source": "8/5日报",
         "sourceFile": "2026-08-05"
@@ -496,41 +496,41 @@
         "rank": 1,
         "name": "霸之意志",
         "heat": "游戏社区持续扩散",
-        "reason": "中二口号型，极适合小学生喊",
+        "reason": "中二口号型，极适合小学生喊；类似阿玛特拉斯路径",
         "probability": "high",
         "date": "8/6"
       },
       {
         "rank": 2,
-        "name": "GTA6预告片效应",
-        "heat": "B站持续热议",
-        "reason": "预告片画面广泛传播，游戏梗已提前下沉",
-        "probability": "high",
-        "date": "8/7"
+        "name": "万人后室生存大挑战",
+        "heat": "B站热搜#15(8/11)",
+        "reason": "Backrooms本就在小学生中流行，B站大型活动可能推动新一轮讨论热潮",
+        "probability": "medium",
+        "date": "8/11"
       },
       {
         "rank": 3,
-        "name": "南天门计划（科幻IP辟谣热）",
-        "heat": "央视8/6+8/9详解，B站热搜，线下巡展8/20",
-        "reason": "若暑假小学生参观巡展+课间讨论中国黑科技可能形成校园梗",
+        "name": "原神至冬版本",
+        "heat": "B站热搜#14(8/11)+抖音热榜(8/1)",
+        "reason": "低龄玩家大量存在(儿童周边搜索词活跃)，新版本可能产生新梗/口头禅",
         "probability": "medium",
-        "date": "8/10"
+        "date": "8/11"
       },
       {
         "rank": 4,
-        "name": "鲤鱼Ace发烧梗",
-        "heat": "B站热门365万播放",
-        "reason": "鲤鱼Ace为小学生最爱UP主，需观察是否产出可传播口头禅",
+        "name": "南天门计划（科幻IP辟谣热）",
+        "heat": "央视连续详解，线下巡展8/20开幕(11500㎡)",
+        "reason": "暑假小学生参观巡展+课间讨论中国黑科技可能形成校园梗",
         "probability": "medium",
         "date": "8/10"
       },
       {
         "rank": 5,
-        "name": "AI漫剧(千荒归契)",
-        "heat": "百亿级播放",
-        "reason": "播放量惊人但需确认低龄渗透度",
-        "probability": "medium",
-        "date": "8/8"
+        "name": "GTA6预告片效应",
+        "heat": "B站持续热议",
+        "reason": "预告片画面广泛传播，游戏梗已提前下沉",
+        "probability": "high",
+        "date": "8/7"
       }
     ],
     "classic": [
@@ -1247,6 +1247,74 @@
           "probability": "中高"
         }
       ]
+    },
+    "2026-08-11": {
+      "date": "2026-08-11",
+      "newMemes": [],
+      "continuing": [
+        {
+          "name": "正太扭腰（左边画个虫虫）",
+          "since": "2026年7月中旬",
+          "status": "蛋仔派对搜索仍大量出现，头条搜索10页结果，播放超23亿"
+        },
+        {
+          "name": "比比拉布",
+          "since": "2025年5月(2026.2二爆)",
+          "status": "低年级社交暗号顶流，无衰退信号"
+        },
+        {
+          "name": "我的刀盾",
+          "since": "2025年5月",
+          "status": "与比比拉布并列无厘头暗号类顶流"
+        },
+        {
+          "name": "甲亢哥（IShowSpeed）",
+          "since": "2025年3月",
+          "status": "B站鬼畜7日榜3条(#2/#3/#9，合计1112万播放)"
+        },
+        {
+          "name": "哈基米",
+          "since": "2025年4月",
+          "status": "B站鬼畜7日榜#6(314万)，已商业化(滇二娃系列)，出现虐猫梗争议"
+        },
+        {
+          "name": "上头神婆多嘴歌/棒棒歌",
+          "since": "2026年夏季",
+          "status": "洗脑歌曲持续校园传唱"
+        },
+        {
+          "name": "验牌/擦皮鞋",
+          "since": "2026年2月",
+          "status": "挂件仍在校园流通"
+        },
+        {
+          "name": "从夯到拉",
+          "since": "2025年下半年",
+          "status": "已固化为日常评价体系"
+        }
+      ],
+      "radar": [
+        {
+          "name": "万人后室生存大挑战",
+          "detail": "B站热搜#15(8/11)，Backrooms本就在小学生中流行，B站大型活动可能推动新讨论",
+          "probability": "中"
+        },
+        {
+          "name": "原神至冬版本",
+          "detail": "B站热搜#14(8/11)+抖音热榜(8/1)，低龄玩家大量存在",
+          "probability": "中"
+        },
+        {
+          "name": "南天门计划",
+          "detail": "线下巡展8/20重庆开幕(11500㎡)，暑假小学生参观可能形成校园讨论",
+          "probability": "中"
+        },
+        {
+          "name": "霸之意志",
+          "detail": "中二口号型，游戏社区持续外溢，类似阿玛特拉斯路径",
+          "probability": "中高"
+        }
+      ]
     }
   },
   "availableDates": [
@@ -1255,7 +1323,8 @@
     "2026-08-07",
     "2026-08-08",
     "2026-08-09",
-    "2026-08-10"
+    "2026-08-10",
+    "2026-08-11"
   ],
   "wikiEntries": [
     {
