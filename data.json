@@ -1,11 +1,11 @@
 {
-  "lastUpdated": "2026-08-11",
+  "lastUpdated": "2026-08-12",
   "masterTable": {
     "timeChart": [
       {
         "rank": 1,
         "name": "竹知了",
-        "heat": 6,
+        "heat": 5,
         "fresh": 9,
         "time": "2026年8月1-4日",
         "source": "8/6日报",
@@ -14,7 +14,7 @@
       {
         "rank": 2,
         "name": "伪人（全面入侵学校）",
-        "heat": 4,
+        "heat": 3,
         "fresh": 9,
         "time": "2026年8月3日",
         "source": "8/6日报",
@@ -50,7 +50,7 @@
       {
         "rank": 6,
         "name": "上头神婆多嘴歌/棒棒歌",
-        "heat": 7,
+        "heat": 6,
         "fresh": 8,
         "time": "2026年夏季",
         "source": "8/7日报",
@@ -294,15 +294,6 @@
       },
       {
         "rank": 6,
-        "name": "上头神婆多嘴歌/棒棒歌",
-        "heat": 7,
-        "fresh": 8,
-        "trend": "stable",
-        "source": "8/7日报",
-        "sourceFile": "2026-08-07"
-      },
-      {
-        "rank": 7,
         "name": "验牌 / 擦皮鞋",
         "heat": 7,
         "fresh": 5,
@@ -311,7 +302,7 @@
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 8,
+        "rank": 7,
         "name": "从夯到拉",
         "heat": 7,
         "fresh": 3,
@@ -320,16 +311,7 @@
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 9,
-        "name": "竹知了",
-        "heat": 6,
-        "fresh": 9,
-        "trend": "down",
-        "source": "8/6日报",
-        "sourceFile": "2026-08-06"
-      },
-      {
-        "rank": 10,
+        "rank": 8,
         "name": "中国人能飞",
         "heat": 6,
         "fresh": 9,
@@ -338,13 +320,31 @@
         "sourceFile": "2026-08-06"
       },
       {
-        "rank": 11,
+        "rank": 9,
+        "name": "上头神婆多嘴歌/棒棒歌",
+        "heat": 6,
+        "fresh": 8,
+        "trend": "stable",
+        "source": "8/7日报",
+        "sourceFile": "2026-08-07"
+      },
+      {
+        "rank": 10,
         "name": "那咋了 / 受着呗",
         "heat": 6,
         "fresh": 3,
         "trend": "stable",
         "source": "8/5日报",
         "sourceFile": "2026-08-05"
+      },
+      {
+        "rank": 11,
+        "name": "竹知了",
+        "heat": 5,
+        "fresh": 9,
+        "trend": "down",
+        "source": "8/6日报",
+        "sourceFile": "2026-08-06"
       },
       {
         "rank": 12,
@@ -357,15 +357,6 @@
       },
       {
         "rank": 13,
-        "name": "大笑奶龙",
-        "heat": 5,
-        "fresh": 4,
-        "trend": "stable",
-        "source": "8/6日报",
-        "sourceFile": "2026-08-06"
-      },
-      {
-        "rank": 14,
         "name": "紫薯精（如果全世界都指责你）",
         "heat": 5,
         "fresh": 5,
@@ -374,13 +365,22 @@
         "sourceFile": "2026-08-07"
       },
       {
-        "rank": 15,
+        "rank": 14,
         "name": "葱明姜就蒜了",
         "heat": 5,
         "fresh": 5,
         "trend": "stable",
         "source": "8/7日报",
         "sourceFile": "2026-08-07"
+      },
+      {
+        "rank": 15,
+        "name": "大笑奶龙",
+        "heat": 5,
+        "fresh": 4,
+        "trend": "stable",
+        "source": "8/6日报",
+        "sourceFile": "2026-08-06"
       },
       {
         "rank": 16,
@@ -393,24 +393,6 @@
       },
       {
         "rank": 17,
-        "name": "妙脆角小猫",
-        "heat": 4,
-        "fresh": 7,
-        "trend": "stable",
-        "source": "8/5日报",
-        "sourceFile": "2026-08-05"
-      },
-      {
-        "rank": 18,
-        "name": "伪人（全面入侵学校）",
-        "heat": 4,
-        "fresh": 9,
-        "trend": "down",
-        "source": "8/6日报",
-        "sourceFile": "2026-08-06"
-      },
-      {
-        "rank": 19,
         "name": "绷住挑战（大绷住时代）",
         "heat": 4,
         "fresh": 8,
@@ -419,7 +401,16 @@
         "sourceFile": "2026-08-06"
       },
       {
-        "rank": 20,
+        "rank": 18,
+        "name": "妙脆角小猫",
+        "heat": 4,
+        "fresh": 7,
+        "trend": "stable",
+        "source": "8/5日报",
+        "sourceFile": "2026-08-05"
+      },
+      {
+        "rank": 19,
         "name": "叮咚鸡 / 库里库里",
         "heat": 4,
         "fresh": 6,
@@ -428,7 +419,7 @@
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 21,
+        "rank": 20,
         "name": "嘉豪（装酷标签）",
         "heat": 4,
         "fresh": 2,
@@ -437,11 +428,20 @@
         "sourceFile": "2026-08-07"
       },
       {
-        "rank": 22,
+        "rank": 21,
         "name": "树恨你（Trees Hate You）",
         "heat": 4,
         "fresh": 2,
         "trend": "stable",
+        "source": "8/6日报",
+        "sourceFile": "2026-08-06"
+      },
+      {
+        "rank": 22,
+        "name": "伪人（全面入侵学校）",
+        "heat": 3,
+        "fresh": 9,
+        "trend": "down",
         "source": "8/6日报",
         "sourceFile": "2026-08-06"
       },
@@ -1315,6 +1315,59 @@
           "probability": "中高"
         }
       ]
+    },
+    "2026-08-12": {
+      "date": "2026-08-12",
+      "newMemes": [],
+      "continuing": [
+        {
+          "name": "正太扭腰",
+          "since": "2026年7月底",
+          "status": "B站搜索活跃，蛋仔派对内置动作"
+        },
+        {
+          "name": "比比拉布",
+          "since": "2025年5月",
+          "status": "1462万播放二创+556万播放"
+        },
+        {
+          "name": "我的刀盾",
+          "since": "2025年5月",
+          "status": "与比比拉布同系列"
+        },
+        {
+          "name": "甲亢哥",
+          "since": "2025年3月",
+          "status": "鬼畜7日榜4条入围"
+        },
+        {
+          "name": "哈基米",
+          "since": "2025年4月",
+          "status": "鬼畜7日榜#6"
+        },
+        {
+          "name": "从夯到拉",
+          "since": "2025年下半年",
+          "status": "1598万播放洗脑音乐盘点"
+        },
+        {
+          "name": "那咋了/受着呗",
+          "since": "2025年6月",
+          "status": "头条家长社区仍提及"
+        }
+      ],
+      "radar": [
+        {
+          "name": "二郎显圣真君",
+          "detail": "B站鬼畜7日榜#5，104万播放",
+          "probability": "中"
+        },
+        {
+          "name": "鼓励式教育",
+          "detail": "B站鬼畜7日榜#1，626万播放，怀旧向",
+          "probability": "低"
+        }
+      ]
     }
   },
   "availableDates": [
@@ -1324,7 +1377,8 @@
     "2026-08-08",
     "2026-08-09",
     "2026-08-10",
-    "2026-08-11"
+    "2026-08-11",
+    "2026-08-12"
   ],
   "wikiEntries": [
     {
