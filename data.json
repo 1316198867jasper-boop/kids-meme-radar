@@ -1,33 +1,33 @@
 {
-  "lastUpdated": "2026-08-13",
+  "lastUpdated": "2026-08-14",
   "masterTable": {
     "timeChart": [
       {
         "rank": 1,
-        "name": "竹知了",
+        "name": "熊大回眸",
         "heat": 4,
+        "fresh": 9,
+        "time": "2026年8月2-3日",
+        "source": "8/5日报",
+        "sourceFile": "2026-08-05"
+      },
+      {
+        "rank": 2,
+        "name": "竹知了",
+        "heat": 3,
         "fresh": 9,
         "time": "2026年8月1-4日",
         "source": "8/6日报",
         "sourceFile": "2026-08-06"
       },
       {
-        "rank": 2,
+        "rank": 3,
         "name": "伪人（全面入侵学校）",
         "heat": 3,
         "fresh": 9,
         "time": "2026年8月3日",
         "source": "8/6日报",
         "sourceFile": "2026-08-06"
-      },
-      {
-        "rank": 3,
-        "name": "熊大回眸",
-        "heat": 2,
-        "fresh": 9,
-        "time": "2026年8月2-3日",
-        "source": "8/5日报",
-        "sourceFile": "2026-08-05"
       },
       {
         "rank": 4,
@@ -384,12 +384,12 @@
       },
       {
         "rank": 16,
-        "name": "竹知了",
+        "name": "熊大回眸",
         "heat": 4,
         "fresh": 9,
-        "trend": "down",
-        "source": "8/6日报",
-        "sourceFile": "2026-08-06"
+        "trend": "up",
+        "source": "8/5日报",
+        "sourceFile": "2026-08-05"
       },
       {
         "rank": 17,
@@ -438,6 +438,15 @@
       },
       {
         "rank": 22,
+        "name": "竹知了",
+        "heat": 3,
+        "fresh": 9,
+        "trend": "down",
+        "source": "8/6日报",
+        "sourceFile": "2026-08-06"
+      },
+      {
+        "rank": 23,
         "name": "伪人（全面入侵学校）",
         "heat": 3,
         "fresh": 9,
@@ -446,7 +455,7 @@
         "sourceFile": "2026-08-06"
       },
       {
-        "rank": 23,
+        "rank": 24,
         "name": "白菜对我笑",
         "heat": 3,
         "fresh": 4,
@@ -455,19 +464,10 @@
         "sourceFile": "2026-08-06"
       },
       {
-        "rank": 24,
+        "rank": 25,
         "name": "龙国 / 帽子叔叔",
         "heat": 3,
         "fresh": 2,
-        "trend": "stable",
-        "source": "8/5日报",
-        "sourceFile": "2026-08-05"
-      },
-      {
-        "rank": 25,
-        "name": "熊大回眸",
-        "heat": 2,
-        "fresh": 9,
         "trend": "stable",
         "source": "8/5日报",
         "sourceFile": "2026-08-05"
@@ -494,14 +494,22 @@
     "potentialChart": [
       {
         "rank": 1,
-        "name": "野生狗奶",
-        "heat": "B站8/9爆发(梗指南86万+人物志129万+古法造物主80万)",
-        "reason": "抽象文化/网络人物梗，有洗脑小曲\"野生狗奶の小曲\"，需观察是否下沉小学生",
-        "probability": "medium",
-        "date": "8/13"
+        "name": "川剧摇",
+        "heat": "B站209万播放'新版江南style'，融合川剧魔性舞步",
+        "reason": "魔性舞蹈+简单动作+洗脑BGM，与正太扭腰同类传播路径",
+        "probability": "high",
+        "date": "8/14"
       },
       {
         "rank": 2,
+        "name": "熊大回眸",
+        "heat": "8/13梗百科32万播放，绿幕素材流通中",
+        "reason": "熊出没IP天然小学生核心受众，表情包+绿幕二创双驱动",
+        "probability": "high",
+        "date": "8/14"
+      },
+      {
+        "rank": 3,
         "name": "霸之意志",
         "heat": "游戏社区持续扩散",
         "reason": "中二口号型，极适合小学生喊；类似阿玛特拉斯路径",
@@ -509,28 +517,36 @@
         "date": "8/6"
       },
       {
-        "rank": 3,
-        "name": "南天门计划（科幻IP辟谣热）",
-        "heat": "央视连续详解，线下巡展8/20开幕(11500㎡)",
-        "reason": "暑假小学生参观巡展可能形成校园讨论",
-        "probability": "medium",
-        "date": "8/10"
-      },
-      {
         "rank": 4,
-        "name": "二郎显圣真君",
-        "heat": "B站鬼畜7日榜#5(104万播放)",
-        "reason": "神话人物鬼畜二创，待观察低龄渗透",
+        "name": "野生狗奶",
+        "heat": "B站8/9爆发(梗指南86万+人物志129万+古法造物主80万)",
+        "reason": "抽象文化/网络人物梗，有洗脑小曲，需观察是否下沉小学生",
         "probability": "medium",
-        "date": "8/12"
+        "date": "8/13"
       },
       {
         "rank": 5,
-        "name": "GTA6预告片效应",
-        "heat": "B站持续热议",
-        "reason": "预告片画面广泛传播，游戏梗已提前下沉",
-        "probability": "high",
-        "date": "8/7"
+        "name": "泥肘",
+        "heat": "B站日榜#12(493万播放)，鬼畜向电击梗",
+        "reason": "鬼畜区热门但偏B站社区文化，小学生渗透度待确认",
+        "probability": "medium",
+        "date": "8/14"
+      },
+      {
+        "rank": 6,
+        "name": "祈神怜手势舞",
+        "heat": "抖音热搜#34，原神7.0至冬相关",
+        "reason": "手势舞天然适合小学生传播，原神有低龄玩家群体",
+        "probability": "medium",
+        "date": "8/14"
+      },
+      {
+        "rank": 7,
+        "name": "南天门计划",
+        "heat": "央视详解+线下巡展8/20开幕(11500㎡)",
+        "reason": "暑假小学生参观巡展可能形成校园讨论",
+        "probability": "medium",
+        "date": "8/10"
       }
     ],
     "classic": [
@@ -1431,6 +1447,69 @@
           "probability": "低"
         }
       ]
+    },
+    "2026-08-14": {
+      "date": "2026-08-14",
+      "newMemes": [],
+      "continuing": [
+        {
+          "name": "正太扭腰（左边画个虫虫）",
+          "since": "2026年7月中旬",
+          "status": "蛋仔派对官方内置+全网模仿高峰持续"
+        },
+        {
+          "name": "比比拉布",
+          "since": "2025年5月(2026.2二爆)",
+          "status": "儿童向IP顶流，宋澈澈澈系列千万播放"
+        },
+        {
+          "name": "我的刀盾",
+          "since": "2025年5月",
+          "status": "与比比拉布并列暗号类顶流"
+        },
+        {
+          "name": "甲亢哥（IShowSpeed）",
+          "since": "2025年3月",
+          "status": "鬼畜7日榜3条TOP11，新素材不断"
+        },
+        {
+          "name": "哈基米",
+          "since": "2025年4月",
+          "status": "鬼畜7日榜进TOP，经典延续"
+        },
+        {
+          "name": "从夯到拉",
+          "since": "2025年下半年",
+          "status": "万物皆可排名，多个百万级盘点视频"
+        },
+        {
+          "name": "中国人能飞",
+          "since": "2026年7月底",
+          "status": "稳定期，梗指南/梗百科均有解读"
+        }
+      ],
+      "radar": [
+        {
+          "name": "熊大回眸",
+          "detail": "8/13梗百科32万+绿幕素材，熊出没=小学生核心IP",
+          "probability": "高"
+        },
+        {
+          "name": "川剧摇",
+          "detail": "B站209万'新版江南style'，魔性舞步简单易模仿",
+          "probability": "高"
+        },
+        {
+          "name": "泥肘",
+          "detail": "B站日榜#12(493万)，鬼畜向",
+          "probability": "中"
+        },
+        {
+          "name": "祈神怜手势舞",
+          "detail": "抖音热搜#34，原神7.0至冬手势舞",
+          "probability": "中"
+        }
+      ]
     }
   },
   "availableDates": [
@@ -2126,6 +2205,36 @@
       "link": "https://search.bilibili.com/all?keyword=成吉思鸡&order=click",
       "verified": "verified",
       "memeType": "ip"
+    },
+    {
+      "name": "川剧摇",
+      "what": "融合川剧变脸元素的魔性舞步，被称为'新版江南style'。动作简单，节奏洗脑，适合模仿。",
+      "howFired": "B站UP主原创舞蹈视频209万播放 → 抖音翻跳传播 → 课间模仿预期",
+      "memeType": "action",
+      "verified": "uncertain",
+      "heat": 3,
+      "fresh": 10,
+      "link": "https://search.bilibili.com/all?keyword=%E5%B7%9D%E5%89%A7%E6%91%87&order=click"
+    },
+    {
+      "name": "泥肘",
+      "what": "B站鬼畜区热门的电击/声效类梗，以⚡符号标记。",
+      "howFired": "B站鬼畜区原创 → 日榜#12(493万播放) → 扩散中",
+      "memeType": "slang",
+      "verified": "uncertain",
+      "heat": 3,
+      "fresh": 10,
+      "link": "https://search.bilibili.com/all?keyword=%E6%B3%A5%E8%82%98&order=click"
+    },
+    {
+      "name": "祈神怜手势舞",
+      "what": "原神7.0至冬版本角色相关的手势舞挑战。",
+      "howFired": "原神7.0版本上线 → 角色PV发布 → 抖音热搜#34手势舞挑战",
+      "memeType": "action",
+      "verified": "uncertain",
+      "heat": 2,
+      "fresh": 10,
+      "link": "https://search.bilibili.com/all?keyword=%E7%A5%88%E7%A5%9E%E6%80%9C+%E6%89%8B%E5%8A%BF%E8%88%9E"
     }
   ]
 }
