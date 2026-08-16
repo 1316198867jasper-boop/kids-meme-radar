@@ -1,11 +1,11 @@
 {
-  "lastUpdated": "2026-08-14",
+  "lastUpdated": "2026-08-16",
   "masterTable": {
     "timeChart": [
       {
         "rank": 1,
         "name": "熊大回眸",
-        "heat": 4,
+        "heat": 5,
         "fresh": 9,
         "time": "2026年8月2-3日",
         "source": "8/5日报",
@@ -23,7 +23,7 @@
       {
         "rank": 3,
         "name": "伪人（全面入侵学校）",
-        "heat": 3,
+        "heat": 2,
         "fresh": 9,
         "time": "2026年8月3日",
         "source": "8/6日报",
@@ -41,7 +41,7 @@
       {
         "rank": 5,
         "name": "中国人能飞",
-        "heat": 6,
+        "heat": 7,
         "fresh": 8,
         "time": "2026年7月25-30日",
         "source": "8/6日报",
@@ -294,6 +294,15 @@
       },
       {
         "rank": 6,
+        "name": "中国人能飞",
+        "heat": 7,
+        "fresh": 8,
+        "trend": "up",
+        "source": "8/6日报",
+        "sourceFile": "2026-08-06"
+      },
+      {
+        "rank": 7,
         "name": "验牌 / 擦皮鞋",
         "heat": 7,
         "fresh": 4,
@@ -302,7 +311,7 @@
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 7,
+        "rank": 8,
         "name": "从夯到拉",
         "heat": 7,
         "fresh": 3,
@@ -311,25 +320,7 @@
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 8,
-        "name": "中国人能飞",
-        "heat": 6,
-        "fresh": 8,
-        "trend": "stable",
-        "source": "8/6日报",
-        "sourceFile": "2026-08-06"
-      },
-      {
         "rank": 9,
-        "name": "上头神婆多嘴歌/棒棒歌",
-        "heat": 6,
-        "fresh": 8,
-        "trend": "stable",
-        "source": "8/7日报",
-        "sourceFile": "2026-08-07"
-      },
-      {
-        "rank": 10,
         "name": "那咋了 / 受着呗",
         "heat": 6,
         "fresh": 3,
@@ -338,7 +329,25 @@
         "sourceFile": "2026-08-05"
       },
       {
+        "rank": 10,
+        "name": "熊大回眸",
+        "heat": 5,
+        "fresh": 9,
+        "trend": "up",
+        "source": "8/5日报",
+        "sourceFile": "2026-08-05"
+      },
+      {
         "rank": 11,
+        "name": "上头神婆多嘴歌/棒棒歌",
+        "heat": 5,
+        "fresh": 8,
+        "trend": "down",
+        "source": "8/7日报",
+        "sourceFile": "2026-08-07"
+      },
+      {
+        "rank": 12,
         "name": "因为我善",
         "heat": 5,
         "fresh": 8,
@@ -347,7 +356,7 @@
         "sourceFile": "2026-08-06"
       },
       {
-        "rank": 12,
+        "rank": 13,
         "name": "紫薯精（如果全世界都指责你）",
         "heat": 5,
         "fresh": 4,
@@ -356,7 +365,7 @@
         "sourceFile": "2026-08-07"
       },
       {
-        "rank": 13,
+        "rank": 14,
         "name": "葱明姜就蒜了",
         "heat": 5,
         "fresh": 4,
@@ -365,7 +374,7 @@
         "sourceFile": "2026-08-07"
       },
       {
-        "rank": 14,
+        "rank": 15,
         "name": "大笑奶龙",
         "heat": 5,
         "fresh": 4,
@@ -374,22 +383,13 @@
         "sourceFile": "2026-08-06"
       },
       {
-        "rank": 15,
+        "rank": 16,
         "name": "新号别搞",
         "heat": 5,
         "fresh": 4,
         "trend": "stable",
         "source": "8/6日报",
         "sourceFile": "2026-08-06"
-      },
-      {
-        "rank": 16,
-        "name": "熊大回眸",
-        "heat": 4,
-        "fresh": 9,
-        "trend": "up",
-        "source": "8/5日报",
-        "sourceFile": "2026-08-05"
       },
       {
         "rank": 17,
@@ -447,15 +447,6 @@
       },
       {
         "rank": 23,
-        "name": "伪人（全面入侵学校）",
-        "heat": 3,
-        "fresh": 9,
-        "trend": "stable",
-        "source": "8/6日报",
-        "sourceFile": "2026-08-06"
-      },
-      {
-        "rank": 24,
         "name": "白菜对我笑",
         "heat": 3,
         "fresh": 4,
@@ -464,13 +455,22 @@
         "sourceFile": "2026-08-06"
       },
       {
-        "rank": 25,
+        "rank": 24,
         "name": "龙国 / 帽子叔叔",
         "heat": 3,
         "fresh": 2,
         "trend": "stable",
         "source": "8/5日报",
         "sourceFile": "2026-08-05"
+      },
+      {
+        "rank": 25,
+        "name": "伪人（全面入侵学校）",
+        "heat": 2,
+        "fresh": 9,
+        "trend": "down",
+        "source": "8/6日报",
+        "sourceFile": "2026-08-06"
       },
       {
         "rank": 26,
@@ -494,59 +494,51 @@
     "potentialChart": [
       {
         "rank": 1,
-        "name": "川剧摇",
-        "heat": "B站209万播放'新版江南style'，融合川剧魔性舞步",
-        "reason": "魔性舞蹈+简单动作+洗脑BGM，与正太扭腰同类传播路径",
+        "name": "泥肘",
+        "heat": "B站6412万+3881万，鬼畜区现象级霸榜",
+        "reason": "规模决定下沉是时间问题，鬼畜梗向低龄传播通常滞后1-2周",
         "probability": "high",
-        "date": "8/14"
+        "date": "8/16"
       },
       {
         "rank": 2,
         "name": "熊大回眸",
-        "heat": "8/13梗百科32万播放，绿幕素材流通中",
-        "reason": "熊出没IP天然小学生核心受众，表情包+绿幕二创双驱动",
+        "heat": "多条百万级视频+熊出没IP本周抖音5000万+",
+        "reason": "熊出没=小学生核心IP，已进入梗图模板化阶段",
         "probability": "high",
-        "date": "8/14"
+        "date": "8/16"
       },
       {
         "rank": 3,
-        "name": "霸之意志",
-        "heat": "游戏社区持续扩散",
-        "reason": "中二口号型，极适合小学生喊；类似阿玛特拉斯路径",
-        "probability": "high",
-        "date": "8/6"
+        "name": "牛来",
+        "heat": "8/15梗百科34万(1天)，多UP密集出视频",
+        "reason": "极新爆发(8/15)，传播路径待观察",
+        "probability": "medium",
+        "date": "8/16"
       },
       {
         "rank": 4,
-        "name": "野生狗奶",
-        "heat": "B站8/9爆发(梗指南86万+人物志129万+古法造物主80万)",
-        "reason": "抽象文化/网络人物梗，有洗脑小曲，需观察是否下沉小学生",
+        "name": "老吴撼地掌",
+        "heat": "网梗指南8/15科普+43万模仿视频",
+        "reason": "动作模仿类梗易在校园传播",
         "probability": "medium",
-        "date": "8/13"
+        "date": "8/16"
       },
       {
         "rank": 5,
-        "name": "泥肘",
-        "heat": "B站日榜#12(493万播放)，鬼畜向电击梗",
-        "reason": "鬼畜区热门但偏B站社区文化，小学生渗透度待确认",
+        "name": "川剧摇",
+        "heat": "陈之猴8/11创300万新高，但8/16未上热榜",
+        "reason": "可能进入平台期",
         "probability": "medium",
         "date": "8/14"
       },
       {
         "rank": 6,
-        "name": "祈神怜手势舞",
-        "heat": "抖音热搜#34，原神7.0至冬相关",
-        "reason": "手势舞天然适合小学生传播，原神有低龄玩家群体",
-        "probability": "medium",
-        "date": "8/14"
-      },
-      {
-        "rank": 7,
-        "name": "南天门计划",
-        "heat": "央视详解+线下巡展8/20开幕(11500㎡)",
-        "reason": "暑假小学生参观巡展可能形成校园讨论",
-        "probability": "medium",
-        "date": "8/10"
+        "name": "霸之意志",
+        "heat": "游戏社区持续扩散",
+        "reason": "中二口号型，极适合小学生喟",
+        "probability": "medium-high",
+        "date": "8/6"
       }
     ],
     "classic": [
@@ -1510,6 +1502,69 @@
           "probability": "中"
         }
       ]
+    },
+    "2026-08-16": {
+      "date": "2026-08-16",
+      "newMemes": [],
+      "continuing": [
+        {
+          "name": "正太扭腰（左边画个虫虫）",
+          "since": "2026年7月中旬",
+          "status": "内娱明星挑战+梗学堂科普+BGM循环，仍在最高峰"
+        },
+        {
+          "name": "比比拉布",
+          "since": "2025年5月(2026.2二爆)",
+          "status": "宋澈澈澈系列千万级，动画合集持续更新"
+        },
+        {
+          "name": "我的刀盾",
+          "since": "2025年5月",
+          "status": "与比比拉布并列暗号顶流"
+        },
+        {
+          "name": "甲亢哥（IShowSpeed）",
+          "since": "2025年3月",
+          "status": "鬼畜7日榜4条霸榜(合计1239万)"
+        },
+        {
+          "name": "哈基米",
+          "since": "2025年4月",
+          "status": "鬼畜榜314万'我无怨无悔'"
+        },
+        {
+          "name": "从夷到拉",
+          "since": "2025年下半年",
+          "status": "万物皆可排名"
+        },
+        {
+          "name": "中国人能飞",
+          "since": "2026年7月底",
+          "status": "鬼畜#28近千万播放，热度回升"
+        }
+      ],
+      "radar": [
+        {
+          "name": "泥肘",
+          "detail": "6412万+3881万鬼畜霸榜，规模决定下沉是时间问题",
+          "probability": "高"
+        },
+        {
+          "name": "熊大回眸",
+          "detail": "多条百万级+熊出没IP本周抖音5000万+最高热度",
+          "probability": "高"
+        },
+        {
+          "name": "牛来",
+          "detail": "8/15梗百科34万(1天)极新爆发",
+          "probability": "中"
+        },
+        {
+          "name": "老吴撼地掌",
+          "detail": "网梗指南8/15科普+43万模仿，动作类",
+          "probability": "中"
+        }
+      ]
     }
   },
   "availableDates": [
@@ -2212,7 +2267,7 @@
       "howFired": "B站UP主原创舞蹈视频209万播放 → 抖音翻跳传播 → 课间模仿预期",
       "memeType": "action",
       "verified": "uncertain",
-      "heat": 3,
+      "heat": 4,
       "fresh": 10,
       "link": "https://search.bilibili.com/all?keyword=%E5%B7%9D%E5%89%A7%E6%91%87&order=click"
     },
@@ -2222,7 +2277,7 @@
       "howFired": "B站鬼畜区原创 → 日榜#12(493万播放) → 扩散中",
       "memeType": "slang",
       "verified": "uncertain",
-      "heat": 3,
+      "heat": 5,
       "fresh": 10,
       "link": "https://search.bilibili.com/all?keyword=%E6%B3%A5%E8%82%98&order=click"
     },
@@ -2235,6 +2290,36 @@
       "heat": 2,
       "fresh": 10,
       "link": "https://search.bilibili.com/all?keyword=%E7%A5%88%E7%A5%9E%E6%80%9C+%E6%89%8B%E5%8A%BF%E8%88%9E"
+    },
+    {
+      "name": "野生狗奶",
+      "what": "粤西博主自制的恶搞道具饮料（标注'保质期：永久'），非真实商品。核心梗句：'人类畏惧时间，时间畏惧野生狗奶'。",
+      "howFired": "粤西博主'吴川才子招茂才'短视频 → 8/8-9 B站多个百万级解读视频集中爆发(梗指南103万/人物志138万/古法造物主96万) → 抽象文化圈刷屏",
+      "memeType": "slang",
+      "verified": "uncertain",
+      "heat": 3,
+      "fresh": 9,
+      "link": "https://search.bilibili.com/all?keyword=%E9%87%8E%E7%94%9F%E7%8B%97%E5%A5%B6&order=click"
+    },
+    {
+      "name": "牛来",
+      "what": "2026年8月15日起在B站集中爆发的新梗，具体含义待验证。",
+      "howFired": "8/15梗百科34万播放(1天) → 多个UP主密集出视频 → 扩散中",
+      "memeType": "slang",
+      "verified": "unverified",
+      "heat": 3,
+      "fresh": 10,
+      "link": "https://search.bilibili.com/all?keyword=%E7%89%9B%E6%9D%A5&order=click"
+    },
+    {
+      "name": "老吴撼地掌",
+      "what": "一种动作模仿类梗，以夸张的拍击地面动作为核心。",
+      "howFired": "7月底原创视频 → 8月初模仿潮(简苗梣43万+哈基米维奇25万) → 网梗指南8/15科普",
+      "memeType": "action",
+      "verified": "uncertain",
+      "heat": 3,
+      "fresh": 9,
+      "link": "https://search.bilibili.com/all?keyword=%E8%80%81%E5%90%B4%E6%92%BC%E5%9C%B0%E6%8E%8C&order=click"
     }
   ]
 }
