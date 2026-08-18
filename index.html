@@ -316,8 +316,29 @@ tbody td:first-child { padding-left: 20px; }
 }
 /* ===== 玩一梗 (Quiz) ===== */
 .quiz-wrap { margin-top: 16px; margin-bottom: 20px; }
-#panel-quiz .quiz-wrap { margin-top: 0; }
-#panel-quiz .quiz-head { font-size: 1.2rem; margin-bottom: 14px; }
+#panel-quiz.active { display: flex; flex-direction: column; height: 100%; }
+#panel-quiz .quiz-wrap { margin-top: 0; margin-bottom: 0; flex: 1; display: flex; flex-direction: column; min-height: 0; }
+#panel-quiz .quiz-head { font-size: 1.2rem; margin-bottom: 14px; flex-shrink: 0; }
+#panel-quiz .quiz-card { flex: 1; display: flex; flex-direction: column; min-height: 0; overflow-y: auto; justify-content: center; }
+/* 答题阶段：标题占中上大块，选项 2x2 占满下方 */
+#panel-quiz .quiz-play-head { flex-shrink: 0; }
+#panel-quiz .quiz-feedback { flex-shrink: 0; font-size: 1rem; margin-bottom: 8px; }
+#panel-quiz .quiz-q {
+  flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; font-size: clamp(1.9rem, 4.6vw, 3rem); line-height: 1.35;
+  margin: 0; padding: 6px 12px; gap: 4px;
+}
+#panel-quiz .quiz-options {
+  flex: 1.35; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;
+  gap: 16px; min-height: 0;
+}
+#panel-quiz .quiz-opt {
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  font-size: 1.1rem; padding: 18px 22px; border-radius: 12px; line-height: 1.6;
+}
+#panel-quiz .quiz-result-score { font-size: 4rem; }
+#panel-quiz .quiz-result-sub { font-size: 1rem; }
+#panel-quiz .quiz-verdict { font-size: 1.25rem; }
 .quiz-head {
   font-size: 1rem; font-weight: 800; color: var(--red);
   display: flex; align-items: baseline; gap: 10px; margin-bottom: 12px;
@@ -736,6 +757,10 @@ tbody td:first-child { padding-left: 20px; }
   .nav-item { font-size: 0; padding: 12px; text-align: center; }
   .nav-item::before { font-size: 1rem; }
   .main { padding: 16px; }
+  #panel-quiz .quiz-q { font-size: clamp(1.45rem, 6.5vw, 2rem); }
+  #panel-quiz .quiz-options { gap: 10px; }
+  #panel-quiz .quiz-opt { font-size: 0.92rem; padding: 12px 14px; }
+  #panel-quiz .quiz-card { padding: 14px; }
 }
 </style>
 </head>
