@@ -315,6 +315,83 @@ tbody td:first-child { padding-left: 20px; }
   color: var(--red);
   font-weight: 700;
 }
+/* ===== 玩一梗 (Quiz) ===== */
+.quiz-wrap { margin-top: 36px; }
+.quiz-head {
+  font-size: 1rem; font-weight: 800; color: var(--red);
+  display: flex; align-items: baseline; gap: 10px; margin-bottom: 12px;
+}
+.quiz-sub { font-size: 0.72rem; font-weight: 400; color: var(--text-3); }
+.quiz-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+}
+.quiz-hello { font-size: 1rem; font-weight: 700; text-align: center; }
+.quiz-rules { font-size: 0.78rem; color: var(--text-3); text-align: center; line-height: 1.8; margin: 10px 0 18px; }
+.quiz-btn {
+  display: block; margin: 0 auto; padding: 10px 34px;
+  background: var(--red); color: #fff; border: none; border-radius: 8px;
+  font-size: 0.92rem; font-weight: 700; cursor: pointer;
+  font-family: var(--font);
+  transition: transform 0.12s, opacity 0.12s;
+}
+.quiz-btn:hover { transform: translateY(-1px); opacity: 0.92; }
+.quiz-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+.quiz-btn.ghost { background: transparent; color: var(--red); border: 1px solid var(--red); }
+.quiz-hint { text-align: center; font-size: 0.7rem; color: var(--text-3); margin-top: 12px; }
+.quiz-play-head {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.78rem; color: var(--text-3); font-family: var(--mono);
+  margin-bottom: 14px;
+}
+.quiz-q { font-size: 1.05rem; font-weight: 800; margin-bottom: 16px; line-height: 1.5; }
+.quiz-q .qi-name { color: var(--red); }
+.quiz-feedback { font-size: 0.8rem; font-weight: 700; margin-bottom: 10px; min-height: 1.2em; }
+.quiz-feedback.ok { color: #2e7d32; }
+.quiz-feedback.bad { color: var(--red); }
+.quiz-options { display: grid; gap: 10px; }
+.quiz-opt {
+  text-align: left; padding: 12px 16px;
+  border: 1px solid var(--border); border-radius: 8px;
+  background: var(--white); cursor: pointer;
+  font-size: 0.86rem; color: var(--text); line-height: 1.55;
+  font-family: var(--font);
+  transition: border-color 0.12s, background 0.12s;
+}
+.quiz-opt:hover:not(:disabled) { border-color: var(--red); }
+.quiz-opt:disabled { cursor: default; }
+.quiz-opt.correct { background: rgba(46,125,50,0.1); border-color: #2e7d32; }
+.quiz-opt.correct::after { content: ' \2714'; color: #2e7d32; font-weight: 700; }
+.quiz-opt.wrong { background: rgba(164,36,35,0.08); border-color: var(--red); color: var(--red); }
+.quiz-opt.wrong::after { content: ' \2718'; font-weight: 700; }
+.quiz-result-score {
+  text-align: center; font-size: 2.2rem; font-weight: 800; color: var(--red);
+  font-family: var(--mono); margin: 8px 0 2px;
+}
+.quiz-result-sub { text-align: center; font-size: 0.82rem; color: var(--text-2); margin-bottom: 6px; }
+.quiz-verdict { text-align: center; font-weight: 700; font-size: 0.9rem; margin-bottom: 12px; }
+.quiz-nick-row { display: flex; gap: 8px; justify-content: center; margin: 14px 0 4px; }
+.quiz-nick {
+  flex: 0 1 220px; padding: 8px 12px;
+  border: 1px solid var(--border); border-radius: 8px;
+  font-size: 0.84rem; font-family: var(--font);
+}
+.quiz-nick:focus { outline: none; border-color: var(--red); }
+.quiz-saved-tip { text-align: center; font-size: 0.72rem; color: #2e7d32; margin-top: 6px; }
+.quiz-lb { margin-top: 22px; }
+.quiz-lb-title { font-size: 0.82rem; font-weight: 700; color: var(--text-2); margin-bottom: 8px; }
+.quiz-lb-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+.quiz-lb-table th {
+  text-align: left; color: var(--text-3); font-weight: 500;
+  padding: 6px 8px; border-bottom: 1px solid var(--border);
+}
+.quiz-lb-table td { padding: 7px 8px; border-bottom: 1px solid rgba(164,36,35,0.06); font-family: var(--mono); }
+.quiz-lb-table td:first-child { color: var(--text-3); }
+.quiz-lb-table td.name { font-family: var(--font); font-weight: 600; }
+.quiz-lb-table tr.quiz-lb-top td { font-weight: 700; color: var(--red); }
+.quiz-lb-empty { font-size: 0.78rem; color: var(--text-3); text-align: center; padding: 14px 0; }
 /* ===== Daily cards ===== */
 .daily-section-title {
   font-size: 0.82rem;
@@ -730,6 +807,12 @@ tbody td:first-child { padding-left: 20px; }
       <button class="wiki-circle-btn" id="wikiNext"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></button>
       <button class="wiki-circle-btn wiki-random-btn" id="wikiRandom"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><circle cx="9" cy="9" r="1.2" fill="currentColor" stroke="none"/><circle cx="15" cy="9" r="1.2" fill="currentColor" stroke="none"/><circle cx="9" cy="15" r="1.2" fill="currentColor" stroke="none"/><circle cx="15" cy="15" r="1.2" fill="currentColor" stroke="none"/><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"/></svg><span style="margin-left:5px;font-size:0.72rem">来一梗</span></button>
     </div>
+
+    <!-- 玩一梗 -->
+    <div class="quiz-wrap">
+      <div class="quiz-head">玩一梗 <span class="quiz-sub">问答闯关 · 答对继续，答错出局 · 成绩记入排行榜</span></div>
+      <div class="quiz-card" id="quizRoot"></div>
+    </div>
   </div>
 
   <!-- 日报 -->
@@ -784,6 +867,8 @@ function init() {
   renderDaily();
   setupNav();
   setupDateNav();
+  renderQuiz();
+  loadLeaderboard();
 }
 
 // ===== Bar renderers =====
@@ -1140,6 +1225,232 @@ function layoutDeck() {
   });
   document.getElementById('wikiPrev').disabled = wikiIdx <= 0;
   document.getElementById('wikiNext').disabled = wikiIdx >= wikiFiltered.length - 1;
+}
+
+// ===== 玩一梗 (Quiz Game) =====
+const QUIZ_PER_GAME = 10;
+const QUIZ_STORAGE_KEY = 'memeQuizLbV1';
+const QUIZ_CLOUD_URL = 'https://crudcrud.com/api/8453bd41fd3942a78211e04986b39ffe/board';
+const QUIZ_CLOUD_DOC_ID = '6a8402e89d436503e895b38b';
+
+const QUIZ_QUESTIONS = [
+  { q: "盘串", a: "小学生模仿大人玩文玩，课间不停搓动珠子，声称这样解压", w: ["指小学生撸串吃烧烤，还比谁吃得多", "指把圆珠笔串成一串当手链戴着炫耀", "指绕着操场跑圈热身时甩胳膊的动作"] },
+  { q: "正太扭腰", a: "一种\"嘴上拒绝、身体却诚实\"的魔性舞蹈挑战：男生先说早就不跳了，下一秒却跟着洗脑口诀跳起夸张的抖身舞，反转逗笑全场", w: ["指用腰转呼啦圈比谁转得久的课间竞技", "指新来的同学必须当众跳一段舞才能入座的迎新仪式", "指把广播体操改成摇头晃脑版的课间整活"] },
+  { q: "牛来", a: "一部儿童动画电影因票房惨淡被全网群嘲烂得离谱，网友反而买票围观，票房竟逆势上涨，还衍生出\"让时间来证明\"的反讽金句", w: ["指孩子开学前帮家里放牧、用一句话证明自己干过活的假期总结", "指主播在直播间卖家乡特产、喊把好东西带出去的带货话术", "指用动物表情包刷屏表示佩服佩服的网络夸人方式"] },
+  { q: "比比拉布", a: "一种小学生接头暗号对答：一个人先喊出一个词，另一个必须接上固定回话，接不上就被当成圈外人", w: ["指两人交换零食比谁带的更好吃的零食对决", "指把生字编成押韵口号全班齐读的早读游戏", "指用橡皮刻章互按手背的盖章交友玩法"] },
+  { q: "我的刀盾", a: "源自一手拿一样东西、另一只手拿另一样东西的萌宠形象，小学生模仿它喊\"召唤装备\"的姿势打闹，还有小挂件在卖", w: ["指体育课夺旗赛里守在最前面的防守队员", "指考试前互相借文具、号称共享武器库的江湖规矩", "指用两根粉笔当兵器比划的粉笔剑客课间决斗"] },
+  { q: "甲亢哥", a: "一位情绪极度亢奋、大吼大叫的外国游戏主播，来中国旅游的夸张反应被做成大量搞笑二创，小学生们模仿他的表情和动作", w: ["指上课憋笑挑战，比谁先笑出声的课间游戏", "指短视频里扯着嗓子喊清仓大甩卖的街头推销", "指把感冒药当糖豆吃的迷糊配音恶搞"] },
+  { q: "哈基米", a: "一句日语空耳口头禅，本意和甜有关，被网友拿来给可爱小动物视频配乐，渐渐变成太可爱了的感叹词，小学生看到萌物就喊", w: ["指把面包边捏成小动物形状的便当手艺", "指模仿机器人说话的电音绕口令挑战", "指用鼻子哼曲调、别人接下一句的音乐接龙"] },
+  { q: "中国人能飞", a: "一首歌词反复循环\"咱们国家的人都能上天\"的魔性歌曲，旋律简单越唱越上头，小学生在体育课和课间拿来当加油号子", w: ["指科学课纸飞机大赛前全班喊的助威口号", "指体育课跳远前默念我能行的自我暗示仪式", "指把气球绑书包上假装会飞的低年级恶作剧"] },
+  { q: "验牌/擦皮鞋", a: "电影里赌场高手的两句口头禅被听成奇怪的谐音，做成会发声的小挂件，按一下响一次，小卖部人手一个、课间响成一片", w: ["指值日生排队互相擦鞋、比赛谁擦得亮的卫生评比", "指把扑克牌藏课本里偷偷比大小的课间游戏", "指文具店集贴纸换牙刷的促销玩法"] },
+  { q: "从夯到拉", a: "一种万物皆可排座次的评价格式：从最顶级一路排到最差劲，小学生们用它给零食、动画、同学表现打分，天天讨论谁排第几", w: ["指体育课按身高排队的报数换位规矩", "指把橡皮切成小块玩跳棋的桌面游戏", "指老师发成绩单时按总分排名的红榜"] },
+  { q: "那咋了/受着呗", a: "一种软抵抗口头禅：不管被怎么批评，都用一句能怎样、我受着顶回去，表达满不在乎，被老师和家长点名批评是消极态度", w: ["指把问题抛回给对方、用于辩论技巧课的反问法", "指同学互相推卸值日责任时的踢皮球话术", "指班主任劝架时让双方各自退一步的调解用语"] },
+  { q: "熊大回眸", a: "儿童动画里一个角色突然转头、表情说不出来的诡异的一幕被截图做成表情包，在短视频平台爆火，小学生课间互相突然转头吓人", w: ["指动物园里动物直立行走的视频被配成打招呼表情包", "指篮球进球的慢镜头回放被做成定格庆祝", "指睡觉被同学拍醒后一脸懵的起床气表情"] },
+  { q: "因为我善", a: "给一切不想解释的行为配一句\"因为我心肠好\"的万能回答，越不讲道理越好笑，已经演变成各种造句接龙", w: ["指值日时对同学说这活我全包了的大包大揽", "指被表扬后鞠躬说谢谢栽培的满分礼貌", "指把零食分给全班后喊别抢人人有份的分享"] },
+  { q: "紫薯精", a: "一部寒假打工短剧里穿紫色工服的女主角，因一句\"如果全世界都怪你，我就带你去吃某连锁小吃\"的台词走红，前半句温情后半句突然接地气，反差逗笑", w: ["指食堂阿姨打菜手抖、肉片越舀越小的抖勺日常", "指美术课橡皮泥捏的小人因颜色像紫薯被起外号", "指秋游挖红薯活动里挖得最多的冠军称号"] },
+  { q: "葱明姜就蒜了", a: "用几种厨房调味品的谐音拼成的劝人顺口溜：脑筋机灵点、差不多得了、不行就拉倒，考试考砸了用来安慰自己", w: ["指食堂推出五色蔬菜套餐劝挑食孩子多吃菜", "指劳动课用菜叶做拓印画的手工作业", "指菜市场老板教小学生认菜名的社会实践"] },
+  { q: "大笑奶龙", a: "把一部低幼动画里的萌系角色用电脑生成成大嘴狂笑的魔性形象，配上循环笑声刷屏，游戏里还出了同款皮肤", w: ["指奶糖广告里笑出皱纹的老头形象表情包", "指用软件把全班合照做成集体大笑的恶搞图", "指对笑点低的同学发起谁先笑谁输的整蛊"] },
+  { q: "新号别搞", a: "原本是游戏里\"刚注册的小号、别来惹事\"的说法，被小学生带进校园：老师家长一追问，就用\"我是新手，别管我\"搪塞", w: ["指转学生自我介绍先说插班生请多关照的套话", "指把练习册封面写上复习专用防老师收走的伪装", "指打游戏开局喊先发育别浪的战队指挥口诀"] },
+  { q: "嘉豪", a: "一个讽刺\"实力一般却爱装酷、故弄玄虚\"的标签，因为撞上了常见人名，真叫这名字的同学在班里被起哄，被媒体点名是隐形校园霸凌", w: ["指给爱炫耀新文具的同学起绰号的攀比行为", "指模仿电视剧里霸总腔调说话的中二表演", "指把打球厉害的同学统一叫球星的班级外号文化"] },
+  { q: "树恨你", a: "一款被会追人的植物撵着跑的通关游戏，主播带火后小学生跟着玩，还发明了躲追人同学的校园真人版", w: ["指不许碰树叶的户外寻宝规则", "指把讨厌的人名字写叶子上丢掉解气的迷信", "指植树节全班认养一株苗并取名的护绿活动"] },
+  { q: "上头神婆/棒棒歌", a: "一首完全听不懂歌词、全靠节奏把人洗脑的外语神曲，哼起来像反复念叨一样上头，小学生课间哼着哼着变成全班大合唱", w: ["指早读课用超快语速齐读课文的贯口整活", "指把数学口诀编进下课铃声的记忆法", "指体育老师吹哨打节拍带出的课间操新编"] },
+  { q: "绷住挑战", a: "看搞笑视频挑战全程不笑，先笑先输，输家要接受惩罚，暑假里小学生们组团互相拉人入坑，专挑笑点低的欺负", w: ["指憋气比赛看谁在水里待得最久", "指睁大眼睛不许眨的瞪眼大赛", "指捂住嘴憋喷嚏的防喷接力"] },
+  { q: "妙脆角小猫", a: "一只耳朵尖尖的小宠物因为外形像某种三角形零食被做成表情包，配文\"被日子磨平了棱角\"，又萌又心酸，小学生拿它当头像", w: ["指仓鼠塞满腮帮子的储粮表情包", "指把薯片袋捏扁当减压玩具的课间手工", "指考试前吃一块三角形巧克力求好运的仪式"] },
+  { q: "叮咚鸡/库里库里", a: "疫情期间一句\"等着听通知\"的方言被听成奇怪拟声词，配上动画做成魔性神曲，意思是耐心等消息，后来变成课间无限循环的欢乐曲目", w: ["指门铃响了要立刻开门取外卖的家庭规矩", "指模仿公鸡打鸣比谁叫得响的晨读游戏", "指值日生敲三角铁报时的打铃制度"] },
+  { q: "龙国/帽子叔叔", a: "小学生发明的代号体系：用夸自己国家的话指代母国，用穿制服的人指代执勤民警，觉得这么说很酷，还悄悄写进了作文里", w: ["指给学校门口石狮子起昵称的校园传统", "指扮演交通指挥游戏时用的角色代号", "指按动物名给同桌起外号的绰号系统"] },
+  { q: "竹知了", a: "一种一块钱的传统手工发声玩具，摇起来哇哇响，碰巧和某手机发布会现场观众的惊叹声撞了音，被配上\"千万以内最好\"的文案玩坏，越禁越火", w: ["指用易拉罐和黄豆自制的音乐课沙锤", "指夏天把树上的虫蜕收集起来换钱的传说", "指公园大爷抖空竹的嗡嗡声被剪进鬼畜视频"] },
+  { q: "伪人", a: "一种恐怖设定：外表和真人一模一样、行为却僵硬诡异的假人悄悄混进班级，小学生课间互相指认\"你是假的\"，越玩越瘆人又停不下来", w: ["指课间游戏的简化版谁是卧底", "指检查作业时抓模仿笔迹抄作业的活动", "指用橡皮泥捏克隆小人互相对暗号的手工"] },
+  { q: "白菜对我笑", a: "一句外语歌词被空耳听成\"蔬菜对我咧嘴笑\"，旋律魔性极其洗脑，变成无厘头口头禅，课间哼两句就停不下来", w: ["指食堂青菜免费续、打饭阿姨笑着说多吃点的福利", "指用蔬菜摆出笑脸形状的摆盘挑战", "指嘲笑同学牙缝卡菜叶的社死时刻"] },
+  { q: "花儿一家找妈妈", a: "一支电脑生成的猫咪动画，画风粗糙但剧情荒诞，主角大嗓门、动作夸张搞笑，小学生看得上头，课间互飙台词", w: ["指幼儿园丢手绢改编版迷路的小鸭子", "指陪弟弟妹妹反复刷同一集动画的带娃体验", "指给自家宠物录视频配内心独白的恶搞"] },
+  { q: "刀马刀马", a: "一句外语歌词被空耳听成\"拿着兵器冲锋\"的拟声词，配上简单摆臂舞步，男生们课间一边喊一边跳，越跳越来劲", w: ["指模仿骑牲口的跨棍跑圈体育游戏", "指玩具摊两军对垒塑料兵人对打的广告语", "指黑板报上画双方对峙分胜负的粉笔规矩"] },
+  { q: "孤勇者对暗号", a: "用一首热血励志歌曲当接头暗号：一人唱上半句，对方必须接下句，接不上就不是自己人，全国小学生几乎都会", w: ["指英语课用暗号记单词的背书技巧", "指入队仪式上宣誓举拳的口号环节", "指放学路队报数的整队口令"] },
+  { q: "你个老六", a: "游戏里专门形容躲在暗处偷袭、阴人的玩家，被小学生拿来骂偷偷告状、暗中使坏的狡猾行为，说的人一脸得意", w: ["指捉迷藏里最会藏身的躲藏之王", "指体育课报数时喊特定数字的数量游戏", "指值日表排第六位被全班起的外号"] },
+  { q: "科目三", a: "一种动作丝滑、魔性上头的舞步，据说是拿到驾照前的最后一道门槛，从婚礼现场火到全平台，小学生课间和联欢会都在跳", w: ["指体育期末新增的三大球必考项目", "指数学应用题三连问被戏称的通关任务", "指书法课横竖撇捺的练习内容"] },
+  { q: "萝卜刀", a: "一种塑料做的重力折叠小玩具，手一甩刃就弹出，玩的就是甩动手感，火遍小卖部后被学校明令禁止，越禁越受欢迎", w: ["指用胡萝卜雕花的手工课作品", "指一套塑料厨具玩具里最抢手的那把", "指把橡皮做成手枪形状的开橡皮枪"] },
+  { q: "烟卡", a: "把大人的包装纸盒折成方片，放在地上用手掌拍，翻面就能赢走对方的，稀有盒子是身份象征，被教育部门点名禁止", w: ["指用扑克搭纸牌屋比谁搭得稳", "指收集糖纸压平比花样的糖纸收藏", "指把旧课本折纸飞机比谁飞得远"] },
+  { q: "奥利给", a: "一位冬泳大叔的口头加油号子，大意是干杯、兄弟们冲，简单热血，成了万能打气口号，比赛前喊一嗓子气势拉满", w: ["指体育老师吹的冲刺哨暗号", "指军队拉练一二三四号子的改编", "指半夜饿醒喊的干饭口号"] },
+  { q: "YYDS", a: "四个拼音首字母，意思是某人是史上最强、地位无可撼动，从电竞圈火到全校，小学生们用它吹爆好朋友和喜欢的零食", w: ["指聊天软件里隐身状态的缩写", "指英语试卷语法填空题型的缩写外号", "指游戏掉线后一键重连的快捷键"] },
+  { q: "不讲武德", a: "一位功夫大叔被年轻人偷袭后的控诉金句：年轻人不讲规矩、来骗我一个老同志，配上好自为之成为经典怼人话", w: ["指摔跤比赛前必须鞠躬的礼仪环节", "指下棋不许悔棋的落子无悔规矩", "指乒乓球发球必须过线的裁判规则"] },
+  { q: "可达鸭", a: "快餐店联名的会摆手跳舞的黄色小玩具，一桌难求被炒出高价，谁在班里亮出它，谁就是当周最靓的仔", w: ["指不会游泳的同学套泳圈下水的旱泳笑话", "指公园里摇头晃脑的太阳能摆件", "指捏一下就响的尖叫鸡整蛊玩具"] },
+  { q: "Skibidi Toilet", a: "一支海外 3D 动画：脑袋从奇怪容器里探出来唱歌，和一群机器人脸互相对抗，剧情越来越离谱，小学生课间讨论打到哪一集了", w: ["指幼儿园认识警告标识的安全课", "指用纸箱做机器人头盔的美术手工", "指把手机倒过来看的新宇宙探索"] },
+  { q: "City不City", a: "一位外国博主在中国旅游时不停感叹这里好洋气好现代，中英混搭的问句火遍全网，小学生看见新商场新文具也这么嚷", w: ["指英语角全程英文交流的硬核规则", "指把流行歌改成英文版的翻唱挑战", "指魔法少女变身台词的经典玩梗"] },
+  { q: "显眼包", a: "形容人群里最抢眼、最搞笑、自带聚光灯的人，本来是损人，后来变夸人，小学生夸同学你今天太会整活了", w: ["指书包挂满玩偶走路叮当响的装备党", "指上课永远第一个举手的点名专业户", "指戴墨镜扮酷的街拍潮人"] },
+  { q: "鸡你太美", a: "一位偶像练习生舞台唱跳的一句歌词被空耳听成怪话，配上夸张动作被做成鬼畜素材，流传了整整一代小学生", w: ["指动画里公鸡报晓的叫早梗", "指用夸张动作模仿健身操的课间整活", "指把流行歌改编成点名版的班级恶搞"] },
+  { q: "歪比巴卜", a: "游戏里一个疯疯癫癫角色的含糊语音被主播学舌带火，小学生们课间用外星语互相对喊，越喊越开心，还会间歇性复活", w: ["指把英语单词当拼音读的谐音背词法", "指早自习用怪腔怪调念课文的天书整活", "指模仿机器人电量不足提示音的配音游戏"] },
+  { q: "咕卡", a: "用贴纸、胶带装饰小方牌子的女生手工，越贴越上头，文具店全套材料卖到断货，课间交换作品比美是常态", w: ["指用便利贴做笔记的便签整理法", "指给课本包手账风书皮的包书比赛", "指美术课彩纸剪贴画传统手工"] },
+  { q: "成吉思鸡", a: "一位外国街头小吃摊主的视频被配上古装译制片腔解说，一本正经胡说八道，摊主被封异域美食教父，笑到肚子疼", w: ["指历史课情景剧一代天骄西征的排练", "指美食博主探店炭火烤肉的流量密码", "指把动物纪录片配音成宫廷剧的恶搞风格"] }
+];
+
+let quizState = { phase: 'idle', pool: [], pos: 0, score: 0, lock: false, opts: [], picked: null, lastOk: false, submitted: false };
+let quizLeader = [];
+
+function shuffleArr(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+function escapeHtml(s) { return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+// ===== 排行榜（本地 localStorage + 云端 jsonstorage 双写） =====
+function lbLocalLoad() { try { return JSON.parse(localStorage.getItem(QUIZ_STORAGE_KEY)) || []; } catch (e) { return []; } }
+function lbLocalSave(list) { try { localStorage.setItem(QUIZ_STORAGE_KEY, JSON.stringify(list)); } catch (e) {} }
+function lbMerge(a, b) {
+  const m = new Map();
+  [...a, ...b].forEach(r => {
+    const p = m.get(r.name);
+    if (!p || r.score > p.score || (r.score === p.score && r.date > p.date)) m.set(r.name, r);
+  });
+  return [...m.values()].sort((x, y) => y.score - x.score || (x.date < y.date ? -1 : 1));
+}
+async function cloudFetch(url, opts = {}) {
+  const ctl = new AbortController();
+  const t = setTimeout(() => ctl.abort(), 5000);
+  try { return await fetch(url, { ...opts, signal: ctl.signal }); }
+  finally { clearTimeout(t); }
+}
+async function fetchCloudLb() {
+  try {
+    const r = await cloudFetch(QUIZ_CLOUD_URL);
+    if (!r.ok) return [];
+    const j = await r.json();
+    const doc = Array.isArray(j) ? (j[0] || {}) : j;
+    return Array.isArray(doc.data) ? doc.data : [];
+  } catch (e) { return []; }
+}
+async function loadLeaderboard() {
+  quizLeader = lbMerge(lbLocalLoad(), []);
+  renderLeaderboard();
+  const cloud = await fetchCloudLb();
+  quizLeader = lbMerge(lbLocalLoad(), cloud);
+  renderLeaderboard();
+}
+async function pushScore(name, score) {
+  const entry = { name, score, date: new Date().toISOString().slice(0, 10) };
+  const local = lbLocalLoad();
+  local.push(entry);
+  lbLocalSave(local);
+  quizLeader = lbMerge(local, []);
+  renderLeaderboard();
+  try {
+    // 本地全量 + 云端全量合并后整体上传，避免任一端的记录丢失
+    const cloud = await fetchCloudLb();
+    const merged = lbMerge(lbLocalLoad(), cloud);
+    const r = await cloudFetch(QUIZ_CLOUD_URL + '/' + QUIZ_CLOUD_DOC_ID, {
+      method: 'PUT', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ data: merged })
+    });
+    if (r.ok) {
+      quizLeader = lbMerge(lbLocalLoad(), merged);
+      renderLeaderboard();
+    }
+  } catch (e) {}
+}
+
+function renderLeaderboard() {
+  const body = document.getElementById('quizLbBody');
+  if (!body) return;
+  const list = quizLeader.slice(0, 10);
+  if (!list.length) {
+    body.innerHTML = '<div class="quiz-lb-empty">还没有人上榜，快来当第一个梗王</div>';
+    return;
+  }
+  body.innerHTML = '<table class="quiz-lb-table"><tr><th>名次</th><th>玩家</th><th>分数</th><th>日期</th></tr>' +
+    list.map((r, i) => `<tr class="${i < 3 ? 'quiz-lb-top' : ''}"><td>${i + 1}</td><td class="name">${escapeHtml(r.name)}</td><td>${r.score}</td><td>${r.date}</td></tr>`).join('') + '</table>';
+}
+
+// ===== 游戏流程 =====
+function quizBuildOptions() {
+  const q = quizState.pool[quizState.pos];
+  quizState.opts = shuffleArr([{ t: q.a, ok: true }, ...q.w.map(t => ({ t, ok: false }))]);
+}
+function quizStart() {
+  quizState = { phase: 'play', pool: shuffleArr(QUIZ_QUESTIONS).slice(0, QUIZ_PER_GAME), pos: 0, score: 0, lock: false, opts: [], picked: null, lastOk: false, submitted: false };
+  quizBuildOptions();
+  renderQuiz();
+}
+function quizVerdict(score) {
+  if (score >= QUIZ_PER_GAME) return '满分通关！你就是梗百科本科';
+  if (score >= 7) return '梗王本王，课间霸主实锤';
+  if (score >= 4) return '梗力十足，是个懂梗的';
+  if (score >= 1) return '再接再厉，梗海无涯';
+  return '零分也是分，先去梗百科补补课';
+}
+function quizPick(i) {
+  if (quizState.lock || quizState.phase !== 'play') return;
+  quizState.lock = true;
+  quizState.picked = i;
+  quizState.lastOk = quizState.opts[i].ok;
+  renderQuiz();
+  setTimeout(() => {
+    if (quizState.lastOk) {
+      quizState.score++;
+      quizState.pos++;
+      quizState.lock = false;
+      quizState.picked = null;
+      if (quizState.pos >= quizState.pool.length) { quizState.phase = 'finish'; renderQuiz(); }
+      else { quizBuildOptions(); renderQuiz(); }
+    } else {
+      quizState.phase = 'finish';
+      renderQuiz();
+    }
+  }, 900);
+}
+function renderQuiz() {
+  const root = document.getElementById('quizRoot');
+  if (!root) return;
+  let html;
+  if (quizState.phase === 'idle') {
+    html = '<div class="quiz-hello">考验你懂不懂梗的时候到了</div>' +
+      '<div class="quiz-rules">每局 <b>' + QUIZ_PER_GAME + '</b> 题随机出题 · 四选一 · 答对继续，答错立刻出局<br>正确答案都被悄悄打码了，选到算你厉害</div>' +
+      '<button class="quiz-btn" id="quizStartBtn">开始游戏</button>' +
+      '<div class="quiz-hint">结束时要输入昵称，成绩才会记入排行榜</div>' +
+      '<div class="quiz-lb"><div class="quiz-lb-title">排行榜 Top 10</div><div id="quizLbBody"></div></div>';
+  } else if (quizState.phase === 'play') {
+    const q = quizState.pool[quizState.pos];
+    const revealed = quizState.lock ? (quizState.lastOk ? '<div class="quiz-feedback ok">答对了！进入下一题</div>' : '<div class="quiz-feedback bad">答错了……正确答案已标出</div>') : '<div class="quiz-feedback"></div>';
+    html = '<div class="quiz-play-head"><span>第 ' + (quizState.pos + 1) + ' / ' + quizState.pool.length + ' 题</span><span>得分 ' + quizState.score + '</span></div>' +
+      revealed +
+      '<div class="quiz-q">「<span class="qi-name">' + escapeHtml(q.q) + '</span>」是什么梗？</div>' +
+      '<div class="quiz-options">' + quizState.opts.map((o, i) => {
+        let cls = 'quiz-opt';
+        if (quizState.lock) {
+          if (o.ok) cls += ' correct';
+          else if (i === quizState.picked) cls += ' wrong';
+        }
+        return '<button class="' + cls + '" data-i="' + i + '"' + (quizState.lock ? ' disabled' : '') + '>' + escapeHtml(o.t) + '</button>';
+      }).join('') + '</div>';
+  } else {
+    const s = quizState.score;
+    html = '<div class="quiz-result-score">' + s + ' / ' + quizState.pool.length + '</div>' +
+      '<div class="quiz-result-sub">答对 ' + s + ' 题，本局结束</div>' +
+      '<div class="quiz-verdict">' + quizVerdict(s) + '</div>' +
+      (quizState.submitted
+        ? '<div class="quiz-saved-tip">成绩已记入排行榜（本地+云端双写）</div>'
+        : '<div class="quiz-nick-row"><input class="quiz-nick" id="quizNick" maxlength="12" placeholder="输入昵称，不填默认匿名同学"><button class="quiz-btn" id="quizSubmitScore" style="margin:0;padding:8px 18px;font-size:0.82rem">记入排行榜</button></div>') +
+      '<div style="text-align:center;margin-top:12px"><button class="quiz-btn ghost" id="quizAgainBtn">再来一局</button></div>' +
+      '<div class="quiz-lb"><div class="quiz-lb-title">排行榜 Top 10</div><div id="quizLbBody"></div></div>';
+  }
+  root.innerHTML = html;
+  renderLeaderboard();
+  const startBtn = document.getElementById('quizStartBtn');
+  if (startBtn) startBtn.addEventListener('click', quizStart);
+  const againBtn = document.getElementById('quizAgainBtn');
+  if (againBtn) againBtn.addEventListener('click', quizStart);
+  const submitBtn = document.getElementById('quizSubmitScore');
+  if (submitBtn) submitBtn.addEventListener('click', () => {
+    const inp = document.getElementById('quizNick');
+    let name = (inp ? inp.value : '').trim() || '匿名同学';
+    if (name.length > 12) name = name.slice(0, 12);
+    submitBtn.disabled = true;
+    quizState.submitted = true;
+    pushScore(name, quizState.score);
+    renderQuiz();
+  });
+  const optBtns = root.querySelectorAll('.quiz-opt');
+  optBtns.forEach(btn => btn.addEventListener('click', () => quizPick(+btn.dataset.i)));
 }
 
 // ===== Daily =====
