@@ -324,9 +324,13 @@ tbody td:first-child { padding-left: 20px; }
 #panel-quiz .quiz-play-head { flex-shrink: 0; }
 #panel-quiz .quiz-feedback { flex-shrink: 0; font-size: 1rem; margin-bottom: 8px; }
 #panel-quiz .quiz-q {
-  flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
-  text-align: center; font-size: clamp(1.9rem, 4.6vw, 3rem); line-height: 1.35;
-  margin: 0; padding: 6px 12px; gap: 4px; white-space: nowrap;
+  flex: 1; display: grid; grid-template-columns: 1fr;
+  align-items: center; justify-items: stretch;
+  min-height: 0; margin: 0; padding: 6px 12px;
+}
+#panel-quiz .quiz-q-inner {
+  display: block; text-align: center; white-space: nowrap; min-width: 0;
+  font-size: clamp(1.9rem, 4.6vw, 3rem); line-height: 1.35;
 }
 #panel-quiz .quiz-options {
   flex: 1.35; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;
@@ -757,7 +761,7 @@ tbody td:first-child { padding-left: 20px; }
   .nav-item { font-size: 0; padding: 12px; text-align: center; }
   .nav-item::before { font-size: 1rem; }
   .main { padding: 16px; }
-  #panel-quiz .quiz-q { font-size: clamp(1.45rem, 6.5vw, 2rem); }
+  #panel-quiz .quiz-q-inner { font-size: clamp(1.45rem, 6.5vw, 2rem); }
   #panel-quiz .quiz-options { gap: 10px; }
   #panel-quiz .quiz-opt { font-size: 0.92rem; padding: 12px 14px; }
   #panel-quiz .quiz-card { padding: 14px; }
@@ -1443,7 +1447,7 @@ function renderQuiz() {
     const revealed = quizState.lock ? (quizState.lastOk ? '<div class="quiz-feedback ok">答对了！进入下一题</div>' : '<div class="quiz-feedback bad">答错了……正确答案已标出</div>') : '<div class="quiz-feedback"></div>';
     html = '<div class="quiz-play-head"><span>第 ' + (quizState.pos + 1) + ' / ' + quizState.pool.length + ' 题</span><span>得分 ' + quizState.score + '</span></div>' +
       revealed +
-      '<div class="quiz-q">「<span class="qi-name">' + escapeHtml(q.q) + '</span>」是什么梗？</div>' +
+      '<div class="quiz-q"><div class="quiz-q-inner">「<span class="qi-name">' + escapeHtml(q.q) + '</span>」是什么梗？</div></div>' +
       '<div class="quiz-options">' + quizState.opts.map((o, i) => {
         let cls = 'quiz-opt';
         if (quizState.lock) {
@@ -1467,12 +1471,12 @@ function renderQuiz() {
   renderLeaderboard();
   fitQuizTitle();
   function fitQuizTitle() {
-  const el = document.querySelector('#panel-quiz .quiz-q');
+  const el = document.querySelector('#panel-quiz .quiz-q-inner');
   if (!el) return;
   el.style.fontSize = '';
-  if (el.scrollWidth <= el.clientWidth) return;
+  if (el.scrollWidth <= el.clientWidth + 1) return;
   let size = parseFloat(getComputedStyle(el).fontSize);
-  while (el.scrollWidth > el.clientWidth && size > 14) {
+  while (el.scrollWidth > el.clientWidth + 1 && size > 14) {
     size -= 0.5;
     el.style.fontSize = size + 'px';
   }
