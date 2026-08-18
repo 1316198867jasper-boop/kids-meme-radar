@@ -1,11 +1,11 @@
 {
-  "lastUpdated": "2026-08-17",
+  "lastUpdated": "2026-08-18",
   "masterTable": {
     "timeChart": [
       {
         "rank": 1,
         "name": "牛来（电影反向出圈梗）",
-        "heat": 8,
+        "heat": 9,
         "fresh": 10,
         "time": "2026年8月14-17日",
         "source": "8/17日报",
@@ -14,7 +14,7 @@
       {
         "rank": 2,
         "name": "熊大回眸",
-        "heat": 6,
+        "heat": 5,
         "fresh": 9,
         "time": "2026年8月2-3日",
         "source": "8/5日报",
@@ -261,12 +261,21 @@
         "name": "正太扭腰（左边画个虫虫）",
         "heat": 10,
         "fresh": 8,
-        "trend": "up",
+        "trend": "stable",
         "source": "8/9日报",
         "sourceFile": "2026-08-09"
       },
       {
         "rank": 2,
+        "name": "牛来（电影反向出圈梗）",
+        "heat": 9,
+        "fresh": 10,
+        "trend": "up",
+        "source": "8/17日报",
+        "sourceFile": "2026-08-17"
+      },
+      {
+        "rank": 3,
         "name": "比比拉布",
         "heat": 9,
         "fresh": 4,
@@ -275,22 +284,13 @@
         "sourceFile": "2026-08-05"
       },
       {
-        "rank": 3,
+        "rank": 4,
         "name": "我的刀盾",
         "heat": 9,
         "fresh": 3,
         "trend": "stable",
         "source": "8/5日报",
         "sourceFile": "2026-08-05"
-      },
-      {
-        "rank": 4,
-        "name": "牛来（电影反向出圈梗）",
-        "heat": 8,
-        "fresh": 10,
-        "trend": "new",
-        "source": "8/17日报",
-        "sourceFile": "2026-08-17"
       },
       {
         "rank": 5,
@@ -339,15 +339,6 @@
       },
       {
         "rank": 10,
-        "name": "熊大回眸",
-        "heat": 6,
-        "fresh": 9,
-        "trend": "up",
-        "source": "8/5日报",
-        "sourceFile": "2026-08-05"
-      },
-      {
-        "rank": 11,
         "name": "那咋了 / 受着呗",
         "heat": 6,
         "fresh": 3,
@@ -356,11 +347,20 @@
         "sourceFile": "2026-08-05"
       },
       {
+        "rank": 11,
+        "name": "熊大回眸",
+        "heat": 5,
+        "fresh": 9,
+        "trend": "down",
+        "source": "8/5日报",
+        "sourceFile": "2026-08-05"
+      },
+      {
         "rank": 12,
         "name": "因为我善",
         "heat": 4,
         "fresh": 8,
-        "trend": "down",
+        "trend": "stable",
         "source": "8/6日报",
         "sourceFile": "2026-08-06"
       },
@@ -369,7 +369,7 @@
         "name": "紫薯精（如果全世界都指责你）",
         "heat": 4,
         "fresh": 4,
-        "trend": "down",
+        "trend": "stable",
         "source": "8/7日报",
         "sourceFile": "2026-08-07"
       },
@@ -387,7 +387,7 @@
         "name": "大笑奶龙",
         "heat": 4,
         "fresh": 4,
-        "trend": "down",
+        "trend": "stable",
         "source": "8/6日报",
         "sourceFile": "2026-08-06"
       },
@@ -396,7 +396,7 @@
         "name": "新号别搞",
         "heat": 4,
         "fresh": 4,
-        "trend": "down",
+        "trend": "stable",
         "source": "8/6日报",
         "sourceFile": "2026-08-06"
       },
@@ -423,7 +423,7 @@
         "name": "上头神婆多嘴歌/棒棒歌",
         "heat": 3,
         "fresh": 8,
-        "trend": "down",
+        "trend": "stable",
         "source": "8/7日报",
         "sourceFile": "2026-08-07"
       },
@@ -432,7 +432,7 @@
         "name": "绷住挑战（大绷住时代）",
         "heat": 3,
         "fresh": 7,
-        "trend": "down",
+        "trend": "stable",
         "source": "8/6日报",
         "sourceFile": "2026-08-06"
       },
@@ -441,7 +441,7 @@
         "name": "妙脆角小猫",
         "heat": 3,
         "fresh": 6,
-        "trend": "down",
+        "trend": "stable",
         "source": "8/5日报",
         "sourceFile": "2026-08-05"
       },
@@ -450,7 +450,7 @@
         "name": "叮咚鸡 / 库里库里",
         "heat": 3,
         "fresh": 6,
-        "trend": "down",
+        "trend": "stable",
         "source": "8/5日报",
         "sourceFile": "2026-08-05"
       },
@@ -468,7 +468,7 @@
         "name": "竹知了",
         "heat": 2,
         "fresh": 9,
-        "trend": "down",
+        "trend": "stable",
         "source": "8/6日报",
         "sourceFile": "2026-08-06"
       },
@@ -477,7 +477,7 @@
         "name": "伪人（全面入侵学校）",
         "heat": 2,
         "fresh": 9,
-        "trend": "down",
+        "trend": "stable",
         "source": "8/6日报",
         "sourceFile": "2026-08-06"
       },
@@ -486,7 +486,7 @@
         "name": "白菜对我笑",
         "heat": 2,
         "fresh": 4,
-        "trend": "down",
+        "trend": "stable",
         "source": "8/6日报",
         "sourceFile": "2026-08-06"
       },
@@ -503,51 +503,51 @@
     "potentialChart": [
       {
         "rank": 1,
-        "name": "迷核手势舞",
-        "heat": "8/17当天文章'最近席卷网络'，未成年人跟风",
-        "reason": "手势舞天然适合小学生，但伴有小三/粗口问题需关注",
-        "probability": "high",
-        "date": "8/17"
+        "name": "顽童戏老叙",
+        "heat": "B站每周必看1264万+8/18两条热搜词",
+        "reason": "B站原生动画梗，'顽童洗老叙'句式衍生中，小学生相关性待验证",
+        "probability": "medium-high",
+        "date": "8/18"
       },
       {
         "rank": 2,
-        "name": "熊大回眸",
-        "heat": "生态成型(小曲+绿幕+教程+科普)，熊出没IP高热",
-        "reason": "熊出没=小学生核心IP，已进入梗图模板化",
-        "probability": "high",
-        "date": "8/16"
+        "name": "发烧梗",
+        "heat": "B站每周必看#2(715万, 8/7)",
+        "reason": "新爆梗，来源待解剖",
+        "probability": "medium",
+        "date": "8/18"
       },
       {
         "rank": 3,
-        "name": "尬连手/目瑙纵歌",
-        "heat": "8/10洗脑BGM(5.9亿+35亿播放!)，线下舞蹈模仿风潮",
-        "reason": "播放量巨大但偏成人向，需确认小学生渗透",
-        "probability": "medium-high",
-        "date": "8/17"
+        "name": "熊大回眸",
+        "heat": "生态仍存但主峰已过(8/14后仅百级播放)",
+        "reason": "回落观察期，等待新二创事件触发",
+        "probability": "medium",
+        "date": "8/18"
       },
       {
         "rank": 4,
+        "name": "OK了老铁们",
+        "heat": "抖音学生向自制综艺7100万播放",
+        "reason": "台词体渗透中，学生向内容",
+        "probability": "medium",
+        "date": "8/18"
+      },
+      {
+        "rank": 5,
         "name": "老吴撼地掌",
-        "heat": "科普收尾期，动作模仿类",
-        "reason": "动作模仿易在校园传播，但峰值已过",
+        "heat": "亚文化百科378万/111万/55万+网梗指南科普",
+        "reason": "动作模仿类，科普收尾期",
         "probability": "medium",
         "date": "8/16"
       },
       {
-        "rank": 5,
-        "name": "牛来(后续)",
-        "heat": "已停排但梗惯性持续，'羊高'续集梗出现",
-        "reason": "电影下线后热度将衰减，但句式梗可能延续",
+        "rank": 6,
+        "name": "牛来衍生(羊高)",
+        "heat": "续作官宣，是衰减或再爆发的分水岭",
+        "reason": "电影下线后热度可能急转直下，持续观察",
         "probability": "medium",
         "date": "8/17"
-      },
-      {
-        "rank": 6,
-        "name": "霸之意志",
-        "heat": "游戏社区持续扩散",
-        "reason": "中二口号型，极适合小学生喟",
-        "probability": "medium-high",
-        "date": "8/6"
       }
     ],
     "classic": [
@@ -1654,6 +1654,74 @@
           "probability": "中"
         }
       ]
+    },
+    "2026-08-18": {
+      "date": "2026-08-18",
+      "newMemes": [],
+      "continuing": [
+        {
+          "name": "牛来（电影反向出圈梗）",
+          "since": "2026年8月14日",
+          "status": "热度不降反升：票房突破1000万+续作《羊高》官宣+股民玄学+Meme币"
+        },
+        {
+          "name": "正太扭腰（左边画个虫虫）",
+          "since": "2026年7月中旬",
+          "status": "梗百科8/17视频11万，顶流延续"
+        },
+        {
+          "name": "比比拉布",
+          "since": "2025年5月(2026.2二爆)",
+          "status": "8/16集市240万，日常更新"
+        },
+        {
+          "name": "我的刀盾",
+          "since": "2025年5月",
+          "status": "三大千万级储存视频"
+        },
+        {
+          "name": "甲亢哥（IShowSpeed）",
+          "since": "2025年3月",
+          "status": "鬼畜3个百万级二创"
+        },
+        {
+          "name": "哈基米",
+          "since": "2025年4月",
+          "status": "老梗二热，鬼畜314万"
+        },
+        {
+          "name": "中国人能飞",
+          "since": "2026年7月底",
+          "status": "官方MV 8/14下场288.6万"
+        },
+        {
+          "name": "那咋了 / 受着呗",
+          "since": "2025年6月",
+          "status": "4个独立来源，最高频老梗"
+        }
+      ],
+      "radar": [
+        {
+          "name": "顽童戏老叙",
+          "detail": "B站每周必看1264万+8/18两条热搜词",
+          "probability": "中高"
+        },
+        {
+          "name": "发烧梗",
+          "detail": "B站每周必看#2(715万)",
+          "probability": "中"
+        },
+        {
+          "name": "OK了老铁们",
+          "detail": "抖音学生向自制综艺7100万，台词体渗透中",
+          "probability": "中"
+        },
+        {
+          "name": "熊大回眸",
+          "detail": "主峰已过，回落观察期",
+          "probability": "中"
+        }
+      ]
     }
   },
   "availableDates": [
@@ -1725,7 +1793,8 @@
       "peakTime": "2025年5月",
       "link": "https://search.bilibili.com/all?keyword=%E6%88%91%E7%9A%84%E5%88%80%E7%9B%BE+%E5%B0%8F%E5%AD%A6%E7%94%9F",
       "memeType": "ip",
-      "verified": "verified"
+      "verified": "verified",
+      "heat": 9
     },
     {
       "name": "验牌 / 擦皮鞋",
@@ -1736,7 +1805,8 @@
       "peakTime": "2026年2月",
       "link": "https://search.bilibili.com/all?keyword=%E9%AA%8C%E7%89%8C+%E6%93%A6%E7%9A%AE%E9%9E%8B+%E6%A2%97",
       "verified": "verified",
-      "memeType": "slang"
+      "memeType": "slang",
+      "heat": 7
     },
     {
       "name": "从夯到拉",
@@ -1806,7 +1876,8 @@
       "peakTime": "2023年8月-2025年4月",
       "link": "https://search.bilibili.com/all?keyword=%E5%93%88%E5%9F%BA%E7%B1%B3+%E7%8C%AB",
       "verified": "verified",
-      "memeType": "song"
+      "memeType": "song",
+      "heat": 8
     },
     {
       "name": "那咋了 / 受着呗",
@@ -1817,7 +1888,8 @@
       "peakTime": "2025年6月",
       "link": "https://search.bilibili.com/all?keyword=%E9%82%A3%E5%92%8B%E4%BA%86+%E5%8F%97%E7%9D%80%E5%91%97+%E5%B0%8F%E5%AD%A6%E7%94%9F",
       "verified": "verified",
-      "memeType": "slang"
+      "memeType": "slang",
+      "heat": 6
     },
     {
       "name": "绷住挑战（大绷住时代）",
@@ -1921,7 +1993,7 @@
       "link": "",
       "verified": "verified",
       "memeType": "ip",
-      "heat": 6
+      "heat": 5
     },
     {
       "name": "花儿一家找妈妈",
@@ -2296,7 +2368,8 @@
       "peakTime": "2025年3月底爆发，2026年8月仍霸榜",
       "link": "https://search.bilibili.com/all?keyword=%E7%94%B2%E4%BA%A2%E5%93%A5+%E9%AC%BC%E7%95%9C",
       "verified": "verified",
-      "memeType": "ip"
+      "memeType": "ip",
+      "heat": 8
     },
     {
       "name": "紫薯精（如果全世界都指责你）",
@@ -2414,7 +2487,7 @@
       "howFired": "8/5上映→9天票房仅7169元 → 8/14热搜反向出圈 → 抖音2164万+1878万全平台霸榜 → 梗指南9/16科普(97万) → 8/16-17停排但梗惯性持续",
       "memeType": "ip",
       "verified": "verified",
-      "heat": 8,
+      "heat": 9,
       "fresh": 10,
       "link": "https://search.bilibili.com/all?keyword=%E7%89%9B%E6%9D%A5&order=click"
     },
@@ -2437,6 +2510,36 @@
       "heat": 3,
       "fresh": 10,
       "link": "https://search.bilibili.com/all?keyword=%E8%BF%B7%E6%A0%B8%E6%89%8B%E5%8A%BF%E8%88%9E&order=click"
+    },
+    {
+      "name": "顽童戏老叙",
+      "what": "B站原生动画梗，'800年前老叙被幼童拿捏'的小叙事系列。B站每周必看1264万，8/18两条热搜词。",
+      "howFired": "B站作者原创动画 → 8/12开始爆发 → 8/18热搜词入榜（'这分明就是顽童洗老叙'/'不同时代的老叙戏顽童'）",
+      "memeType": "action",
+      "verified": "uncertain",
+      "heat": 3,
+      "fresh": 9,
+      "link": "https://search.bilibili.com/all?keyword=顽童戏老叙&order=click"
+    },
+    {
+      "name": "发烧梗",
+      "what": "2026年8月初在B站爆发的新梗，具体含义待验证。",
+      "howFired": "B站每周必看#2(715万, 8/7) → 扩散中",
+      "memeType": "slang",
+      "verified": "unverified",
+      "heat": 3,
+      "fresh": 9,
+      "link": "https://search.bilibili.com/all?keyword=发烧梗&order=click"
+    },
+    {
+      "name": "OK了老铁们",
+      "what": "抖音自制综艺（陈泽），台词体在学生群体渗透中。",
+      "howFired": "抖音综艺第二集三条上榜(合计约7100万) → 台词成梗中",
+      "memeType": "slang",
+      "verified": "uncertain",
+      "heat": 2,
+      "fresh": 10,
+      "link": "https://search.bilibili.com/all?keyword=OK了老铁们&order=click"
     }
   ]
 }
