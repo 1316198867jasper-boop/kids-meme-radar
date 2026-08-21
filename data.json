@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-20",
+  "lastUpdated": "2026-08-21",
   "masterTable": {
     "timeChart": [
       {
@@ -262,224 +262,224 @@
         "heat": 9,
         "fresh": 10,
         "trend": "stable",
-        "source": "8/20日报",
-        "sourceFile": "2026-08-20"
+        "source": "8/21日报",
+        "sourceFile": "2026-08-21"
       },
       {
         "rank": 2,
-        "name": "正太扭腰（左边画个虫虫）",
+        "name": "胆子肥嘟嘟",
         "heat": 9,
-        "fresh": 8,
-        "trend": "down",
-        "source": "8/20日报",
-        "sourceFile": "2026-08-20"
+        "fresh": 9,
+        "trend": "up",
+        "source": "8/21日报",
+        "sourceFile": "2026-08-21"
       },
       {
         "rank": 3,
+        "name": "正太扭腰（左边画个虫虫）",
+        "heat": 9,
+        "fresh": 8,
+        "trend": "stable",
+        "source": "8/21日报",
+        "sourceFile": "2026-08-21"
+      },
+      {
+        "rank": 4,
+        "name": "中国人能飞",
+        "heat": 9,
+        "fresh": 8,
+        "trend": "up",
+        "source": "8/21日报",
+        "sourceFile": "2026-08-21"
+      },
+      {
+        "rank": 5,
         "name": "比比拉布",
         "heat": 9,
         "fresh": 4,
         "trend": "stable",
-        "source": "8/20日报",
-        "sourceFile": "2026-08-20"
-      },
-      {
-        "rank": 4,
-        "name": "我的刀盾",
-        "heat": 9,
-        "fresh": 3,
-        "trend": "stable",
-        "source": "8/20日报",
-        "sourceFile": "2026-08-20"
-      },
-      {
-        "rank": 5,
-        "name": "中国人能飞",
-        "heat": 8,
-        "fresh": 8,
-        "trend": "up",
-        "source": "8/20日报",
-        "sourceFile": "2026-08-20"
+        "source": "8/21日报",
+        "sourceFile": "2026-08-21"
       },
       {
         "rank": 6,
-        "name": "甲亢哥（IShowSpeed）",
+        "name": "我的刀盾",
         "heat": 8,
         "fresh": 3,
-        "trend": "stable",
-        "source": "8/20日报",
-        "sourceFile": "2026-08-20"
+        "trend": "down",
+        "source": "8/21日报",
+        "sourceFile": "2026-08-21"
       },
       {
         "rank": 7,
         "name": "哈基米",
-        "heat": 8,
+        "heat": 7,
         "fresh": 3,
-        "trend": "stable",
-        "source": "8/20日报",
-        "sourceFile": "2026-08-20"
+        "trend": "down",
+        "source": "8/21日报",
+        "sourceFile": "2026-08-21"
       },
       {
         "rank": 8,
-        "name": "鸡来",
-        "heat": 7,
-        "fresh": 10,
-        "trend": "new",
-        "source": "8/20日报",
-        "sourceFile": "2026-08-20"
-      },
-      {
-        "rank": 9,
-        "name": "胆子肥嘟嘟",
-        "heat": 7,
-        "fresh": 10,
-        "trend": "new",
-        "source": "8/20日报",
-        "sourceFile": "2026-08-20"
-      },
-      {
-        "rank": 10,
-        "name": "验牌 / 擦皮鞋",
-        "heat": 7,
-        "fresh": 4,
-        "trend": "stable",
-        "source": "8/20日报",
-        "sourceFile": "2026-08-20"
-      },
-      {
-        "rank": 11,
         "name": "从夯到拉",
         "heat": 7,
         "fresh": 3,
         "trend": "stable",
-        "source": "8/20日报",
-        "sourceFile": "2026-08-20"
+        "source": "8/21日报",
+        "sourceFile": "2026-08-21"
       },
       {
-        "rank": 12,
+        "rank": 9,
+        "name": "爱反坐的小孩",
+        "heat": 6,
+        "fresh": 10,
+        "trend": "new",
+        "source": "8/21日报",
+        "sourceFile": "2026-08-21"
+      },
+      {
+        "rank": 10,
         "name": "熊大回眸",
         "heat": 6,
         "fresh": 9,
         "trend": "stable",
-        "source": "8/20日报",
-        "sourceFile": "2026-08-20"
+        "source": "8/21日报",
+        "sourceFile": "2026-08-21"
       },
       {
-        "rank": 13,
+        "rank": 11,
+        "name": "甲亢哥（IShowSpeed）",
+        "heat": 6,
+        "fresh": 3,
+        "trend": "down",
+        "source": "8/21日报",
+        "sourceFile": "2026-08-21"
+      },
+      {
+        "rank": 12,
         "name": "那咋了 / 受着呗",
         "heat": 6,
         "fresh": 3,
         "trend": "stable",
-        "source": "8/20日报",
-        "sourceFile": "2026-08-20"
+        "source": "8/21日报",
+        "sourceFile": "2026-08-21"
+      },
+      {
+        "rank": 13,
+        "name": "鸡来",
+        "heat": 5,
+        "fresh": 7,
+        "trend": "down",
+        "source": "8/21日报",
+        "sourceFile": "2026-08-21"
       },
       {
         "rank": 14,
+        "name": "验牌 / 擦皮鞋",
+        "heat": 5,
+        "fresh": 4,
+        "trend": "down",
+        "source": "8/21日报",
+        "sourceFile": "2026-08-21"
+      },
+      {
+        "rank": 15,
         "name": "紫薯精（如果全世界都指责你）",
         "heat": 5,
         "fresh": 4,
         "trend": "stable",
-        "source": "8/20日报",
-        "sourceFile": "2026-08-20"
+        "source": "8/21日报",
+        "sourceFile": "2026-08-21"
       },
       {
-        "rank": 15,
+        "rank": 16,
+        "name": "伪人（全面入侵学校）",
+        "heat": 4,
+        "fresh": 9,
+        "trend": "up",
+        "source": "8/21日报",
+        "sourceFile": "2026-08-21"
+      },
+      {
+        "rank": 17,
         "name": "因为我善",
         "heat": 4,
         "fresh": 8,
         "trend": "stable",
-        "source": "8/20日报",
-        "sourceFile": "2026-08-20"
+        "source": "8/21日报",
+        "sourceFile": "2026-08-21"
       },
       {
-        "rank": 16,
+        "rank": 18,
         "name": "葱明姜就蒜了",
         "heat": 4,
         "fresh": 4,
         "trend": "stable",
-        "source": "8/20日报",
-        "sourceFile": "2026-08-20"
+        "source": "8/21日报",
+        "sourceFile": "2026-08-21"
       },
       {
-        "rank": 17,
+        "rank": 19,
         "name": "大笑奶龙",
         "heat": 4,
         "fresh": 4,
         "trend": "stable",
-        "source": "8/20日报",
-        "sourceFile": "2026-08-20"
+        "source": "8/21日报",
+        "sourceFile": "2026-08-21"
       },
       {
-        "rank": 18,
+        "rank": 20,
         "name": "新号别搞",
         "heat": 4,
         "fresh": 4,
         "trend": "stable",
-        "source": "8/20日报",
-        "sourceFile": "2026-08-20"
+        "source": "8/21日报",
+        "sourceFile": "2026-08-21"
       },
       {
-        "rank": 19,
+        "rank": 21,
         "name": "嘉豪（装酷标签）",
         "heat": 4,
         "fresh": 2,
         "trend": "stable",
-        "source": "8/20日报",
-        "sourceFile": "2026-08-20"
+        "source": "8/21日报",
+        "sourceFile": "2026-08-21"
       },
       {
-        "rank": 20,
+        "rank": 22,
         "name": "树恨你（Trees Hate You）",
         "heat": 4,
         "fresh": 2,
         "trend": "stable",
-        "source": "8/20日报",
-        "sourceFile": "2026-08-20"
+        "source": "8/21日报",
+        "sourceFile": "2026-08-21"
       },
       {
-        "rank": 21,
-        "name": "伪人（全面入侵学校）",
-        "heat": 3,
-        "fresh": 9,
-        "trend": "stable",
-        "source": "8/20日报",
-        "sourceFile": "2026-08-20"
-      },
-      {
-        "rank": 22,
+        "rank": 23,
         "name": "绷住挑战（大绷住时代）",
         "heat": 3,
         "fresh": 7,
         "trend": "stable",
-        "source": "8/20日报",
-        "sourceFile": "2026-08-20"
+        "source": "8/21日报",
+        "sourceFile": "2026-08-21"
       },
       {
-        "rank": 23,
+        "rank": 24,
         "name": "妙脆角小猫",
         "heat": 3,
         "fresh": 6,
         "trend": "stable",
-        "source": "8/20日报",
-        "sourceFile": "2026-08-20"
+        "source": "8/21日报",
+        "sourceFile": "2026-08-21"
       },
       {
-        "rank": 24,
+        "rank": 25,
         "name": "叮咚鸡 / 库里库里",
         "heat": 3,
         "fresh": 6,
         "trend": "stable",
-        "source": "8/20日报",
-        "sourceFile": "2026-08-20"
-      },
-      {
-        "rank": 25,
-        "name": "龙国 / 帽子叔叔",
-        "heat": 3,
-        "fresh": 2,
-        "trend": "stable",
-        "source": "8/20日报",
-        "sourceFile": "2026-08-20"
+        "source": "8/21日报",
+        "sourceFile": "2026-08-21"
       },
       {
         "rank": 26,
@@ -487,26 +487,26 @@
         "heat": 2,
         "fresh": 9,
         "trend": "stable",
-        "source": "8/20日报",
-        "sourceFile": "2026-08-20"
+        "source": "8/21日报",
+        "sourceFile": "2026-08-21"
       },
       {
         "rank": 27,
-        "name": "上头神婆多嘴歌/棒棒歌",
-        "heat": 2,
-        "fresh": 8,
-        "trend": "down",
-        "source": "8/20日报",
-        "sourceFile": "2026-08-20"
-      },
-      {
-        "rank": 28,
         "name": "白菜对我笑",
         "heat": 2,
         "fresh": 4,
         "trend": "stable",
-        "source": "8/20日报",
-        "sourceFile": "2026-08-20"
+        "source": "8/21日报",
+        "sourceFile": "2026-08-21"
+      },
+      {
+        "rank": 28,
+        "name": "上头神婆多嘴歌/棒棒歌",
+        "heat": 1,
+        "fresh": 8,
+        "trend": "down",
+        "source": "8/21日报",
+        "sourceFile": "2026-08-21"
       },
       {
         "rank": 29,
@@ -514,8 +514,8 @@
         "heat": 1,
         "fresh": 7,
         "trend": "stable",
-        "source": "8/20日报",
-        "sourceFile": "2026-08-20"
+        "source": "8/21日报",
+        "sourceFile": "2026-08-21"
       }
     ],
     "potentialChart": [
@@ -638,6 +638,11 @@
         "name": "刀马刀马",
         "peakTime": "2026年",
         "status": "heat降至1，移入经典区"
+      },
+      {
+        "name": "龙国 / 帽子叔叔",
+        "peakTime": "2024年10月-2025年",
+        "status": "曾经的爱国代称梗（龙国=中国、帽子叔叔=警察），heat=3 fresh=2 达标，8/21流转入经典区"
       }
     ],
     "parentGuide": {
@@ -1879,6 +1884,76 @@
           "probability": "低"
         }
       ]
+    },
+    "2026-08-21": {
+      "date": "2026-08-21",
+      "newMemes": [
+        {
+          "rank": 1,
+          "name": "爱反坐的小孩",
+          "fireTime": "2026年8月19日",
+          "what": "孩子反坐电瓶车的动画搞笑短剧，UP主韩波格_制作的26秒动画，表现一身反骨的幼崽坐车日常",
+          "howFired": "8/19发布→2天281.5万播放→B站日榜#61；抖音同题材反坐视频生态联动（583万未经核验）",
+          "scene": "B站动画搞笑+抖音同题材幼崽生态",
+          "platform": "B站/抖音",
+          "channel": "韩波格_",
+          "link": "https://search.bilibili.com/all?keyword=爱反坐的小孩&order=click"
+        }
+      ],
+      "continuing": [
+        {
+          "name": "牛来",
+          "since": "8/15",
+          "status": "heat=9 stable，票房破3400万进国产动画前五+LexBurner 561万"
+        },
+        {
+          "name": "正太扭腰",
+          "since": "8/9",
+          "status": "heat=9 stable，锐评123万/100万+NBA官方号8/21下场玩梗"
+        },
+        {
+          "name": "比比拉布",
+          "since": "8/5",
+          "status": "heat=9 stable，七夕313万+花仙谷134万+生活日记133万三连百万"
+        },
+        {
+          "name": "胆子肥嘟嘟",
+          "since": "8/14",
+          "status": "heat=9 up，概指南109万+click榜19/20新视频，本周增量最猛"
+        },
+        {
+          "name": "中国人能飞",
+          "since": "8/6",
+          "status": "heat=9 up，官方MV 8/14首发333万+4条150万+"
+        },
+        {
+          "name": "我的刀盾",
+          "since": "8/5",
+          "status": "heat=8 down，百万级与比比拉布同源，独立讨论弱"
+        },
+        {
+          "name": "哈基米",
+          "since": "8/5",
+          "status": "heat=7 down，碎片化上新无新百万爆款"
+        },
+        {
+          "name": "从夯到拉",
+          "since": "8/5",
+          "status": "heat=7 stable，锐评系列窗口内百万级"
+        }
+      ],
+      "radar": [
+        {
+          "name": "商务柔道",
+          "detail": "8/18伤心欲茄222配音小剧场775万/B站日榜#4，单视频爆款型无二创扩散（438万粉粉丝盘），待观察是否形成梗化",
+          "probability": "中"
+        },
+        {
+          "name": "上头神婆",
+          "detail": "heat=1濒死但fresh未达classic条件，观察是否彻底退烧",
+          "probability": "低"
+        }
+      ]
     }
   },
   "availableDates": [
@@ -1896,7 +1971,8 @@
     "2026-08-17",
     "2026-08-18",
     "2026-08-19",
-    "2026-08-20"
+    "2026-08-20",
+    "2026-08-21"
   ],
   "wikiEntries": [
     {
@@ -2731,6 +2807,30 @@
       "verified": "unverified",
       "memeType": "song",
       "heat": 7
+    },
+    {
+      "name": "爱反坐的小孩",
+      "what": "孩子反坐电瓶车的动画搞笑短剧，UP主韩波格_制作的26秒动画，专攻一身反骨的幼崽坐车日常",
+      "howFired": "8/19发布→2天281.5万播放→B站日榜#61；抖音同题材反坐视频生态联动",
+      "scene": "B站/抖音动画搞笑区观看传播，亲子童年语境强",
+      "platform": "B站+抖音",
+      "peakTime": "2026年8月",
+      "link": "https://search.bilibili.com/all?keyword=爱反坐的小孩&order=click",
+      "verified": "unverified",
+      "memeType": "ip",
+      "heat": 6
+    },
+    {
+      "name": "商务柔道",
+      "what": "西装商务人士被柔道背摔的搞笑配音小剧场，韩版商务精英人设×柔道翻车的反差笑点",
+      "howFired": "8/18发布→3天775.5万→B站日榜#4；438万粉粉丝盘助推，尚未形成跨账号二创",
+      "scene": "B站搞笑配音区单视频爆款",
+      "platform": "B站",
+      "peakTime": "2026年8月",
+      "link": "https://search.bilibili.com/all?keyword=商务柔道&order=click",
+      "verified": "unverified",
+      "memeType": "action",
+      "heat": 5
     }
   ]
 }
