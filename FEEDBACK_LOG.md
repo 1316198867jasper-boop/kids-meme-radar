@@ -18,6 +18,7 @@
   - 1-3: 几乎无人提及，仅存在于梗百科记录中
 - **R4**: fresh 定义 = 梗首次爆发距今的时间新鲜度(1-10)。fresh 仅用于 timeChart（时效榜）的排名，不影响 hotChart
 - **R5**: 关键区分——一个 2025 年的老梗如果本周突然被大量讨论（如节目播出/新二创），其 heat 应该很高；一个本周刚出现但没人讨论的新梗 fresh=10 但 heat 可能只有 3-4
+- **R6 (8/24新规)**: **timeChart 与 hotChart 必须每日同步维护**（成员全集相等、heat 一致、fresh 按换算表全量重算）。换算表：7天内=10, 8-14天=9, 15-30天=7-8, 1-3月=4-6, 3-6月=2-3, 6月+=1。hotChart 增删/流转后 timeChart 必须同步增删，禁止留下成员集合不一致的"僵尸新梗榜"（8/24 曾因缺此规则致新梗榜8天未更新：缺4个新梗、滞留4个已流转梗、heat为旧快照）
 
 ### 数据结构
 - **D1**: dailyReports 中 newMemes 必须是对象数组 `[{rank, name, fireTime, what, howFired, scene, platform, channel, link}]`，不能是字符串数组
@@ -94,3 +95,4 @@
 4. [ ] 链接生成：禁止使用具体BV号，统一用搜索页
 5. [ ] 数据格式：hardcode dailyReport schema 验证
 6. [ ] heat赋值时需搜索实际数据佐证：B站搜索结果数、7日播放量、家长帖数量
+| 2026-08-24 | 数据滞后 | 新梗榜不是最新的 | timeChart 无每日维护规则（成员/heat/fresh 全停更于 8/17） | 重建 timeChart+hotChart fresh 全量按换算表重算+Rank重写，Cron第九步加入强制同步规则 | R6 |
