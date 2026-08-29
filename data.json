@@ -1,123 +1,123 @@
 {
-  "lastUpdated": "2026-08-28",
+  "lastUpdated": "2026-08-29",
   "masterTable": {
     "timeChart": [
       {
         "rank": 1,
         "name": "胆子肥嘟嘟",
-        "heat": 9,
+        "heat": 10,
         "fresh": 10,
         "trend": "up",
-        "source": "8/28日报",
-        "sourceFile": "2026-08-28"
+        "source": "8/29日报",
+        "sourceFile": "2026-08-29"
       },
       {
         "rank": 2,
-        "name": "复活吧！我的（ ）",
-        "heat": 8,
+        "name": "熊大回眸",
+        "heat": 5,
         "fresh": 10,
         "trend": "stable",
-        "source": "8/28日报",
-        "sourceFile": "2026-08-28"
+        "source": "8/29日报",
+        "sourceFile": "2026-08-29"
       },
       {
         "rank": 3,
         "name": "顽童戏老叟",
         "heat": 8,
-        "fresh": 10,
+        "fresh": 9,
         "trend": "stable",
-        "source": "8/28日报",
-        "sourceFile": "2026-08-28"
+        "source": "8/29日报",
+        "sourceFile": "2026-08-29"
       },
       {
         "rank": 4,
-        "name": "妙脆角小猫",
-        "heat": 7,
-        "fresh": 10,
-        "trend": "stable",
-        "source": "8/28日报",
-        "sourceFile": "2026-08-28"
+        "name": "牛来（电影反向出圈梗）",
+        "heat": 8,
+        "fresh": 9,
+        "trend": "down",
+        "source": "8/29日报",
+        "sourceFile": "2026-08-29"
       },
       {
         "rank": 5,
-        "name": "鸡来",
-        "heat": 4,
-        "fresh": 10,
-        "trend": "stable",
-        "source": "8/28日报",
-        "sourceFile": "2026-08-28"
+        "name": "复活吧！我的（ ）",
+        "heat": 7,
+        "fresh": 9,
+        "trend": "down",
+        "source": "8/29日报",
+        "sourceFile": "2026-08-29"
       },
       {
         "rank": 6,
-        "name": "牛来（电影反向出圈梗）",
-        "heat": 9,
+        "name": "妙脆角小猫",
+        "heat": 6,
         "fresh": 9,
-        "trend": "stable",
-        "source": "8/28日报",
-        "sourceFile": "2026-08-28"
+        "trend": "down",
+        "source": "8/29日报",
+        "sourceFile": "2026-08-29"
       },
       {
         "rank": 7,
         "name": "爱反坐的小孩",
-        "heat": 6,
+        "heat": 5,
         "fresh": 9,
         "trend": "down",
-        "source": "8/28日报",
-        "sourceFile": "2026-08-28"
+        "source": "8/29日报",
+        "sourceFile": "2026-08-29"
       },
       {
         "rank": 8,
-        "name": "中国人能飞",
-        "heat": 6,
+        "name": "鸡来",
+        "heat": 4,
         "fresh": 9,
-        "trend": "down",
-        "source": "8/28日报",
-        "sourceFile": "2026-08-28"
+        "trend": "stable",
+        "source": "8/29日报",
+        "sourceFile": "2026-08-29"
       },
       {
         "rank": 9,
-        "name": "正太扭腰（左边画个虫虫）",
-        "heat": 6,
-        "fresh": 7,
+        "name": "中国人能飞",
+        "heat": 5,
+        "fresh": 8,
         "trend": "down",
-        "source": "8/28日报",
-        "sourceFile": "2026-08-28"
+        "source": "8/29日报",
+        "sourceFile": "2026-08-29"
       },
       {
         "rank": 10,
-        "name": "熊大回眸",
+        "name": "正太扭腰（左边画个虫虫）",
         "heat": 5,
         "fresh": 7,
-        "trend": "stable",
-        "source": "8/28日报",
-        "sourceFile": "2026-08-28"
+        "trend": "down",
+        "source": "8/29日报",
+        "sourceFile": "2026-08-29"
       },
       {
         "rank": 11,
         "name": "比比拉布",
-        "heat": 7,
+        "heat": 6,
         "fresh": 4,
         "trend": "down",
-        "source": "8/28日报",
-        "sourceFile": "2026-08-28"
+        "source": "8/29日报",
+        "sourceFile": "2026-08-29"
       },
       {
         "rank": 12,
         "name": "我的刀盾",
-        "heat": 6,
+        "heat": 5,
         "fresh": 4,
         "trend": "down",
-        "source": "8/28日报",
-        "sourceFile": "2026-08-28"
+        "source": "8/29日报",
+        "sourceFile": "2026-08-29"
       },
       {
         "rank": 13,
         "name": "从夯到拉",
-        "heat": 6,
+        "heat": 5,
         "fresh": 4,
         "trend": "down",
-        "source": "8/28日报",
-        "sourceFile": "2026-08-28"
+        "source": "8/29日报",
+        "sourceFile": "2026-08-29"
       },
       {
         "rank": 14,
@@ -125,35 +125,35 @@
         "heat": 4,
         "fresh": 4,
         "trend": "stable",
-        "source": "8/28日报",
-        "sourceFile": "2026-08-28"
+        "source": "8/29日报",
+        "sourceFile": "2026-08-29"
       },
       {
         "rank": 15,
-        "name": "验牌 / 擦皮鞋",
-        "heat": 4,
+        "name": "甲亢哥（IShowSpeed）",
+        "heat": 3,
         "fresh": 4,
-        "trend": "stable",
-        "source": "8/28日报",
-        "sourceFile": "2026-08-28"
+        "trend": "down",
+        "source": "8/29日报",
+        "sourceFile": "2026-08-29"
       },
       {
         "rank": 16,
-        "name": "甲亢哥（IShowSpeed）",
-        "heat": 4,
+        "name": "验牌 / 擦皮鞋",
+        "heat": 3,
         "fresh": 4,
         "trend": "down",
-        "source": "8/28日报",
-        "sourceFile": "2026-08-28"
+        "source": "8/29日报",
+        "sourceFile": "2026-08-29"
       },
       {
         "rank": 17,
         "name": "哈基米",
-        "heat": 4,
-        "fresh": 3,
+        "heat": 3,
+        "fresh": 4,
         "trend": "down",
-        "source": "8/28日报",
-        "sourceFile": "2026-08-28"
+        "source": "8/29日报",
+        "sourceFile": "2026-08-29"
       },
       {
         "rank": 18,
@@ -161,26 +161,26 @@
         "heat": 4,
         "fresh": 3,
         "trend": "stable",
-        "source": "8/28日报",
-        "sourceFile": "2026-08-28"
+        "source": "8/29日报",
+        "sourceFile": "2026-08-29"
       },
       {
         "rank": 19,
         "name": "大笑奶龙",
         "heat": 3,
         "fresh": 3,
-        "trend": "stable",
-        "source": "8/28日报",
-        "sourceFile": "2026-08-28"
+        "trend": "down",
+        "source": "8/29日报",
+        "sourceFile": "2026-08-29"
       },
       {
         "rank": 20,
         "name": "紫薯精（如果全世界都指责你）",
-        "heat": 5,
+        "heat": 4,
         "fresh": 2,
         "trend": "down",
-        "source": "8/28日报",
-        "sourceFile": "2026-08-28"
+        "source": "8/29日报",
+        "sourceFile": "2026-08-29"
       },
       {
         "rank": 21,
@@ -188,199 +188,199 @@
         "heat": 5,
         "fresh": 1,
         "trend": "stable",
-        "source": "8/28日报",
-        "sourceFile": "2026-08-28"
+        "source": "8/29日报",
+        "sourceFile": "2026-08-29"
       }
     ],
     "hotChart": [
       {
         "rank": 1,
         "name": "胆子肥嘟嘟",
-        "heat": 9,
+        "heat": 10,
         "fresh": 10,
         "trend": "up",
-        "source": "8/28日报",
-        "sourceFile": "2026-08-28"
+        "source": "8/29日报",
+        "sourceFile": "2026-08-29"
       },
       {
         "rank": 2,
-        "name": "牛来（电影反向出圈梗）",
-        "heat": 9,
+        "name": "顽童戏老叟",
+        "heat": 8,
         "fresh": 9,
         "trend": "stable",
-        "source": "8/28日报",
-        "sourceFile": "2026-08-28"
+        "source": "8/29日报",
+        "sourceFile": "2026-08-29"
       },
       {
         "rank": 3,
-        "name": "复活吧！我的（ ）",
+        "name": "牛来（电影反向出圈梗）",
         "heat": 8,
-        "fresh": 10,
-        "trend": "stable",
-        "source": "8/28日报",
-        "sourceFile": "2026-08-28"
+        "fresh": 9,
+        "trend": "down",
+        "source": "8/29日报",
+        "sourceFile": "2026-08-29"
       },
       {
         "rank": 4,
-        "name": "顽童戏老叟",
-        "heat": 8,
-        "fresh": 10,
-        "trend": "stable",
-        "source": "8/28日报",
-        "sourceFile": "2026-08-28"
+        "name": "复活吧！我的（ ）",
+        "heat": 7,
+        "fresh": 9,
+        "trend": "down",
+        "source": "8/29日报",
+        "sourceFile": "2026-08-29"
       },
       {
         "rank": 5,
         "name": "妙脆角小猫",
-        "heat": 7,
-        "fresh": 10,
-        "trend": "stable",
-        "source": "8/28日报",
-        "sourceFile": "2026-08-28"
+        "heat": 6,
+        "fresh": 9,
+        "trend": "down",
+        "source": "8/29日报",
+        "sourceFile": "2026-08-29"
       },
       {
         "rank": 6,
         "name": "比比拉布",
-        "heat": 7,
+        "heat": 6,
         "fresh": 4,
         "trend": "down",
-        "source": "8/28日报",
-        "sourceFile": "2026-08-28"
+        "source": "8/29日报",
+        "sourceFile": "2026-08-29"
       },
       {
         "rank": 7,
-        "name": "爱反坐的小孩",
-        "heat": 6,
-        "fresh": 9,
-        "trend": "down",
-        "source": "8/28日报",
-        "sourceFile": "2026-08-28"
+        "name": "熊大回眸",
+        "heat": 5,
+        "fresh": 10,
+        "trend": "stable",
+        "source": "8/29日报",
+        "sourceFile": "2026-08-29"
       },
       {
         "rank": 8,
-        "name": "中国人能飞",
-        "heat": 6,
+        "name": "爱反坐的小孩",
+        "heat": 5,
         "fresh": 9,
         "trend": "down",
-        "source": "8/28日报",
-        "sourceFile": "2026-08-28"
+        "source": "8/29日报",
+        "sourceFile": "2026-08-29"
       },
       {
         "rank": 9,
-        "name": "正太扭腰（左边画个虫虫）",
-        "heat": 6,
-        "fresh": 7,
+        "name": "中国人能飞",
+        "heat": 5,
+        "fresh": 8,
         "trend": "down",
-        "source": "8/28日报",
-        "sourceFile": "2026-08-28"
+        "source": "8/29日报",
+        "sourceFile": "2026-08-29"
       },
       {
         "rank": 10,
-        "name": "我的刀盾",
-        "heat": 6,
-        "fresh": 4,
+        "name": "正太扭腰（左边画个虫虫）",
+        "heat": 5,
+        "fresh": 7,
         "trend": "down",
-        "source": "8/28日报",
-        "sourceFile": "2026-08-28"
+        "source": "8/29日报",
+        "sourceFile": "2026-08-29"
       },
       {
         "rank": 11,
-        "name": "从夯到拉",
-        "heat": 6,
+        "name": "我的刀盾",
+        "heat": 5,
         "fresh": 4,
         "trend": "down",
-        "source": "8/28日报",
-        "sourceFile": "2026-08-28"
+        "source": "8/29日报",
+        "sourceFile": "2026-08-29"
       },
       {
         "rank": 12,
-        "name": "熊大回眸",
+        "name": "从夯到拉",
         "heat": 5,
-        "fresh": 7,
-        "trend": "stable",
-        "source": "8/28日报",
-        "sourceFile": "2026-08-28"
+        "fresh": 4,
+        "trend": "down",
+        "source": "8/29日报",
+        "sourceFile": "2026-08-29"
       },
       {
         "rank": 13,
-        "name": "紫薯精（如果全世界都指责你）",
-        "heat": 5,
-        "fresh": 2,
-        "trend": "down",
-        "source": "8/28日报",
-        "sourceFile": "2026-08-28"
-      },
-      {
-        "rank": 14,
         "name": "那咋了 / 受着呗",
         "heat": 5,
         "fresh": 1,
         "trend": "stable",
-        "source": "8/28日报",
-        "sourceFile": "2026-08-28"
+        "source": "8/29日报",
+        "sourceFile": "2026-08-29"
+      },
+      {
+        "rank": 14,
+        "name": "鸡来",
+        "heat": 4,
+        "fresh": 9,
+        "trend": "stable",
+        "source": "8/29日报",
+        "sourceFile": "2026-08-29"
       },
       {
         "rank": 15,
-        "name": "鸡来",
-        "heat": 4,
-        "fresh": 10,
-        "trend": "stable",
-        "source": "8/28日报",
-        "sourceFile": "2026-08-28"
-      },
-      {
-        "rank": 16,
         "name": "绷住挑战（大绷住时代）",
         "heat": 4,
         "fresh": 4,
         "trend": "stable",
-        "source": "8/28日报",
-        "sourceFile": "2026-08-28"
+        "source": "8/29日报",
+        "sourceFile": "2026-08-29"
       },
       {
-        "rank": 17,
-        "name": "验牌 / 擦皮鞋",
-        "heat": 4,
-        "fresh": 4,
-        "trend": "stable",
-        "source": "8/28日报",
-        "sourceFile": "2026-08-28"
-      },
-      {
-        "rank": 18,
-        "name": "甲亢哥（IShowSpeed）",
-        "heat": 4,
-        "fresh": 4,
-        "trend": "down",
-        "source": "8/28日报",
-        "sourceFile": "2026-08-28"
-      },
-      {
-        "rank": 19,
-        "name": "哈基米",
-        "heat": 4,
-        "fresh": 3,
-        "trend": "down",
-        "source": "8/28日报",
-        "sourceFile": "2026-08-28"
-      },
-      {
-        "rank": 20,
+        "rank": 16,
         "name": "伪人（全面入侵学校）",
         "heat": 4,
         "fresh": 3,
         "trend": "stable",
-        "source": "8/28日报",
-        "sourceFile": "2026-08-28"
+        "source": "8/29日报",
+        "sourceFile": "2026-08-29"
+      },
+      {
+        "rank": 17,
+        "name": "紫薯精（如果全世界都指责你）",
+        "heat": 4,
+        "fresh": 2,
+        "trend": "down",
+        "source": "8/29日报",
+        "sourceFile": "2026-08-29"
+      },
+      {
+        "rank": 18,
+        "name": "甲亢哥（IShowSpeed）",
+        "heat": 3,
+        "fresh": 4,
+        "trend": "down",
+        "source": "8/29日报",
+        "sourceFile": "2026-08-29"
+      },
+      {
+        "rank": 19,
+        "name": "验牌 / 擦皮鞋",
+        "heat": 3,
+        "fresh": 4,
+        "trend": "down",
+        "source": "8/29日报",
+        "sourceFile": "2026-08-29"
+      },
+      {
+        "rank": 20,
+        "name": "哈基米",
+        "heat": 3,
+        "fresh": 4,
+        "trend": "down",
+        "source": "8/29日报",
+        "sourceFile": "2026-08-29"
       },
       {
         "rank": 21,
         "name": "大笑奶龙",
         "heat": 3,
         "fresh": 3,
-        "trend": "stable",
-        "source": "8/28日报",
-        "sourceFile": "2026-08-28"
+        "trend": "down",
+        "source": "8/29日报",
+        "sourceFile": "2026-08-29"
       }
     ],
     "potentialChart": [
@@ -2140,6 +2140,45 @@
           "probability": "低"
         }
       ]
+    },
+    "2026-08-29": {
+      "date": "2026-08-29",
+      "newMemes": [],
+      "continuing": [
+        {
+          "name": "胆子肥嘟嘟",
+          "note": "开学变体爆发线9条命中(top 213.6万@8/23)+窗口4条命中(top 393.5万@8/24)+影视《空枪》借梗商用+微博12.5万帖，heat 9→10唯一升级"
+        },
+        {
+          "name": "顽童戏老叟",
+          "note": "窗口2条命中635.9万/384.1万+8/29仍11.1万新作"
+        },
+        {
+          "name": "牛来（电影反向出圈梗）",
+          "note": "《牛莱》469.9万每周必看#21；票房口径存疑(头条5341.5万@8/28 vs 网易快照4600万[未验证])，长尾趋平"
+        },
+        {
+          "name": "复活吧！我的（ ）",
+          "note": "母视频843万每周必看榜首(增速+0.4%/天趋零)，开学变体0破万接棒失败"
+        }
+      ],
+      "radar": [
+        {
+          "name": "我同意开学 / 我不同意开学",
+          "detail": "开学日未放量：四榜无条目、B站填空二创近48h全<3000、高播放全为2025-08存量；9/1上海/菏泽最后一批开学为最后窗口，触发=任一平台≥3条破万填空二创或小学生使用证据",
+          "probability": "中"
+        },
+        {
+          "name": "开学季专线（专项）",
+          "detail": "9/1最后一批开学；存量变体路径已验证(胆子肥嘟嘟)，跟踪复活吧假期变体是否9/1复活；触发=9/1后开学梗常态化",
+          "probability": "中"
+        },
+        {
+          "name": "鸡来 / 《羊高》续作",
+          "detail": "8/22官宣后无新物料（8/28-29仅<300播放AI整活）；触发=《羊高》上映带动鸡来破万二创",
+          "probability": "低"
+        }
+      ]
     }
   },
   "availableDates": [
@@ -2163,7 +2202,8 @@
     "2026-08-24",
     "2026-08-25",
     "2026-08-26",
-    "2026-08-28"
+    "2026-08-28",
+    "2026-08-29"
   ],
   "wikiEntries": [
     {
@@ -2201,8 +2241,8 @@
       "link": "",
       "memeType": "song",
       "verified": "verified",
-      "heat": 6,
-      "fresh": 9
+      "heat": 5,
+      "fresh": 8
     },
     {
       "name": "比比拉布",
@@ -2214,7 +2254,7 @@
       "link": "https://search.bilibili.com/all?keyword=%E6%AF%94%E6%AF%94%E6%8B%89%E5%B8%83+%E5%B0%8F%E5%AD%A6%E7%94%9F",
       "memeType": "ip",
       "verified": "verified",
-      "heat": 7,
+      "heat": 6,
       "fresh": 4
     },
     {
@@ -2227,7 +2267,7 @@
       "link": "https://search.bilibili.com/all?keyword=%E6%88%91%E7%9A%84%E5%88%80%E7%9B%BE+%E5%B0%8F%E5%AD%A6%E7%94%9F",
       "memeType": "ip",
       "verified": "verified",
-      "heat": 6,
+      "heat": 5,
       "fresh": 4
     },
     {
@@ -2240,7 +2280,7 @@
       "link": "https://search.bilibili.com/all?keyword=%E9%AA%8C%E7%89%8C+%E6%93%A6%E7%9A%AE%E9%9E%8B+%E6%A2%97",
       "verified": "verified",
       "memeType": "slang",
-      "heat": 4,
+      "heat": 3,
       "fresh": 4
     },
     {
@@ -2253,7 +2293,7 @@
       "link": "https://search.bilibili.com/all?keyword=%E4%BB%8E%E5%A4%AF%E5%88%B0%E6%8B%89",
       "verified": "verified",
       "memeType": "slang",
-      "heat": 6,
+      "heat": 5,
       "fresh": 4
     },
     {
@@ -2266,8 +2306,8 @@
       "link": "https://search.bilibili.com/all?keyword=%E5%A6%99%E8%84%86%E8%A7%92%E5%B0%8F%E7%8C%AB",
       "verified": "verified",
       "memeType": "ip",
-      "heat": 7,
-      "fresh": 10
+      "heat": 6,
+      "fresh": 9
     },
     {
       "name": "叮咚鸡 / 库里库里",
@@ -2316,8 +2356,8 @@
       "link": "https://search.bilibili.com/all?keyword=%E5%93%88%E5%9F%BA%E7%B1%B3+%E7%8C%AB",
       "verified": "verified",
       "memeType": "song",
-      "heat": 4,
-      "fresh": 3
+      "heat": 3,
+      "fresh": 4
     },
     {
       "name": "那咋了 / 受着呗",
@@ -2438,7 +2478,7 @@
       "verified": "verified",
       "memeType": "ip",
       "heat": 5,
-      "fresh": 7
+      "fresh": 10
     },
     {
       "name": "花儿一家找妈妈",
@@ -2814,7 +2854,7 @@
       "link": "https://search.bilibili.com/all?keyword=%E7%94%B2%E4%BA%A2%E5%93%A5+%E9%AC%BC%E7%95%9C",
       "verified": "verified",
       "memeType": "ip",
-      "heat": 4,
+      "heat": 3,
       "fresh": 4
     },
     {
@@ -2827,7 +2867,7 @@
       "link": "https://so.toutiao.com/search?dvpf=pc&keyword=紫薯精+短剧+如果全世界",
       "verified": "verified",
       "memeType": "ip",
-      "heat": 5,
+      "heat": 4,
       "fresh": 2
     },
     {
@@ -2876,7 +2916,7 @@
       "link": "https://search.bilibili.com/all?keyword=%E6%AD%A3%E5%A4%AA%E6%89%AD%E8%85%B0+%E8%99%AB%E8%99%AB+%E9%BE%99%E9%BE%99&order=click",
       "verified": "verified",
       "memeType": "action",
-      "heat": 6,
+      "heat": 5,
       "fresh": 7
     },
     {
@@ -2936,7 +2976,7 @@
       "howFired": "8/5上映→9天票房仅7169元 → 8/14热搜反向出圈 → 抖音2164万+1878万全平台霸榜 → 梗指南9/16科普(97万) → 8/16-17停排但梗惯性持续",
       "memeType": "ip",
       "verified": "verified",
-      "heat": 9,
+      "heat": 8,
       "fresh": 9,
       "link": "https://search.bilibili.com/all?keyword=%E7%89%9B%E6%9D%A5&order=click"
     },
@@ -2967,7 +3007,7 @@
       "memeType": "action",
       "verified": "unverified",
       "heat": 8,
-      "fresh": 10,
+      "fresh": 9,
       "link": "https://search.bilibili.com/all?keyword=顽童戏老叟&order=click"
     },
     {
@@ -3001,7 +3041,7 @@
       "verified": "unverified",
       "memeType": "ip",
       "heat": 4,
-      "fresh": 10
+      "fresh": 9
     },
     {
       "name": "胆子肥嘟嘟",
@@ -3013,7 +3053,7 @@
       "link": "https://search.bilibili.com/all?keyword=胆子肥嘟嘟&order=click",
       "verified": "unverified",
       "memeType": "song",
-      "heat": 9,
+      "heat": 10,
       "fresh": 10
     },
     {
@@ -3026,7 +3066,7 @@
       "link": "https://search.bilibili.com/all?keyword=爱反坐的小孩&order=click",
       "verified": "unverified",
       "memeType": "ip",
-      "heat": 6,
+      "heat": 5,
       "fresh": 9
     },
     {
@@ -3051,8 +3091,8 @@
       "link": "https://search.bilibili.com/all?keyword=复活吧我的&order=click",
       "verified": "uncertain",
       "memeType": "slang",
-      "heat": 8,
-      "fresh": 10
+      "heat": 7,
+      "fresh": 9
     },
     {
       "name": "我同意开学 / 我不同意开学",
