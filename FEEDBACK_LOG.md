@@ -63,6 +63,10 @@
 - **T4**: 泛搜索/微信文章 → 使用 WebSearch（通过子Agent执行）
 - **T5**: 不用 Jina Reader 读中文动态页面（头条/热榜返回空），只用 curl 直连API或 WebFetch
 
+### 数据写入（R7，8/30 议题实验定型）
+- **R7**: data.json **禁止整体重写**（8/30 前每天全量 Read(~90KB) + 全量 Write(~65KB)，绝大多数内容未变化）→ 改为增量更新：读 `scripts/meme_data.py digest` 摘要 → 只写当天变更清单 delta（/tmp/meme_delta_YYYY-MM-DD.json）→ `scripts/meme_merge.py` 自动应用+同步+排序+校验+回滚。脚本机械强制 R6（两榜成员/heat 一致）与 R1（排序 rank 重写），newMemes 必须带 heat/fresh/trend/firstBurst。合并连续两次失败才回退旧全量流程。
+- **输出纪律**: 抓取命令原始输出先落盘 /tmp 再 python 提取摘要，整份 JSON/HTML 不进上下文。
+
 ### 重点监测账号
 - **M1**: B站"网梗指南"账号（UID: 662218156）— 不定期更新梗解释视频。每日通过搜索API抓取其最新视频，对每条视频执行以下分析：
   1. 提取梗名 → 2. 搜索验证爆发时期（C6：不是发了视频就算新梗）→ 3. 搜索"梗名+小学生"判断是否小学生使用 → 4. 按结果决定：收入newMemes/更新heat/加入wikiEntries/忽略
@@ -96,3 +100,4 @@
 5. [ ] 数据格式：hardcode dailyReport schema 验证
 6. [ ] heat赋值时需搜索实际数据佐证：B站搜索结果数、7日播放量、家长帖数量
 | 2026-08-24 | 数据滞后 | 新梗榜不是最新的 | timeChart 无每日维护规则（成员/heat/fresh 全停更于 8/17） | 重建 timeChart+hotChart fresh 全量按换算表重算+Rank重写，Cron第九步加入强制同步规则 | R6 |
+| 2026-08-30 | 资源效率 | 每日全量读写 data.json 浪费 token（约 40k 输入 + 40k 输出/天） | 模型每次整体重写 ~90KB 数据文件，90% 内容未变化 | 第九步改增量：摘要+delta+合并脚本（meme_data.py/meme_merge.py），脚本机械强制 R6/R1 校验+失败回滚；抓取输出落盘摘要化 | R7 |

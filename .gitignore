@@ -6,3 +6,5 @@ daily/*-v*.md
 小学生热梗总览.html
 小学生热梗总览-preview.png
 小学生热梗总览.pdf
+# 增量合并备份（8/30 议题实验）
+data.json.bak*
