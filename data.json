@@ -1,5 +1,5 @@
 {
- "lastUpdated": "2026-09-01",
+ "lastUpdated": "2026-09-04",
  "masterTable": {
   "timeChart": [
    {
@@ -32,11 +32,11 @@
    {
     "rank": 4,
     "name": "牛来（电影反向出圈梗）",
-    "heat": 7,
+    "heat": 6,
     "fresh": 9,
     "trend": "down",
-    "source": "2026-09-01日报",
-    "sourceFile": "2026-09-01"
+    "source": "2026-09-04日报",
+    "sourceFile": "2026-09-04"
    },
    {
     "rank": 5,
@@ -88,9 +88,9 @@
     "name": "正太扭腰（左边画个虫虫）",
     "heat": 4,
     "fresh": 7,
-    "trend": "down",
-    "source": "2026-09-01日报",
-    "sourceFile": "2026-09-01"
+    "trend": "stable",
+    "source": "2026-09-04日报",
+    "sourceFile": "2026-09-04"
    },
    {
     "rank": 11,
@@ -176,11 +176,11 @@
    {
     "rank": 20,
     "name": "那咋了 / 受着呗",
-    "heat": 5,
-    "fresh": 1,
-    "trend": "stable",
-    "source": "2026-09-01日报",
-    "sourceFile": "2026-09-01"
+    "heat": 6,
+    "fresh": 2,
+    "trend": "up",
+    "source": "2026-09-04日报",
+    "sourceFile": "2026-09-04"
    }
   ],
   "hotChart": [
@@ -205,11 +205,11 @@
    {
     "rank": 3,
     "name": "牛来（电影反向出圈梗）",
-    "heat": 7,
+    "heat": 6,
     "fresh": 9,
     "trend": "down",
-    "source": "2026-09-01日报",
-    "sourceFile": "2026-09-01"
+    "source": "2026-09-04日报",
+    "sourceFile": "2026-09-04"
    },
    {
     "rank": 4,
@@ -231,6 +231,15 @@
    },
    {
     "rank": 6,
+    "name": "那咋了 / 受着呗",
+    "heat": 6,
+    "fresh": 2,
+    "trend": "up",
+    "source": "2026-09-04日报",
+    "sourceFile": "2026-09-04"
+   },
+   {
+    "rank": 7,
     "name": "熊大回眸",
     "heat": 5,
     "fresh": 10,
@@ -239,7 +248,7 @@
     "sourceFile": "2026-09-01"
    },
    {
-    "rank": 7,
+    "rank": 8,
     "name": "妙脆角小猫",
     "heat": 5,
     "fresh": 9,
@@ -248,7 +257,7 @@
     "sourceFile": "2026-09-01"
    },
    {
-    "rank": 8,
+    "rank": 9,
     "name": "我的刀盾",
     "heat": 5,
     "fresh": 4,
@@ -257,19 +266,10 @@
     "sourceFile": "2026-09-01"
    },
    {
-    "rank": 9,
+    "rank": 10,
     "name": "从夯到拉",
     "heat": 5,
     "fresh": 4,
-    "trend": "stable",
-    "source": "2026-09-01日报",
-    "sourceFile": "2026-09-01"
-   },
-   {
-    "rank": 10,
-    "name": "那咋了 / 受着呗",
-    "heat": 5,
-    "fresh": 1,
     "trend": "stable",
     "source": "2026-09-01日报",
     "sourceFile": "2026-09-01"
@@ -306,9 +306,9 @@
     "name": "正太扭腰（左边画个虫虫）",
     "heat": 4,
     "fresh": 7,
-    "trend": "down",
-    "source": "2026-09-01日报",
-    "sourceFile": "2026-09-01"
+    "trend": "stable",
+    "source": "2026-09-04日报",
+    "sourceFile": "2026-09-04"
    },
    {
     "rank": 15,
@@ -2210,6 +2210,52 @@
      "probability": "低"
     }
    ]
+  },
+  "2026-09-04": {
+   "date": "2026-09-04",
+   "newMemes": [],
+   "continuing": [
+    {
+     "name": "胆子肥嘟嘟",
+     "note": "heat10顶格stable：9/4单日20+新作品，猫眼电影官方9/4借梗，全网老梗"
+    },
+    {
+     "name": "顽童戏老叟",
+     "note": "heat8保持：窗口无新命中，续观察"
+    }
+   ],
+   "radar": [
+    {
+     "name": "我不同意开学 / 全世界都不同意开学",
+     "detail": "9/1晚安名签仿拍潮948条总量持续至9/4；主视频14.6万→18.1万。仿拍量大连播但单件均低，未达3+破万完全触发线",
+     "probability": "高"
+    },
+    {
+     "name": "我了叹",
+     "detail": "梗指南科普26.8万持续放量；9/2-9/4每日仿拍（单件50-453播放）→扩散收敛，触发=校园语境引用或二创破万",
+     "probability": "中"
+    },
+    {
+     "name": "耍起",
+     "detail": "川渝方言梗：网梗指南8/27选题+梗指南9/2科普13.3万+「开学=耍起」32.4万；小学生使用证据待补（wiki已录unverified）",
+     "probability": "低"
+    },
+    {
+     "name": "唐人 / 伞兵",
+     "detail": "9/1宋宇选读（语文老师）点名2026校园流行语，待独立验证",
+     "probability": "低"
+    },
+    {
+     "name": "开学第一周现象线",
+     "detail": "开学belike 52.4万/抖音开学众生相1221万/第一批20后入学3667万/牛:赶紧开学吧3亿阅读——三侧叙事爆发未梗化",
+     "probability": "低"
+    },
+    {
+     "name": "鸡来 / 《羊高》续作",
+     "detail": "无新物料；触发=《羊高》上映带动鸡来破万二创",
+     "probability": "低"
+    }
+   ]
   }
  },
  "availableDates": [
@@ -2235,7 +2281,8 @@
   "2026-08-26",
   "2026-08-28",
   "2026-08-29",
-  "2026-09-01"
+  "2026-09-01",
+  "2026-09-04"
  ],
  "wikiEntries": [
   {
@@ -3149,6 +3196,17 @@
    "platform": "B站",
    "peakTime": "2026年8月中旬",
    "link": "https://search.bilibili.com/all?keyword=%E6%88%91%E4%BA%86%E5%8F%B9"
+  },
+  {
+   "name": "耍起",
+   "memeType": "slang",
+   "verified": "unverified",
+   "what": "川渝方言口头禅（=「去玩/嗨起来/耍起来」），2026年8月底借「松弛感」叙事出圈全网，开学季被用作「开学=耍起」的乐观心态表达",
+   "howFired": "2026年8月底出圈：8/27网梗指南选题 → 9/2梗指南科普《耍起是什么梗》13.3万 → 「开学=耍起」32.4万、「云贵川渝耍起主义」29万等二创放量",
+   "scene": "聊天/弹幕表达「出去玩/嗨起来」；开学季变体「开学=耍起」表达开学乐观心态",
+   "platform": "B站+抖音",
+   "peakTime": "2026年8月底-9月初",
+   "link": "https://search.bilibili.com/all?keyword=%E8%80%8D%E8%B5%B7"
   }
  ]
 }
